@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTRI Innovation Pvt. Ltd. — Joining the World with Technology</title>
+<meta name="description" content="AI-powered platforms, scalable products and intelligent digital experiences engineered to power what comes next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090c;
+    --bg-soft:#0e1014;
+    --bg-card:#13151b;
+    --ink:#f3f1ec;
+    --ink-mute:#9b9990;
+    --ink-faint:#56554f;
+    --blue:#1b6fe8;
+    --orange:#e8631a;
+    --cyan:#1aace8;
+    --lime:#c2d81a;
+    --accent:#e8631a;
+    --line:rgba(243,241,236,0.08);
+    --line-mid:rgba(243,241,236,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Outfit',sans-serif;font-weight:300;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--orange);color:#fff}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.07;letter-spacing:-0.02em}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+  /* grain */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;
+    opacity:.04;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;transition:background .4s,padding .4s,border-color .4s;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(8,9,12,.85);backdrop-filter:blur(14px);
+    padding:14px 32px;border-bottom:1px solid var(--line);
+  }
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:21px;font-weight:600;letter-spacing:-.02em}
+  .logo .dots{display:flex;gap:4px}
+  .logo .dots span{width:7px;height:7px;border-radius:50%}
+  .logo .dots span:nth-child(1){background:var(--blue)}
+  .logo .dots span:nth-child(2){background:var(--orange)}
+  .logo .dots span:nth-child(3){background:var(--cyan)}
+  .logo .dots span:nth-child(4){background:var(--lime)}
+  .logo small{color:var(--ink-faint);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;font-weight:400;text-transform:uppercase}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--ink-mute);transition:color .25s;position:relative}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--orange);transition:width .3s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    border:1px solid var(--line-mid);padding:10px 20px;border-radius:40px;
+    font-size:13px;color:var(--ink);display:flex;align-items:center;gap:8px;
+    transition:all .3s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+  /* mobile menu — hidden by default, only shown via burger on small screens */
+  .mobile-menu{display:none}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    position:relative;padding:140px 0 80px;overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 70% 30%, rgba(27,111,232,.13), transparent 70%),
+      radial-gradient(ellipse 60% 45% at 20% 75%, rgba(232,99,26,.10), transparent 70%);
+  }
+  .hero-grid{
+    position:absolute;inset:0;z-index:0;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000,transparent);
+  }
+  .star{position:absolute;border-radius:50%;background:#fff;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-mute);
+    border:1px solid var(--line-mid);padding:8px 16px;border-radius:40px;
+    margin-bottom:38px;
+  }
+  .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(194,216,26,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(194,216,26,0)}100%{box-shadow:0 0 0 0 rgba(194,216,26,0)}}
+  h1.hero-title{
+    font-size:clamp(3.2rem,9.5vw,8.4rem);font-weight:500;
+    letter-spacing:-.045em;margin-bottom:34px;
+  }
+  h1.hero-title em{font-style:italic;font-weight:400;color:var(--orange)}
+  h1.hero-title .line{display:block;overflow:hidden}
+  h1.hero-title .line span{display:block;transform:translateY(105%);animation:rise .9s cubic-bezier(.16,1,.3,1) forwards}
+  h1.hero-title .line:nth-child(2) span{animation-delay:.12s}
+  h1.hero-title .line:nth-child(3) span{animation-delay:.24s}
+  @keyframes rise{to{transform:translateY(0)}}
+  .hero-sub{
+    max-width:540px;font-size:1.18rem;color:var(--ink-mute);
+    margin-bottom:44px;opacity:0;animation:fade .8s ease .5s forwards;
+  }
+  @keyframes fade{to{opacity:1}}
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;opacity:0;animation:fade .8s ease .65s forwards}
+  .btn{
+    display:inline-flex;align-items:center;gap:11px;
+    padding:16px 30px;border-radius:46px;font-size:15px;font-weight:400;
+    transition:all .3s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--ink);color:var(--bg)}
+  .btn-primary:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--line-mid);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);background:rgba(243,241,236,.04)}
+  .btn .arrow{transition:transform .3s}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .hero-foot{
+    position:absolute;bottom:34px;left:0;right:0;z-index:2;
+    display:flex;justify-content:space-between;align-items:flex-end;
+  }
+  .scroll-ind{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-faint);text-transform:uppercase}
+  .scroll-line{width:1px;height:46px;background:linear-gradient(var(--ink-faint),transparent);position:relative;overflow:hidden}
+  .scroll-line::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--orange);animation:scrolldot 2s ease-in-out infinite}
+  @keyframes scrolldot{0%{transform:translateY(-14px)}100%{transform:translateY(46px)}}
+  .hero-tagline{max-width:280px;font-size:13px;color:var(--ink-faint);text-align:right}
+
+  /* ---------- SECTION COMMON ---------- */
+  section{position:relative}
+  .sec{padding:130px 0}
+  .sec-label{
+    display:flex;align-items:center;gap:14px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--orange);margin-bottom:26px;
+  }
+  .sec-label::before{content:"";width:32px;height:1px;background:var(--orange)}
+  h2.sec-title{font-size:clamp(2.4rem,5.5vw,4.4rem);margin-bottom:24px;letter-spacing:-.035em}
+  h2.sec-title em{font-style:italic;font-weight:400;color:var(--ink-mute)}
+  .sec-intro{max-width:560px;color:var(--ink-mute);font-size:1.1rem}
+
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* ---------- ABOUT ---------- */
+  #about{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
+  .about-lead{font-size:1.5rem;font-family:'Fraunces',serif;line-height:1.4;font-weight:400;margin-bottom:28px;letter-spacing:-.01em}
+  .about-lead em{font-style:italic;color:var(--orange)}
+  .about-body p{color:var(--ink-mute);margin-bottom:18px}
+  .ptri-acronym{margin-top:38px;display:grid;gap:14px}
+  .acro-row{display:flex;gap:18px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .acro-letter{font-family:'Fraunces',serif;font-size:2rem;color:var(--orange);width:34px;flex-shrink:0}
+  .acro-text{color:var(--ink-mute);font-size:.98rem}
+  .acro-text strong{color:var(--ink);font-weight:500}
+  .about-checks{display:grid;gap:2px;margin-bottom:36px}
+  .check{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);font-size:.98rem;color:var(--ink-mute)}
+  .check svg{flex-shrink:0;margin-top:4px}
+  .stats-box{
+    border:1px solid var(--line-mid);border-radius:18px;padding:34px;
+    background:linear-gradient(160deg,var(--bg-card),var(--bg));
+  }
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:28px}
+  .stat .num{font-family:'Fraunces',serif;font-size:2.7rem;color:var(--ink);line-height:1}
+  .stat .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:6px}
+  .core-bar{display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid var(--line)}
+  .core-status{display:flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute)}
+  .core-status .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 2.4s infinite}
+  .core-ver{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint)}
+
+  /* ---------- VALUES ---------- */
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:60px}
+  .value{background:var(--bg);padding:42px 34px;transition:background .35s}
+  .value:hover{background:var(--bg-card)}
+  .value .vn{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--orange);margin-bottom:30px}
+  .value h3{font-size:1.5rem;margin-bottom:14px}
+  .value p{color:var(--ink-mute);font-size:.96rem}
+
+  /* ---------- PRODUCTS ---------- */
+  #products{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .prod-card{
+    border:1px solid var(--line-mid);border-radius:24px;overflow:hidden;
+    margin-top:54px;background:var(--bg-card);position:relative;
+  }
+  .prod-card.featured{
+    background:linear-gradient(150deg,rgba(27,111,232,.07),var(--bg-card) 55%);
+  }
+  .prod-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .prod-text{padding:54px 50px}
+  .prod-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;padding:6px 13px;border-radius:30px;margin-bottom:26px;
+  }
+  .prod-badge.live{background:rgba(194,216,26,.12);color:var(--lime);border:1px solid rgba(194,216,26,.3)}
+  .prod-badge.soon{background:rgba(232,99,26,.12);color:var(--orange);border:1px solid rgba(232,99,26,.3)}
+  .prod-badge .d{width:6px;height:6px;border-radius:50%;background:currentColor}
+  .prod-name{font-size:3.4rem;letter-spacing:-.03em;margin-bottom:6px}
+  .prod-url{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);margin-bottom:22px}
+  .prod-desc{color:var(--ink-mute);margin-bottom:30px;font-size:1.05rem}
+  .prod-feats{display:grid;gap:1px;margin-bottom:34px}
+  .pfeat{display:flex;gap:13px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--ink-mute)}
+  .pfeat .pf-i{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+  .prod-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-mute);border:1px solid var(--line-mid);padding:5px 11px;border-radius:30px}
+  .prod-visual{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(ellipse at center,rgba(27,111,232,.14),transparent 70%);
+    border-left:1px solid var(--line);overflow:hidden;min-height:480px;
+  }
+  .prod-visual.soon-v{background:radial-gradient(ellipse at center,rgba(232,99,26,.12),transparent 70%)}
+  /* voyagea mock */
+  .voy-mock{
+    width:300px;border-radius:20px;border:1px solid var(--line-mid);
+    background:var(--bg);overflow:hidden;box-shadow:0 40px 80px -20px rgba(0,0,0,.6);
+    transform:rotate(-3deg);transition:transform .5s;
+  }
+  .prod-visual:hover .voy-mock{transform:rotate(-1deg) translateY(-6px)}
+  .vm-bar{display:flex;align-items:center;gap:6px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .vm-bar i{width:9px;height:9px;border-radius:50%;display:block}
+  .vm-bar i:nth-child(1){background:#e8631a}
+  .vm-bar i:nth-child(2){background:#c2d81a}
+  .vm-bar i:nth-child(3){background:#1aace8}
+  .vm-bar span{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-faint)}
+  .vm-body{padding:20px 18px}
+  .vm-msg{font-size:12px;padding:11px 14px;border-radius:13px;margin-bottom:11px;line-height:1.5}
+  .vm-msg.user{background:var(--bg-card);color:var(--ink-mute);margin-left:38px}
+  .vm-msg.ai{background:linear-gradient(135deg,rgba(27,111,232,.22),rgba(26,172,232,.12));color:var(--ink);border:1px solid rgba(27,111,232,.25);margin-right:24px}
+  .vm-typing{display:flex;gap:4px;padding:11px 14px}
+  .vm-typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-faint);animation:typing 1.4s infinite}
+  .vm-typing i:nth-child(2){animation-delay:.2s}
+  .vm-typing i:nth-child(3){animation-delay:.4s}
+  @keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+  .vm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .vm-tag{font-family:'JetBrains Mono',monospace;font-size:8px;background:var(--bg-card);color:var(--cyan);padding:4px 8px;border-radius:20px;border:1px solid var(--line)}
+  /* dwello mock */
+  .dwell-mock{position:relative;width:280px;height:280px}
+  .dwell-room{position:absolute;inset:0;border:1px solid var(--line-mid);border-radius:14px;background:var(--bg);transform:rotateX(48deg) rotateZ(-42deg);transform-style:preserve-3d;box-shadow:0 50px 90px -30px rgba(0,0,0,.7)}
+  .dwell-room i{position:absolute;border-radius:4px}
+  .df1{width:90px;height:54px;background:var(--orange);bottom:30px;left:34px;opacity:.85}
+  .df2{width:46px;height:46px;background:var(--cyan);top:40px;right:46px;opacity:.8}
+  .df3{width:64px;height:24px;background:var(--lime);top:54px;left:50px;opacity:.7}
+  .df4{width:30px;height:78px;background:var(--blue);bottom:40px;right:40px;opacity:.8}
+  .dwell-float{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-faint);animation:floaty 4s ease-in-out infinite}
+  @keyframes floaty{50%{transform:translateY(-8px)}}
+
+  /* ---------- SERVICES ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:60px}
+  .svc{background:var(--bg);padding:48px 44px;transition:background .35s;position:relative}
+  .svc:hover{background:var(--bg-card)}
+  .svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:30px}
+  .svc-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--orange)}
+  .svc-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);padding:4px 10px;border-radius:30px}
+  .svc h3{font-size:1.7rem;margin-bottom:13px}
+  .svc>p{color:var(--ink-mute);font-size:.97rem;margin-bottom:24px}
+  .svc-list{display:grid;gap:9px}
+  .svc-list li{list-style:none;display:flex;gap:11px;align-items:center;font-size:.9rem;color:var(--ink-mute)}
+  .svc-list li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--cyan)}
+
+  /* marquee */
+  .marquee{margin-top:80px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden;display:flex}
+  .marquee-track{display:flex;gap:46px;white-space:nowrap;animation:marq 28s linear infinite;flex-shrink:0;padding-right:46px}
+  .marquee-track span{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--ink-faint);font-style:italic}
+  .marquee-track span::after{content:"·";margin-left:46px;color:var(--orange)}
+  @keyframes marq{to{transform:translateX(-100%)}}
+
+  /* ---------- PROCESS ---------- */
+  #process{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:60px}
+  .proc{background:var(--bg);padding:40px 30px}
+  .proc-num{font-family:'Fraunces',serif;font-size:3.4rem;color:var(--line-mid);line-height:1;margin-bottom:24px}
+  .proc:hover .proc-num{color:var(--orange);transition:color .3s}
+  .proc h3{font-size:1.3rem;margin-bottom:12px}
+  .proc p{color:var(--ink-mute);font-size:.92rem}
+
+  /* ---------- PRICING ---------- */
+  .price-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:50px;margin-bottom:48px}
+  .ptab{
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    border:1px solid var(--line-mid);padding:11px 20px;border-radius:40px;
+    color:var(--ink-mute);cursor:pointer;transition:all .25s;
+  }
+  .ptab:hover{color:var(--ink)}
+  .ptab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .price-set{display:none}
+  .price-set.active{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;animation:fade .5s ease}
+  .price-card{
+    border:1px solid var(--line-mid);border-radius:20px;padding:38px 32px;
+    background:var(--bg-card);display:flex;flex-direction:column;transition:transform .35s,border-color .35s;
+  }
+  .price-card:hover{transform:translateY(-6px);border-color:var(--line-mid)}
+  .price-card.popular{border-color:var(--orange);background:linear-gradient(160deg,rgba(232,99,26,.08),var(--bg-card))}
+  .pop-tag{
+    align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:9px;
+    letter-spacing:.12em;text-transform:uppercase;background:var(--orange);color:#fff;
+    padding:4px 11px;border-radius:30px;margin-bottom:18px;
+  }
+  .price-card .tier{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  .price-amt{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--ink);line-height:1;margin-bottom:6px}
+  .price-amt small{font-size:.85rem;color:var(--ink-faint);font-family:'Outfit';font-weight:300}
+  .price-card>p{color:var(--ink-mute);font-size:.92rem;margin:14px 0 22px;min-height:62px}
+  .price-feats{display:grid;gap:11px;margin-bottom:28px;flex:1}
+  .price-feats li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:.9rem;color:var(--ink-mute)}
+  .price-feats li svg{flex-shrink:0;margin-top:3px}
+  .price-card .btn{justify-content:center;width:100%;font-size:14px;padding:13px}
+  .price-note{text-align:center;margin-top:42px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-faint)}
+
+  /* ---------- CONTACT ---------- */
+  #contact{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;margin-top:56px}
+  .contact-info p.ci-lead{color:var(--ink-mute);font-size:1.08rem;margin-bottom:36px}
+  .ci-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+  .ci-icon{
+    width:44px;height:44px;border-radius:11px;border:1px solid var(--line-mid);
+    display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;
+    color:var(--orange);
+  }
+  .ci-item .ci-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .ci-item .ci-val{color:var(--ink);font-size:.98rem}
+  .form-card{border:1px solid var(--line-mid);border-radius:22px;padding:42px;background:var(--bg-card)}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
+  .field input,.field select,.field textarea{
+    width:100%;background:var(--bg);border:1px solid var(--line-mid);border-radius:11px;
+    padding:14px 16px;color:var(--ink);font-family:'Outfit',sans-serif;font-size:.96rem;
+    transition:border-color .25s;font-weight:300;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+  .field textarea{resize:vertical;min-height:110px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .form-msg{display:none;margin-top:16px;padding:13px 16px;border-radius:11px;background:rgba(194,216,26,.1);border:1px solid rgba(194,216,26,.3);color:var(--lime);font-size:.9rem}
+  .form-msg.show{display:block;animation:fade .4s ease}
+
+  /* ---------- CTA STRIP ---------- */
+  .cta-strip{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+  .cta-strip .glow{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(232,99,26,.14),transparent 70%);z-index:0}
+  .cta-strip .wrap{position:relative;z-index:2}
+  .cta-strip h2{font-size:clamp(2.6rem,6vw,5rem);margin-bottom:24px;letter-spacing:-.04em}
+  .cta-strip h2 em{font-style:italic;color:var(--orange)}
+  .cta-strip p{max-width:480px;margin:0 auto 40px;color:var(--ink-mute);font-size:1.1rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:70px 0 36px;background:var(--bg)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;margin-bottom:56px}
+  .foot-brand .logo{margin-bottom:18px}
+  .foot-brand p{color:var(--ink-mute);font-size:.95rem;max-width:280px;margin-bottom:22px}
+  .foot-socials{display:flex;gap:10px}
+  .foot-socials a{
+    width:38px;height:38px;border-radius:10px;border:1px solid var(--line-mid);
+    display:flex;align-items:center;justify-content:center;font-size:14px;
+    color:var(--ink-mute);transition:all .3s;
+  }
+  .foot-socials a:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .foot-col h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;font-weight:400}
+  .foot-col a{display:block;color:var(--ink-mute);font-size:.95rem;margin-bottom:12px;transition:color .25s}
+  .foot-col a:hover{color:var(--orange)}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:30px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-faint)}
+  .foot-bot .tagline{font-family:'Fraunces',serif;font-style:italic}
+
+  /* ---------- PORTFOLIO (home preview) ---------- */
+  #portfolio{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+  .pf-card{
+    position:relative;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line-mid);background:var(--bg-card);
+    aspect-ratio:16/10;cursor:pointer;display:block;
+    transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s;
+  }
+  .pf-card:hover{transform:translateY(-6px);border-color:var(--orange)}
+  .pf-shot{
+    position:absolute;inset:0;background-size:cover;background-position:top center;
+    transition:transform .8s cubic-bezier(.16,1,.3,1),filter .4s;
+    filter:saturate(.85) brightness(.75);
+  }
+  .pf-card:hover .pf-shot{transform:scale(1.06);filter:saturate(1) brightness(1)}
+  .pf-scrim{
+    position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,9,12,0) 20%,rgba(8,9,12,.55) 60%,rgba(8,9,12,.92) 100%);
+  }
+  .pf-meta{
+    position:absolute;left:28px;right:28px;bottom:24px;z-index:2;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:16px;
+  }
+  .pf-meta-left{min-width:0}
+  .pf-cat{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--orange);margin-bottom:8px;display:block;
+  }
+  .pf-name{font-family:'Fraunces',serif;font-size:1.9rem;letter-spacing:-.02em;color:var(--ink);line-height:1.05;margin-bottom:6px}
+  .pf-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);opacity:.85}
+  .pf-arrow{
+    width:44px;height:44px;border-radius:50%;border:1px solid var(--line-mid);
+    background:rgba(8,9,12,.55);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;color:var(--ink);
+    flex-shrink:0;transition:background .3s,transform .3s,border-color .3s;
+  }
+  .pf-card:hover .pf-arrow{background:var(--orange);border-color:var(--orange);transform:rotate(-45deg)}
+  .pf-cta-row{margin-top:48px;display:flex;justify-content:center}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .nav-links,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{
+      position:fixed;inset:0;background:var(--bg);z-index:999;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+      transform:translateY(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);
+    }
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{font-family:'Fraunces',serif;font-size:2rem;color:var(--ink)}
+    .about-grid,.contact-grid,.prod-inner{grid-template-columns:1fr}
+    .prod-visual{border-left:none;border-top:1px solid var(--line);min-height:380px}
+    .values-grid,.proc-grid,.price-grid,.price-set.active,.svc-grid,.portfolio-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr 1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .field-row{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    nav{padding:16px 20px}
+    .sec{padding:90px 0}
+    .prod-text{padding:38px 28px}
+    .foot-top{grid-template-columns:1fr}
+    .foot-bot{flex-direction:column;gap:14px;text-align:center}
+    .hero-foot{padding:0 20px}
+    .hero-tagline{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#home" class="logo">
+    <span class="dots"><span></span><span></span><span></span><span></span></span>
+    <span>Ptri<small style="display:block;margin-top:-3px">Innovation</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get in Touch <span>&rarr;</span></a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div id="stars"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="pulse"></span>PTRI Innovation — Joining the World with Technology</div>
+    <h1 class="hero-title">
+      <span class="line"><span>Building</span></span>
+      <span class="line"><span><em>Intelligent</em></span></span>
+      <span class="line"><span>Digital Platforms</span></span>
+    </h1>
+    <p class="hero-sub">AI-driven products, scalable platforms, and modern digital experiences engineered to power what comes next.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-primary">Explore Work <span class="arrow">&rarr;</span></a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-foot wrap">
+    <div class="scroll-ind"><div class="scroll-line"></div>Scroll to explore</div>
+    <p class="hero-tagline">We build AI-powered platforms and intelligent digital experiences engineered for the future.</p>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="sec-label">Who We Are</div>
+        <p class="about-lead">A new kind of technology company — built for <em>what comes next.</em></p>
+        <div class="about-body">
+          <p>We are PTRI Innovation — building AI-powered platforms and intelligent digital experiences. From concept to deployment, we architect systems built for scale, speed, and the demands of tomorrow.</p>
+          <p>We are not a typical agency. We are builders, architects, and engineers who care deeply about every product we ship — from the first line of code to the final pixel.</p>
+        </div>
+        <div class="ptri-acronym">
+          <div class="acro-row"><span class="acro-letter">P</span><span class="acro-text"><strong>Platform thinking.</strong> Systems designed as living infrastructure.</span></div>
+          <div class="acro-row"><span class="acro-letter">T</span><span class="acro-text"><strong>Technology excellence.</strong> The right tool for every challenge.</span></div>
+          <div class="acro-row"><span class="acro-letter">R</span><span class="acro-text"><strong>Real-world impact.</strong> Technology that changes lives.</span></div>
+          <div class="acro-row"><span class="acro-letter">I</span><span class="acro-text"><strong>Innovation without compromise.</strong> No shortcuts, ever.</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="about-checks">
+          <div class="check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4" stroke="#e8631a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Deep AI expertise embedded in every product we build</div>
+          <div class="check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4" stroke="#e8631a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Modern cloud-native architecture, zero legacy constraints</div>
+          <div class="check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4" stroke="#e8631a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>From MVP to planet-scale — designed to grow with you</div>
+          <div class="check"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4" stroke="#e8631a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Obsessed with performance, polish, and precision</div>
+        </div>
+        <div class="stats-box">
+          <div class="stats-grid">
+            <div class="stat"><div class="num" data-count="10">0</div><div class="lbl">Products</div></div>
+            <div class="stat"><div class="num" data-count="3">0</div><div class="lbl">AI Platforms</div></div>
+            <div class="stat"><div class="num" data-count="99" data-suffix="%">0</div><div class="lbl">Uptime</div></div>
+          </div>
+          <div class="core-bar">
+            <div class="core-status"><span class="dot"></span>All systems nominal</div>
+            <div class="core-ver">PTRI CORE v2.4</div>
+          </div>
+        </div>
+        <p style="margin-top:30px;font-family:'Fraunces',serif;font-size:1.3rem;line-height:1.45;color:var(--ink-mute)">We don't just write code. We build living digital systems that <span style="color:var(--orange);font-style:italic">think, adapt, and scale</span> without limits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Why Choose Us</div>
+      <h2 class="sec-title">The PTRI <em>Difference</em></h2>
+      <p class="sec-intro">Four convictions that shape every system we architect and every product we ship.</p>
+    </div>
+    <div class="values-grid reveal" style="transition-delay:.1s">
+      <div class="value"><div class="vn">01</div><h3>AI-First by Design</h3><p>Intelligence isn't a feature we add — it's how we build. Every system thinks, learns, and adapts from day one.</p></div>
+      <div class="value"><div class="vn">02</div><h3>100&times; Scale Ready</h3><p>Edge-native, cloud-agnostic architecture handles massive growth without re-platforming. Ever.</p></div>
+      <div class="value"><div class="vn">03</div><h3>Zero Legacy Debt</h3><p>Modern stack, right tool for every challenge. No outdated patterns, no shortcuts, no regret.</p></div>
+      <div class="value"><div class="vn">04</div><h3>Performance Obsessed</h3><p>Every millisecond is a feature. We optimise for speed and reliability as first-class concerns.</p></div>
+      <div class="value"><div class="vn">05</div><h3>Craft &amp; Polish</h3><p>We obsess over every micro-interaction, loading state, and edge case. Our products look as good as they perform.</p></div>
+      <div class="value"><div class="vn">06</div><h3>Built to Last</h3><p>We build for the version of your business five years from now — scale is the foundation, not an afterthought.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">What We've Built</div>
+      <h2 class="sec-title">Live <em>Products</em></h2>
+      <p class="sec-intro">Live platforms powered by real intelligence, used by real people.</p>
+    </div>
+
+    <!-- Voyagea -->
+    <div class="prod-card featured reveal">
+      <div class="prod-inner">
+        <div class="prod-text">
+          <div class="prod-badge live"><span class="d"></span>Live — Featured</div>
+          <h3 class="prod-name">Voyagea</h3>
+          <div class="prod-url">voyagea.co</div>
+          <p class="prod-desc">The future of travel planning. An AI platform that understands your style, generates complete itineraries, and handles booking — all in a single natural conversation. No forms, no filters, just intelligence.</p>
+          <div class="prod-feats">
+            <div class="pfeat"><span class="pf-i"></span>Real-time AI itinerary generation</div>
+            <div class="pfeat"><span class="pf-i"></span>Integrated smart booking engine</div>
+            <div class="pfeat"><span class="pf-i"></span>Personalization that learns over time</div>
+            <div class="pfeat"><span class="pf-i"></span>Conversational natural language UI</div>
+            <div class="pfeat"><span class="pf-i"></span>Multi-platform, fully responsive</div>
+            <div class="pfeat"><span class="pf-i"></span>Real-time availability &amp; pricing</div>
+          </div>
+          <div class="prod-stack">
+            <span class="chip">Next.js</span><span class="chip">LLM APIs</span><span class="chip">Node.js</span>
+            <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">AWS</span>
+          </div>
+          <a href="https://voyagea.co" target="_blank" class="btn btn-primary">Visit Voyagea <span class="arrow">&#8599;</span></a>
+        </div>
+        <div class="prod-visual">
+          <div class="voy-mock">
+            <div class="vm-bar"><i></i><i></i><i></i><span>voyagea.co</span></div>
+            <div class="vm-body">
+              <div class="vm-msg user">Plan me 5 days in Japan — culture &amp; food, mid-budget.</div>
+              <div class="vm-msg ai">Crafting your itinerary now — Kyoto temples, a Tokyo food crawl, and a day in Hakone.
+                <div class="vm-tags"><span class="vm-tag">Day 1 · Kyoto</span><span class="vm-tag">Day 3 · Tokyo</span><span class="vm-tag">Booking ready</span></div>
+              </div>
+              <div class="vm-typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dwello -->
+    <div class="prod-card reveal" style="transition-delay:.1s">
+      <div class="prod-inner">
+        <div class="prod-text">
+          <div class="prod-badge soon"><span class="d"></span>Coming Soon — 2025</div>
+          <h3 class="prod-name">Dwello</h3>
+          <div class="prod-url">dwello.ptriinnovation.com</div>
+          <p class="prod-desc">Upload your floor plan and get a fully designed home — furniture, colours, materials, lighting, all in 3D. AI-powered interior design for everyone. See every room before buying a single thing.</p>
+          <div class="prod-feats">
+            <div class="pfeat"><span class="pf-i"></span>Upload any floor plan — AI does the rest</div>
+            <div class="pfeat"><span class="pf-i"></span>Full furniture layout &amp; styling</div>
+            <div class="pfeat"><span class="pf-i"></span>Real-time 3D room visualisation</div>
+            <div class="pfeat"><span class="pf-i"></span>Multiple design styles to choose from</div>
+          </div>
+          <div class="prod-stack">
+            <span class="chip">Three.js</span><span class="chip">WebGL</span><span class="chip">Python</span>
+            <span class="chip">TensorFlow</span><span class="chip">Vector DBs</span>
+          </div>
+          <a href="#contact" class="btn btn-ghost">Get Early Access <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="prod-visual soon-v">
+          <div class="dwell-mock">
+            <div class="dwell-room"><i class="df1"></i><i class="df2"></i><i class="df3"></i><i class="df4"></i></div>
+            <div class="dwell-float" style="top:-6px;left:0">AI · floor plan parsed</div>
+            <div class="dwell-float" style="bottom:-6px;right:0;animation-delay:1.5s">3D render ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">What We Build</div>
+      <h2 class="sec-title">Our <em>Services</em></h2>
+      <p class="sec-intro">Four core disciplines — from immersive web experiences to production-grade AI platforms.</p>
+    </div>
+    <div class="svc-grid reveal" style="transition-delay:.1s">
+      <div class="svc">
+        <div class="svc-top"><span class="svc-num">01</span><span class="svc-tag">Web</span></div>
+        <h3>Website Development</h3>
+        <p>Performant, immersive web experiences. From marketing sites to complex applications with exceptional UI polish.</p>
+        <ul class="svc-list">
+          <li>Marketing &amp; landing pages</li><li>Web applications &amp; dashboards</li>
+          <li>E-commerce &amp; SaaS frontends</li><li>3D &amp; WebGL experiences</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><span class="svc-num">02</span><span class="svc-tag">Mobile</span></div>
+        <h3>App Development</h3>
+        <p>Native and cross-platform mobile applications. Fast, smooth, engineered with user behaviour at the absolute core.</p>
+        <ul class="svc-list">
+          <li>iOS &amp; Android native apps</li><li>React Native cross-platform</li>
+          <li>Real-time &amp; offline-first apps</li><li>App Store optimisation</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><span class="svc-num">03</span><span class="svc-tag">AI</span></div>
+        <h3>AI Platform Engineering</h3>
+        <p>Custom AI pipelines, LLM integrations, and vector databases. We build the AI layer that makes your product genuinely intelligent.</p>
+        <ul class="svc-list">
+          <li>LLM integration &amp; fine-tuning</li><li>RAG &amp; vector database systems</li>
+          <li>AI-powered product features</li><li>ML pipelines &amp; model serving</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="svc-top"><span class="svc-num">04</span><span class="svc-tag">Platform</span></div>
+        <h3>Custom Tech Platforms</h3>
+        <p>Bespoke SaaS products and enterprise infrastructure. Zero legacy constraints — built to last a decade.</p>
+        <ul class="svc-list">
+          <li>SaaS product development</li><li>Microservices architecture</li>
+          <li>API design &amp; development</li><li>Cloud infrastructure &amp; DevOps</li>
+        </ul>
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Next.js</span><span>React</span><span>Three.js</span><span>Python</span><span>TensorFlow</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span><span>GraphQL</span><span>Docker</span><span>Kubernetes</span><span>LLM APIs</span><span>Vector DBs</span><span>WebGL</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>Next.js</span><span>React</span><span>Three.js</span><span>Python</span><span>TensorFlow</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span><span>GraphQL</span><span>Docker</span><span>Kubernetes</span><span>LLM APIs</span><span>Vector DBs</span><span>WebGL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO (home preview) ============ -->
+<section class="sec" id="portfolio">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Selected Work</div>
+      <h2 class="sec-title">Recent <em>Projects</em></h2>
+      <p class="sec-intro">A glimpse of what we've shipped &mdash; from AI travel platforms to premium brand experiences. Hover to preview, tap to explore.</p>
+    </div>
+    <div class="portfolio-grid">
+      <a href="portfolio.html#voyagea" class="pf-card reveal">
+        <div class="pf-shot" style="background-image:url('portfolio/voyagea.jpg')"></div>
+        <div class="pf-scrim"></div>
+        <div class="pf-meta">
+          <div class="pf-meta-left">
+            <span class="pf-cat">AI Platform &middot; 2026</span>
+            <div class="pf-name">Voyagea</div>
+            <div class="pf-url">voyagea.travel</div>
+          </div>
+          <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#skyvage" class="pf-card reveal" style="transition-delay:.08s">
+        <div class="pf-shot" style="background-image:url('portfolio/skyvage.jpg')"></div>
+        <div class="pf-scrim"></div>
+        <div class="pf-meta">
+          <div class="pf-meta-left">
+            <span class="pf-cat">Web Experience &middot; Aviation</span>
+            <div class="pf-name">Skyvage</div>
+            <div class="pf-url">skyvageweb.vercel.app</div>
+          </div>
+          <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#keri" class="pf-card reveal" style="transition-delay:.16s">
+        <div class="pf-shot" style="background-image:url('portfolio/keri.jpg')"></div>
+        <div class="pf-scrim"></div>
+        <div class="pf-meta">
+          <div class="pf-meta-left">
+            <span class="pf-cat">Brand &amp; Commerce</span>
+            <div class="pf-name">Keri in Windsor</div>
+            <div class="pf-url">keriinwindsor.ca</div>
+          </div>
+          <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#akbuilds" class="pf-card reveal" style="transition-delay:.24s">
+        <div class="pf-shot" style="background-image:url('portfolio/akbuilds.jpg')"></div>
+        <div class="pf-scrim"></div>
+        <div class="pf-meta">
+          <div class="pf-meta-left">
+            <span class="pf-cat">Corporate Web &middot; Trades</span>
+            <div class="pf-name">AK Builds &amp; Plumbing</div>
+            <div class="pf-url">akbuildsandplumbing.ca</div>
+          </div>
+          <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+    </div>
+    <div class="pf-cta-row reveal">
+      <a href="portfolio.html" class="btn btn-ghost">View Full Portfolio <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">How We Work</div>
+      <h2 class="sec-title">Our <em>Process</em></h2>
+      <p class="sec-intro">A disciplined path from idea to launch — with real progress every single week.</p>
+    </div>
+    <div class="proc-grid reveal" style="transition-delay:.1s">
+      <div class="proc"><div class="proc-num">01</div><h3>Discovery &amp; Architecture</h3><p>We understand your goals deeply, then architect the system before writing a single line of code — no surprises later.</p></div>
+      <div class="proc"><div class="proc-num">02</div><h3>Design &amp; Prototype</h3><p>High-fidelity designs and interactive prototypes before development. Every interaction designed first, built second.</p></div>
+      <div class="proc"><div class="proc-num">03</div><h3>Build &amp; Iterate</h3><p>Agile development with weekly reviews. Real progress every week, adjusted based on what we learn together.</p></div>
+      <div class="proc"><div class="proc-num">04</div><h3>Launch &amp; Scale</h3><p>Zero-downtime deployment, comprehensive monitoring, and a performance baseline set on day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label">Get in Touch</div>
+      <h2 class="sec-title">Let's build <em>something</em> remarkable.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="ci-lead">Whether you have a fully-formed idea or just a problem to solve — we want to hear it. We respond to every message within 24 hours.</p>
+        <div class="ci-item">
+          <div class="ci-icon">&#9993;</div>
+          <div><div class="ci-lbl">Email</div><div class="ci-val">info@ptriinnovation.com</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">in</div>
+          <div><div class="ci-lbl">LinkedIn</div><div class="ci-val">linkedin.com/company/ptri-innovation</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">&#120143;</div>
+          <div><div class="ci-lbl">Twitter / X</div><div class="ci-val">@ptriinnovation</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">&#128205;</div>
+          <div><div class="ci-lbl">Location</div><div class="ci-val">706 Supath Complex, Vijay Cross Road, Ahmedabad, Gujarat, India</div></div>
+        </div>
+      </div>
+      <div class="form-card reveal" style="transition-delay:.1s">
+        <form id="leadForm" action="https://formspree.io/f/maqkeged" method="POST">
+          <div class="field-row">
+            <div class="field"><label>Your Name</label><input type="text" id="f-name" name="name" placeholder="Jane Doe" required></div>
+            <div class="field"><label>Email Address</label><input type="email" id="f-email" name="email" placeholder="jane@company.com" required></div>
+          </div>
+          <div class="field"><label>Company (optional)</label><input type="text" name="company" placeholder="Company name"></div>
+          <div class="field">
+            <label>Service Needed</label>
+            <select name="service">
+              <option value="">Select a service</option>
+              <option>Website Development</option>
+              <option>App Development</option>
+              <option>AI Platform Engineering</option>
+              <option>Custom Tech Platform</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label>Tell us about your project</label><textarea name="message" placeholder="What are you building?" required></textarea></div>
+          <input type="hidden" name="_subject" value="New lead from PTRI website">
+          <button type="submit" class="btn btn-primary" id="sendBtn" style="width:100%;justify-content:center">Send Message <span class="arrow">&rarr;</span></button>
+          <div class="form-msg" id="formMsg">&#10003; Form submitted successfully &mdash; our team will contact you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA STRIP ============ -->
+<section class="cta-strip">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2>Let's build the <em>future</em> together.</h2>
+    <p>Whether you have a product idea, a platform to scale, or a system to build from scratch — we make it real.</p>
+    <a href="#contact" class="btn btn-primary">Start a Project <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#home" class="logo">
+          <span class="dots"><span></span><span></span><span></span><span></span></span>
+          <span>Ptri<small style="display:block;margin-top:-3px">Innovation</small></span>
+        </a>
+        <p>Joining the World with Technology. AI-powered platforms and intelligent digital experiences engineered for the future.</p>
+        <div class="foot-socials">
+          <a href="https://linkedin.com/company/ptri-innovation" target="_blank">in</a>
+          <a href="https://twitter.com/ptriinnovation" target="_blank">&#120143;</a>
+          <a href="#contact">&#9993;</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#home">Home</a><a href="#about">About Us</a><a href="#portfolio">Portfolio</a><a href="#process">Process</a><a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Website Development</a><a href="#services">App Development</a><a href="#services">AI Engineering</a><a href="#services">Tech Platforms</a>
+      </div>
+      <div class="foot-col">
+        <h4>Products</h4>
+        <a href="https://voyagea.co" target="_blank">Voyagea &#8599;</a><a href="#products">Dwello</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 PTRI Innovation Pvt. Ltd. All rights reserved.</span>
+      <span class="tagline">Joining the World with Technology</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav scroll state
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+
+  // mobile menu
+  const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>mm.classList.toggle('open'));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+  // stars in hero
+  const stars=document.getElementById('stars');
+  for(let i=0;i<40;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*1.8+.5;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;opacity:${Math.random()*.6+.15}`;
+    stars.appendChild(s);
+  }
+
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // count up
+  const countIO=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'';
+        let cur=0;const step=target/45;
+        const tick=()=>{cur+=step;if(cur>=target){el.textContent=target+suf}else{el.textContent=Math.floor(cur)+suf;requestAnimationFrame(tick)}};
+        tick();countIO.unobserve(el);
+      }
+    })
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
+
+  // contact form — submits to Formspree
+  const leadForm=document.getElementById('leadForm');
+  const sendBtn=document.getElementById('sendBtn');
+  const formMsg=document.getElementById('formMsg');
+  const btnOriginal=sendBtn.innerHTML;
+
+  function showMsg(text,ok){
+    formMsg.textContent=text;
+    if(ok){
+      formMsg.style.background='rgba(194,216,26,.1)';formMsg.style.borderColor='rgba(194,216,26,.3)';formMsg.style.color='#c2d81a';
+    }else{
+      formMsg.style.background='rgba(232,99,26,.1)';formMsg.style.borderColor='rgba(232,99,26,.3)';formMsg.style.color='#e8631a';
+    }
+    formMsg.classList.add('show');
+  }
+
+  leadForm.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const name=document.getElementById('f-name').value.trim();
+    const email=document.getElementById('f-email').value.trim();
+    if(!name||!email){showMsg('Please enter your name and email.',false);return;}
+
+    sendBtn.disabled=true;
+    sendBtn.style.opacity='.6';sendBtn.style.cursor='wait';
+    sendBtn.textContent='Sending\u2026';
+
+    try{
+      const res=await fetch(leadForm.action,{
+        method:'POST',
+        body:new FormData(leadForm),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        showMsg("\u2713 Form submitted successfully \u2014 our team will contact you shortly.",true);
+        leadForm.reset();
+      }else{
+        const data=await res.json().catch(()=>({}));
+        const err=(data.errors&&data.errors[0]&&data.errors[0].message)||'Something went wrong. Please email us at info@ptriinnovation.com';
+        showMsg(err,false);
+      }
+    }catch(err){
+      showMsg('Network error. Please email us directly at info@ptriinnovation.com',false);
+    }finally{
+      sendBtn.disabled=false;
+      sendBtn.style.opacity='';sendBtn.style.cursor='pointer';
+      sendBtn.innerHTML=btnOriginal;
+    }
+  });
+</script>
+</body>
+</html>
