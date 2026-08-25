@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — PTRI Innovation</title>
+<meta name="description" content="How PTRI Innovation handles data. Beamfall, our free iPhone puzzle game, collects nothing at all: no accounts, no analytics, no advertising and no network access.">
+<meta name="theme-color" content="#08090c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08090c;--bg-soft:#0e1014;--bg-card:#13151b;
+  --ink:#f3f1ec;--ink-mute:#9b9990;--ink-faint:#56554f;
+  --blue:#1b6fe8;--orange:#e8631a;--cyan:#1aace8;--lime:#c2d81a;--accent:#e8631a;
+  --line:rgba(243,241,236,0.08);--line-mid:rgba(243,241,236,0.14);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.07;letter-spacing:-0.02em}
+em{font-style:italic;font-weight:400;color:var(--orange)}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--orange);color:#fff}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.narrow{max-width:800px}
+.sec{padding:96px 0}
+.sec-label{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:26px}
+.sec-label::before{content:"";width:26px;height:1px;background:var(--line-mid)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);border:1px solid var(--line-mid);
+  padding:6px 13px;border-radius:30px}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:46px;
+  font-size:15px;font-weight:400;transition:all .3s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-primary:hover{background:var(--orange);color:#fff}
+.btn-ghost{border-color:var(--line-mid);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;padding:20px 32px;transition:.4s;
+  background:rgba(8,9,12,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:21px;
+  font-weight:600;letter-spacing:-.02em}
+.dots{display:grid;grid-template-columns:repeat(2,7px);gap:3px}
+.dots span{width:7px;height:7px;border-radius:2px;display:block}
+.dots span:nth-child(1){background:var(--orange)}
+.dots span:nth-child(2){background:var(--cyan)}
+.dots span:nth-child(3){background:var(--lime)}
+.dots span:nth-child(4){background:var(--blue)}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+@media(max-width:780px){.nav-links{display:none}}
+/* page head */
+.phead{padding:150px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.phead::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(232,99,26,.10),transparent 70%)}
+.phead .wrap{position:relative;z-index:1}
+.phead h1{font-size:clamp(2.5rem,6vw,4.4rem);letter-spacing:-.035em;margin:20px 0 20px;max-width:17ch}
+.phead p.intro{max-width:600px;color:var(--ink-mute);font-size:1.12rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+/* body copy */
+.doc h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:0 0 18px;scroll-margin-top:90px}
+.doc h3{font-size:1.15rem;font-weight:500;margin:30px 0 10px;font-family:'Outfit',sans-serif;letter-spacing:-.01em;color:var(--ink)}
+.doc p{color:var(--ink-mute);margin-bottom:16px;max-width:70ch}
+.doc strong{color:var(--ink);font-weight:400}
+.doc ul{list-style:none;margin:0 0 20px;max-width:70ch;display:flex;flex-direction:column;gap:12px}
+.doc li{color:var(--ink-mute);padding-left:24px;position:relative}
+.doc li::before{content:"";position:absolute;left:2px;top:.7em;width:9px;height:1px;background:var(--orange);opacity:.7}
+.block{padding-bottom:56px}
+.card{background:var(--bg-card);border:1px solid var(--line-mid);border-radius:24px;padding:34px}
+/* footer */
+footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg)}
+.foot-row{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;gap:24px}
+.foot-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
+.foot-links a:hover{color:var(--orange)}
+.foot-bot{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media(max-width:640px){.sec{padding:64px 0}.wrap{padding:0 22px}.card{padding:24px}}
+</style>
+<style>
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.gcard{border:1px solid var(--line-mid);border-radius:18px;padding:24px 22px;background:var(--bg-card)}
+.gcard .n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--orange)}
+.gcard b{display:block;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;margin:12px 0 7px}
+.gcard p{font-size:.9rem;color:var(--ink-faint);line-height:1.55;margin:0}
+.callout{border:1px solid rgba(232,99,26,.34);border-radius:22px;padding:34px;
+  background:linear-gradient(180deg,rgba(232,99,26,.09),rgba(232,99,26,.02));margin:10px 0 30px}
+.callout .tag{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.callout .tag i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
+.callout h3{font-family:'Fraunces',serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:500;margin:16px 0 12px !important}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:11px 26px;margin-top:22px}
+.checks div{display:flex;align-items:center;gap:11px;font-size:.94rem;color:var(--ink-mute)}
+.tbl{border:1px solid var(--line-mid);border-radius:18px;overflow:hidden;margin:20px 0 8px}
+.tbl>div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:18px;padding:15px 22px;border-bottom:1px solid var(--line)}
+.tbl>div:last-child{border-bottom:0}
+.tbl b{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:400}
+.tbl span{font-size:.94rem;color:var(--ink-mute)}
+@media(max-width:900px){.glance{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.glance{grid-template-columns:1fr}.checks{grid-template-columns:1fr}.tbl>div{grid-template-columns:1fr;gap:5px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">
+    <span class="dots"><span></span><span></span><span></span><span></span></span>
+    <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#products">Products</a>
+    <a href="/#services">Services</a>
+    <a href="/support/">Support</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <div class="sec-label">Legal — Privacy</div>
+    <h1>We collect <em>almost nothing</em>. Here is the exact list.</h1>
+    <p class="intro">Most privacy policies are written to protect the company. This one is written to
+      tell you what actually happens, product by product, in language you can check.</p>
+    <div class="meta">
+      <span class="chip">Last updated 25 August 2026</span>
+      <span class="chip">PTRI Innovation Pvt. Ltd.</span>
+    </div>
+    <div class="glance">
+      <div class="gcard"><span class="n">01</span><b>No analytics</b><p>No Google Analytics, no Meta pixel, no heatmaps, no session recording — anywhere.</p></div>
+      <div class="gcard"><span class="n">02</span><b>No cookies</b><p>This website sets no cookies. There is no consent banner because there is nothing to consent to.</p></div>
+      <div class="gcard"><span class="n">03</span><b>No ad networks</b><p>We run no advertising and embed no advertising SDKs in any product we ship.</p></div>
+      <div class="gcard"><span class="n">04</span><b>Never sold</b><p>We do not sell, rent or trade personal information. No business model here depends on it.</p></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap narrow doc">
+
+    <div class="block" id="website">
+      <h2>This website</h2>
+      <p>ptriinnovation.com is a static site. It has no user accounts, no database and no server-side
+        logic of its own. In practice that means:</p>
+      <ul>
+        <li><strong>No cookies are set</strong> and nothing is written to your browser's local storage.</li>
+        <li><strong>No analytics or tracking scripts run.</strong> We do not measure your visit, and we cannot tell you apart from any other visitor.</li>
+        <li><strong>Our contact form does not submit anywhere.</strong> It assembles a message and hands it to your own email application. Nothing reaches us until you press send yourself.</li>
+      </ul>
+      <h3>Two things that are honest to disclose</h3>
+      <p>The site loads its typefaces from <strong>Google Fonts</strong>. Your browser therefore makes a
+        request to Google's servers, and Google receives your IP address as part of that request, as it
+        would for any site using the service.</p>
+      <p>Our hosting provider keeps standard server logs (IP address, timestamp, requested file) for
+        security and reliability, as essentially all web hosting does. We do not analyse those logs to
+        build any profile of you. If you email us, we hold that email in our mailbox so we can reply.</p>
+    </div>
+
+    <div class="block" id="beamfall">
+      <h2>Beamfall for iPhone</h2>
+      <div class="callout">
+        <span class="tag"><i></i>App Store privacy label — Data Not Collected</span>
+        <h3>Beamfall collects no data whatsoever.</h3>
+        <p style="margin-bottom:0">No accounts. No sign-in. No analytics. No advertising. No tracking.
+          No crash reporting. The app makes no network requests of any kind and is fully playable in
+          aeroplane mode.</p>
+        <div class="checks">
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No account or sign-in</div>
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No analytics SDKs</div>
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No advertising SDKs</div>
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No in-app purchases</div>
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No location, camera or contacts</div>
+          <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#e8631a" stroke-width="1.7"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No network requests at all</div>
+        </div>
+      </div>
+
+      <h3>What the app stores on your device</h3>
+      <p>Beamfall saves your progress using the operating system's standard local app storage. That is
+        the only data the app creates, and it never leaves your phone:</p>
+      <div class="tbl">
+        <div><b>Levels cleared</b><span>Which of the 100 levels you have completed</span></div>
+        <div><b>Star ratings</b><span>How many diamonds you earned on each level</span></div>
+        <div><b>Best taps</b><span>Your fewest-taps record per level</span></div>
+        <div><b>Haptics setting</b><span>Whether vibration feedback is switched on</span></div>
+      </div>
+      <p>This data is not uploaded, not backed up to us — we operate no servers for this app — not
+        shared and not sold. Deleting the app deletes it permanently. Because there is no account,
+        progress does not transfer between devices.</p>
+
+      <h3>Third parties</h3>
+      <p>Beamfall contains no third-party advertising, analytics, social or crash-reporting SDKs.
+        <strong>No third party receives any information about you through this app.</strong></p>
+    </div>
+
+    <div class="block" id="products">
+      <h2>Our other products</h2>
+      <p>PTRI Innovation also builds products that genuinely do need accounts and server-side data to
+        work — Voyagea and Dwello among them. Those are separate services with their own data
+        practices, and each is governed by <strong>its own privacy policy</strong> rather than this page.
+        If you cannot find the policy for one of them, write to us and we will point you to it.</p>
+    </div>
+
+    <div class="block" id="rights">
+      <h2>Your rights</h2>
+      <p>Depending on where you live, laws such as the GDPR (Europe), PIPEDA (Canada), India's DPDP Act
+        and the CCPA (California) give you rights to access, correct, export or delete personal data an
+        organisation holds about you, and to object to its processing.</p>
+      <p>For this website and for Beamfall, we hold no personal data about you, so there is nothing for
+        us to retrieve, correct or erase. The only data Beamfall creates is the progress file on your
+        own device, which is entirely under your control and is removed when you delete the app. If you
+        have emailed us, you can ask us to delete that correspondence at any time and we will.</p>
+    </div>
+
+    <div class="block" id="children">
+      <h2>Children</h2>
+      <p>Beamfall is rated 4+ and is suitable for all ages. Because the app collects no data at all, it
+        collects no data from children. We do not knowingly collect personal information from children
+        through this website either.</p>
+    </div>
+
+    <div class="block" id="changes">
+      <h2>Changes to this policy</h2>
+      <p>If our products change in a way that affects this policy, we will update this page and change
+        the date at the top. Material changes to how a shipped app handles data would also be described
+        in that app's release notes.</p>
+    </div>
+
+    <div class="block" id="contact" style="padding-bottom:0">
+      <h2>Contact</h2>
+      <p>Questions about privacy, or a request about your data — email
+        <a href="mailto:info@ptriinnovation.com" style="color:var(--orange)">info@ptriinnovation.com</a>.</p>
+      <p style="margin-top:20px"><strong>PTRI Innovation Private Limited</strong></p>
+      <a class="btn btn-ghost" href="/support/" style="margin-top:14px">Visit support <span>&rarr;</span></a>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="/" class="logo">
+        <span class="dots"><span></span><span></span><span></span><span></span></span>
+        <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
+      </a>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/#products">Products</a>
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 PTRI Innovation Pvt. Ltd.</span>
+      <span>Joining the World with Technology</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
