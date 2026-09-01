@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delete your Beamfall account — PTRI Innovation</title>
+<meta name="description" content="How to delete your Beamfall account and every score attached to it, from inside the app or by email. What is deleted, what is kept, and how long it takes.">
+<meta name="theme-color" content="#08090c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08090c;--bg-soft:#0e1014;--bg-card:#13151b;
+  --ink:#f3f1ec;--ink-mute:#9b9990;--ink-faint:#56554f;
+  --blue:#1b6fe8;--orange:#e8631a;--cyan:#1aace8;--lime:#c2d81a;--accent:#e8631a;
+  --line:rgba(243,241,236,0.08);--line-mid:rgba(243,241,236,0.14);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.07;letter-spacing:-0.02em}
+em{font-style:italic;font-weight:400;color:var(--orange)}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--orange);color:#fff}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.narrow{max-width:800px}
+.sec{padding:96px 0}
+.sec-label{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:26px}
+.sec-label::before{content:"";width:26px;height:1px;background:var(--line-mid)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);border:1px solid var(--line-mid);
+  padding:6px 13px;border-radius:30px}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:46px;
+  font-size:15px;font-weight:400;transition:all .3s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-primary:hover{background:var(--orange);color:#fff}
+.btn-ghost{border-color:var(--line-mid);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;padding:20px 32px;transition:.4s;
+  background:rgba(8,9,12,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:21px;
+  font-weight:600;letter-spacing:-.02em}
+.dots{display:grid;grid-template-columns:repeat(2,7px);gap:3px}
+.dots span{width:7px;height:7px;border-radius:2px;display:block}
+.dots span:nth-child(1){background:var(--orange)}
+.dots span:nth-child(2){background:var(--cyan)}
+.dots span:nth-child(3){background:var(--lime)}
+.dots span:nth-child(4){background:var(--blue)}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+@media(max-width:780px){.nav-links{display:none}}
+.phead{padding:150px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.phead::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(232,99,26,.10),transparent 70%)}
+.phead .wrap{position:relative;z-index:1}
+.phead h1{font-size:clamp(2.5rem,6vw,4.4rem);letter-spacing:-.035em;margin:20px 0 20px;max-width:19ch}
+.phead p.intro{max-width:640px;color:var(--ink-mute);font-size:1.12rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.doc h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:0 0 18px;scroll-margin-top:90px}
+.doc h3{font-size:1.15rem;font-weight:500;margin:30px 0 10px;font-family:'Outfit',sans-serif;letter-spacing:-.01em;color:var(--ink)}
+.doc p{color:var(--ink-mute);margin-bottom:16px;max-width:70ch}
+.doc strong{color:var(--ink);font-weight:400}
+.doc ul{list-style:none;margin:0 0 20px;max-width:70ch;display:flex;flex-direction:column;gap:12px}
+.doc li{color:var(--ink-mute);padding-left:24px;position:relative}
+.doc li::before{content:"";position:absolute;left:2px;top:.7em;width:9px;height:1px;background:var(--orange);opacity:.7}
+.block{padding-bottom:56px}
+.card{background:var(--bg-card);border:1px solid var(--line-mid);border-radius:24px;padding:34px}
+footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg)}
+.foot-row{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;gap:24px}
+.foot-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
+.foot-links a:hover{color:var(--orange)}
+.foot-bot{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media(max-width:640px){.sec{padding:64px 0}.wrap{padding:0 22px}.card{padding:24px}}
+
+/* numbered steps — the point of this page, so they lead */
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:18px;margin:8px 0 30px;max-width:70ch}
+.steps li{counter-increment:s;list-style:none;padding-left:56px;position:relative;color:var(--ink-mute)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:36px;height:36px;
+  border-radius:50%;border:1px solid var(--line-mid);display:grid;place-items:center;
+  font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--orange);background:var(--bg-card)}
+.steps li b{color:var(--ink);font-weight:400}
+.tbl{width:100%;border-collapse:collapse;margin:6px 0 8px;font-size:.96rem}
+.tbl th,.tbl td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:400}
+.tbl td{color:var(--ink-mute)}
+.tbl td:first-child{color:var(--ink);width:38%}
+.tbl-wrap{overflow-x:auto}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <span class="dots"><span></span><span></span><span></span><span></span></span>
+    <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#products">Products</a>
+    <a href="/#services">Services</a>
+    <a href="/support/">Support</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <div class="sec-label">Beamfall — Account deletion</div>
+    <h1>Delete your Beamfall account</h1>
+    <p class="intro">Beamfall is published by PTRI Innovation Pvt. Ltd. You can delete your
+      account and every score attached to it from inside the app, in about ten seconds, with
+      no email and no waiting.</p>
+    <div class="meta">
+      <span class="chip">Beamfall</span>
+      <span class="chip">iOS &amp; Android</span>
+      <span class="chip">Deletion is immediate</span>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap narrow doc">
+
+    <div class="block">
+      <h2>From inside the app</h2>
+      <p>This is the fastest route and it deletes everything immediately.</p>
+      <ol class="steps">
+        <li>Open <b>Beamfall</b>.</li>
+        <li>On the title screen, tap <b>LEADERBOARD</b>.</li>
+        <li>Make sure you are signed in — the screen shows <b>SIGNED IN AS</b> and your name.</li>
+        <li>Scroll to the bottom and tap <b>DELETE ACCOUNT</b>.</li>
+        <li>Confirm by tapping <b>Delete</b>. Your account and all scores are removed straight away.</li>
+      </ol>
+    </div>
+
+    <div class="block">
+      <h2>By email</h2>
+      <p>If you have lost access to the device or cannot sign in, email
+        <a href="mailto:info@ptriinnovation.com?subject=Beamfall%20account%20deletion" style="color:var(--orange)">info@ptriinnovation.com</a>
+        from the address you signed in with, with the subject <strong>Beamfall account deletion</strong>.
+        We will confirm and delete the account within <strong>30 days</strong>, and in practice far sooner.</p>
+    </div>
+
+    <div class="block">
+      <h2>What is deleted, and what is kept</h2>
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Data</th><th>What happens</th></tr>
+            <tr>
+              <td>Your account</td>
+              <td><strong>Deleted permanently.</strong> The sign-in record is removed, along with
+                the email address associated with it.</td>
+            </tr>
+            <tr>
+              <td>Display name</td>
+              <td><strong>Deleted permanently.</strong> Your entry disappears from the global
+                leaderboard immediately.</td>
+            </tr>
+            <tr>
+              <td>Scores and level results</td>
+              <td><strong>Deleted permanently.</strong> Every level result — taps, diamonds,
+                whether a hint was used — is removed.</td>
+            </tr>
+            <tr>
+              <td>Notification token</td>
+              <td><strong>Deleted permanently.</strong> We can no longer send you notifications.</td>
+            </tr>
+            <tr>
+              <td>Your progress on your own device</td>
+              <td><strong>Kept.</strong> It never leaves your phone unless you sign in, so
+                deleting the account does not cost you your levels. You can carry on playing
+                exactly as before.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <p style="margin-top:22px">Nothing is retained after deletion beyond what the law requires
+        of us, and there is no backup copy held for a retention period. We do not sell or share
+        any of this data with third parties, and we never have.</p>
+    </div>
+
+    <div class="block">
+      <h2>You may not need an account at all</h2>
+      <p>Beamfall is complete without one. All 100 levels, all three hints, and every setting
+        work with no account and no sign-in. An account exists only so your name can appear on
+        the global leaderboard and so your progress can follow you to another device. If you
+        never sign in, nothing about you is transmitted or stored anywhere.</p>
+      <p>Full detail is in our <a href="/privacy/#beamfall" style="color:var(--orange)">privacy policy</a>,
+        and other questions are answered on the <a href="/support/#beamfall" style="color:var(--orange)">support page</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="/" class="logo">
+        <span class="dots"><span></span><span></span><span></span><span></span></span>
+        <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
+      </a>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/#products">Products</a>
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 PTRI Innovation Pvt. Ltd.</span>
+      <span>Joining the World with Technology</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
