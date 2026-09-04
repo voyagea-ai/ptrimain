@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>Websites built by PTRI Innovation</title>
+<meta name="description" content="Websites built by PTRI Innovation — akbuildsandplumbing.ca, keriinwindsor.ca, voyagea.travel, ptrionix.com and skyvageweb.vercel.app. Five live builds, all custom.">
+<style>
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.2vw,28px);margin-top:clamp(34px,4vw,46px)}
+.stats4 div{border-top:1px solid var(--line-2);padding-top:16px}
+.stats4 b{display:block;font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:500;letter-spacing:-.05em;line-height:1}
+.stats4 small{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);
+  display:block;margin-top:9px}
+@media(max-width:700px){.stats4{grid-template-columns:1fr 1fr}}
+
+.entry{border-top:1px solid var(--line);padding:clamp(38px,5vw,66px) 0;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(26px,4vw,58px);align-items:center}
+.entry.flip .ev{order:-1}
+.entry .n{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--ink-3)}
+.entry h2{font-size:clamp(2rem,4.4vw,3.3rem);letter-spacing:-.05em;margin:14px 0 6px}
+.entry .dom{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11.5px;
+  letter-spacing:.1em;color:var(--ink-3);border-bottom:1px solid var(--line-2);padding-bottom:3px;transition:.25s}
+.entry .dom:hover{color:var(--ac,var(--volt));border-color:var(--ac,var(--volt))}
+.entry p.lead{margin:20px 0 24px}
+.ev{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--void-2);
+  display:block;transition:transform .55s var(--ease),box-shadow .55s var(--ease),border-color .4s}
+.ev:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.ev .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--void-3)}
+.ev .bar i{width:8px;height:8px;border-radius:50%;background:var(--line-3);display:block}
+.ev .bar span{margin-left:8px;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-3)}
+.ev img{width:100%;display:block;transition:transform 1s var(--ease)}
+.ev:hover img{transform:scale(1.02)}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(16px,2.4vw,30px);margin-bottom:22px}
+.meta div{border-top:1px solid var(--line);padding:11px 0}
+.meta small{display:block;font-family:var(--f-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.meta b{font-size:.92rem;font-weight:450;display:block;margin-top:3px}
+@media(max-width:900px){.entry{grid-template-columns:1fr}.entry.flip .ev{order:0}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="phero">
+  <div class="bp" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><a href="/projects/">Projects</a><i>/</i><b>Websites</b></p>
+    <h1 class="d1" style="max-width:13ch">Sites built <em>by PTRI</em>.</h1>
+    <p class="lead" style="margin-top:26px">Five live builds — a trades company, a seasonal mango business, an AI travel platform, an ERP launch and a private aviation brand. Every one custom: no themes, no page builders, no template underneath.</p>
+    <div class="stats4">
+      <div><b data-count="5">0</b><small>Live builds</small></div>
+      <div><b data-count="2">0</b><small>In-house products</small></div>
+      <div><b data-count="100" data-suffix="%">0</b><small>Custom built</small></div>
+      <div><b>2026</b><small>Most recent release</small></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="wrap">
+
+    <!-- AK Builds -->
+    <article class="entry rv" style="--ac:#e8631a">
+      <div>
+        <span class="n">01 &nbsp;·&nbsp; Client work</span>
+        <h2>AK Builds &amp; Plumbing</h2>
+        <a class="dom" href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">akbuildsandplumbing.ca ↗</a>
+        <p class="lead">A bold, editorial corporate site for a full-service renovation and plumbing team in Windsor. Oversized type, a calm dark palette and a quote-request flow engineered for high-intent visitors who already know they have a leaking basement.</p>
+        <div class="meta">
+          <div><small>Client</small><b>AK Builds &amp; Plumbing</b></div>
+          <div><small>Category</small><b>Trades · corporate web</b></div>
+          <div><small>Deliverable</small><b>Marketing site + quote flow</b></div>
+          <div><small>Region</small><b>Windsor &amp; Essex County</b></div>
+        </div>
+        <div class="tags" style="margin-bottom:24px">
+          <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Framer Motion</span><span class="tag">Vercel</span>
+        </div>
+        <a class="btn btn-ghost" href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>
+      </div>
+      <a class="ev" href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span>akbuildsandplumbing.ca</span></div>
+        <img src="/assets/img/akbuilds.jpg" alt="AK Builds &amp; Plumbing homepage" loading="lazy">
+      </a>
+    </article>
+
+    <!-- Keri -->
+    <article class="entry flip rv" style="--ac:#f5b324">
+      <div>
+        <span class="n">02 &nbsp;·&nbsp; Client work</span>
+        <h2>Keri in Windsor</h2>
+        <a class="dom" href="https://keriinwindsor.ca" target="_blank" rel="noopener">keriinwindsor.ca ↗</a>
+        <p class="lead">A scroll-driven, cinematic brand site for Windsor's premium Indian mango delivery service. Editorial storytelling, a warm seasonal palette, and a pre-order flow designed around limited-batch drops that sell out in days.</p>
+        <div class="meta">
+          <div><small>Client</small><b>Keri in Windsor</b></div>
+          <div><small>Category</small><b>Brand &amp; commerce</b></div>
+          <div><small>Deliverable</small><b>Brand site + pre-order</b></div>
+          <div><small>Delivery</small><b>Windsor–Essex, London, Toronto, Brampton</b></div>
+        </div>
+        <div class="tags" style="margin-bottom:24px">
+          <span class="tag">HTML</span><span class="tag">GSAP</span><span class="tag">Custom CSS</span><span class="tag">Video BG</span>
+        </div>
+        <a class="btn btn-ghost" href="https://keriinwindsor.ca" target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>
+      </div>
+      <a class="ev" href="https://keriinwindsor.ca" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span>keriinwindsor.ca</span></div>
+        <img src="/assets/img/keri.jpg" alt="Keri in Windsor homepage" loading="lazy">
+      </a>
+    </article>
+
+    <!-- Voyagea -->
+    <article class="entry rv" style="--ac:#3ecfb2">
+      <div>
+        <span class="n">03 &nbsp;·&nbsp; In-house product</span>
+        <h2>Voyagea</h2>
+        <a class="dom" href="https://voyagea.travel" target="_blank" rel="noopener">voyagea.travel ↗</a>
+        <p class="lead">The marketing site and product surface for our own AI travel planner. A cinematic hero, a single input that does the work of an entire booking funnel, and a design system that carries straight through into the iOS app.</p>
+        <div class="meta">
+          <div><small>Client</small><b>PTRI Innovation (in-house)</b></div>
+          <div><small>Category</small><b>AI travel platform</b></div>
+          <div><small>Deliverable</small><b>Web app + marketing + iOS</b></div>
+          <div><small>Status</small><b style="color:#3ecfb2">Live · public · free</b></div>
+        </div>
+        <div class="tags" style="margin-bottom:24px">
+          <span class="tag">Next.js</span><span class="tag">React Native</span><span class="tag">Supabase</span>
+          <span class="tag">Gemini</span><span class="tag">Vercel</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a class="btn btn-ghost" href="https://voyagea.travel" target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>
+          <a class="tlink" href="/products/voyagea/">Product page <span class="ar">→</span></a>
+        </div>
+      </div>
+      <a class="ev" href="https://voyagea.travel" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span>voyagea.travel</span></div>
+        <img src="/assets/img/voyagea.jpg" alt="Voyagea homepage" loading="lazy">
+      </a>
+    </article>
+
+    <!-- Ptrionix -->
+    <article class="entry flip rv" style="--ac:#f5b324">
+      <div>
+        <span class="n">04 &nbsp;·&nbsp; In-house product</span>
+        <h2>Ptrionix</h2>
+        <a class="dom" href="https://ptrionix.com" target="_blank" rel="noopener">ptrionix.com ↗</a>
+        <p class="lead">A blueprint-sheet launch page for our construction ERP — drafting grid, technical type, and a countdown to breaking ground on 14 September 2026. The site sets the product's language before the product ships.</p>
+        <div class="meta">
+          <div><small>Client</small><b>PTRI Innovation (in-house)</b></div>
+          <div><small>Category</small><b>ERP · launch page</b></div>
+          <div><small>Deliverable</small><b>Pre-launch site</b></div>
+          <div><small>Launch</small><b style="color:#f5b324">14.09.2026</b></div>
+        </div>
+        <div class="tags" style="margin-bottom:24px">
+          <span class="tag">Static</span><span class="tag">Custom CSS</span><span class="tag">Countdown</span><span class="tag">Blueprint grid</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a class="btn btn-ghost" href="https://ptrionix.com" target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>
+          <a class="tlink" href="/products/ptrionix/">Product page <span class="ar">→</span></a>
+        </div>
+      </div>
+      <a class="ev" href="https://ptrionix.com" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span>ptrionix.com</span></div>
+        <img src="/assets/img/ptrionix.jpg" alt="Ptrionix launch page" loading="lazy">
+      </a>
+    </article>
+
+    <!-- Skyvage -->
+    <article class="entry rv" style="--ac:#38bdf8">
+      <div>
+        <span class="n">05 &nbsp;·&nbsp; Client work</span>
+        <h2>Skyvage</h2>
+        <a class="dom" href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">skyvageweb.vercel.app ↗</a>
+        <p class="lead">A premium private aviation web experience — positioning private jets as accessible without giving up an ounce of luxury. Editorial typography, a light, airy palette and cinematic imagery in a clean, confident brand statement.</p>
+        <div class="meta">
+          <div><small>Client</small><b>Skyvage</b></div>
+          <div><small>Category</small><b>Aviation · brand web</b></div>
+          <div><small>Deliverable</small><b>Marketing site</b></div>
+          <div><small>Year</small><b>2026</b></div>
+        </div>
+        <div class="tags" style="margin-bottom:24px">
+          <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Framer Motion</span>
+          <span class="tag">Tailwind</span><span class="tag">Vercel</span>
+        </div>
+        <a class="btn btn-ghost" href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>
+      </div>
+      <a class="ev" href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">
+        <div class="bar"><i></i><i></i><i></i><span>skyvageweb.vercel.app</span></div>
+        <img src="/assets/img/skyvage.jpg" alt="Skyvage homepage" loading="lazy">
+      </a>
+    </article>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d2 rv" style="max-width:15ch;margin:0 auto">Want to be <em>next</em>?</h2>
+    <p class="lead rv" data-d="1" style="margin:18px auto 28px">Tell us what the site has to do for the business — leads, orders, credibility — and we'll build the one that does it.</p>
+    <div class="rv" data-d="2" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-solid" href="/#contact">Start a project <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/products/">See our products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

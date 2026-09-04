@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>Products — Voyagea, Dwello &amp; Ptrionix · PTRI Innovation</title>
+<meta name="description" content="The products PTRI Innovation builds and runs in-house: Voyagea, the AI travel planner; Dwello, a radar-sensing desk robot; and Ptrionix, an AI-powered ERP for construction and interior design firms.">
+<style>
+.pcard{border-top:1px solid var(--line);padding:clamp(38px,5vw,64px) 0;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(26px,4vw,60px);align-items:center}
+.pcard.flip .pv{order:-1}
+.pcard h3{font-size:clamp(2rem,4.2vw,3.2rem);letter-spacing:-.05em;margin:14px 0 4px}
+.pcard .dom{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.11em;color:var(--ink-3)}
+.pcard .num{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--ink-3)}
+.pv{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:340px;
+  background:linear-gradient(160deg,var(--void-2),var(--void));display:flex;align-items:center;justify-content:center;padding:24px}
+.pv::before{content:"";position:absolute;inset:0;opacity:.45;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:34px 34px;-webkit-mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000,transparent);
+  mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000,transparent)}
+.pv img{position:relative;z-index:1;border-radius:12px;border:1px solid var(--line-2)}
+.dstage{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;z-index:2;width:100%}
+.dradar{position:absolute;width:270px;height:270px;border-radius:50%;border:1px solid rgba(56,189,248,.16);z-index:0}
+.dradar::before{content:"";position:absolute;inset:48px;border-radius:50%;border:1px solid rgba(56,189,248,.13)}
+.dsweep{position:absolute;width:270px;height:270px;border-radius:50%;z-index:0;
+  background:conic-gradient(from 0deg,rgba(56,189,248,.15),transparent 26%);animation:spin 5.5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dexp{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;position:relative;z-index:3;max-width:320px}
+.dexp button{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);
+  border:1px solid var(--line);background:rgba(8,9,11,.55);border-radius:100px;padding:6px 12px;cursor:pointer;transition:.25s}
+.dexp button.on{background:rgba(56,189,248,.14);border-color:rgba(56,189,248,.55);color:var(--cyan)}
+.pcount{display:flex;gap:6px;width:100%;max-width:380px;position:relative;z-index:2}
+.pcount div{flex:1;text-align:center;border:1px solid var(--line);border-radius:11px;padding:14px 4px;background:rgba(245,179,36,.05)}
+.pcount b{display:block;font-size:clamp(1.5rem,3.4vw,2rem);font-weight:500;color:var(--amber);letter-spacing:-.03em;line-height:1}
+.pcount small{display:block;font-family:var(--f-mono);font-size:8.5px;letter-spacing:.2em;color:var(--ink-3);margin-top:6px;text-transform:uppercase}
+.pfeat{list-style:none;display:grid;gap:8px;margin:18px 0 22px}
+.pfeat li{display:flex;gap:11px;font-size:.93rem;color:var(--ink-2)}
+.pfeat li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ac);flex:none;margin-top:8px}
+.bfgrid{position:relative;z-index:2;width:100%;max-width:330px}
+.bfgrid .beam{animation:bfrun 1.8s linear infinite;filter:drop-shadow(0 0 6px rgba(168,85,247,.55))}
+@keyframes bfrun{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion:reduce){.bfgrid .beam{animation:none}}
+@media(max-width:900px){.pcard{grid-template-columns:1fr}.pcard.flip .pv{order:0}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="phero">
+  <div class="bp" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><b>Products</b></p>
+    <h1 class="d1" style="max-width:13ch">Things we build <em>for ourselves</em>.</h1>
+    <p class="lead" style="margin-top:26px">Four products, four stages. We design them, engineer them, ship them and keep them running — which is exactly why our client work behaves like product work.</p>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="idx rv">
+      <a href="/products/voyagea/">
+        <span class="n">01</span>
+        <div><h3>Voyagea</h3><span class="dom">voyagea.travel</span></div>
+        <p>A free AI travel planner that writes complete day-by-day itineraries in seconds — with maps, budgets and a digital V-Passport.</p>
+        <span class="st" style="color:#3ecfb2;border-color:rgba(62,207,178,.4)">Live</span>
+        <span class="go">→</span>
+      </a>
+      <a href="/products/dwello/">
+        <span class="n">02</span>
+        <div><h3>Dwello</h3><span class="dom">by AirTrace</span></div>
+        <p>A desk robot that senses your room with radar — not a camera — blinks, talks back and runs the lights when you walk in.</p>
+        <span class="st" style="color:#38bdf8;border-color:rgba(56,189,248,.4)">Prototype</span>
+        <span class="go">→</span>
+      </a>
+      <a href="/products/ptrionix/">
+        <span class="n">03</span>
+        <div><h3>Ptrionix</h3><span class="dom">ptrionix.com</span></div>
+        <p>The operating system for construction and interior design firms — BOQs, materials, finance and site logs on one AI-powered plan.</p>
+        <span class="st" style="color:#f5b324;border-color:rgba(245,179,36,.4)">14.09.2026</span>
+        <span class="go">→</span>
+      </a>
+      <a href="/support/#beamfall">
+        <span class="n">04</span>
+        <div><h3>Beamfall</h3><span class="dom" style="text-transform:none">iPhone &amp; Android</span></div>
+        <p>A beam-routing puzzle — rotate mirrors and prisms to light every target. 100 levels, no ads, no purchases, no account.</p>
+        <span class="st" style="color:#a855f7;border-color:rgba(168,85,247,.4)">Live · free</span>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap">
+
+    <!-- Voyagea -->
+    <article class="pcard rv" style="--ac:#3ecfb2">
+      <div>
+        <span class="num">01 &nbsp;·&nbsp; <span style="color:#3ecfb2">LIVE</span></span>
+        <h3>Voyagea</h3><span class="dom">voyagea.travel</span>
+        <p class="lead" style="margin-top:18px">Tell it where you're going and how you like to travel. Voyagea returns a complete day-by-day plan — routes, budgets, food, and the small hyperlocal things a good friend would tell you. Every trip you take earns a stamp in your V-Passport.</p>
+        <ul class="pfeat">
+          <li>Itineraries generated in seconds, not evenings of tabs</li>
+          <li>Maps, day budgets and hyperlocal recommendations</li>
+          <li>V-Passport — a digital stamp for every place you land</li>
+          <li>iOS app and web sharing one account and one library</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="btn btn-solid" href="/products/voyagea/">Product page <span class="ar">→</span></a>
+          <a class="tlink" href="https://voyagea.travel" target="_blank" rel="noopener">voyagea.travel <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="pv"><img src="/assets/img/voyagea.jpg" alt="Voyagea homepage" loading="lazy"></div>
+    </article>
+
+    <!-- Dwello -->
+    <article class="pcard flip rv" style="--ac:#38bdf8">
+      <div>
+        <span class="num">02 &nbsp;·&nbsp; <span style="color:#38bdf8">PROTOTYPE</span></span>
+        <h3>Dwello</h3><span class="dom" style="text-transform:none">by AirTrace · Windsor, Canada</span>
+        <p class="lead" style="margin-top:18px">A little desk robot that senses your room with radar — not a camera — and actually reacts to you. Alexa waits for you to speak. Dwello already knows you walked in.</p>
+        <ul class="pfeat">
+          <li>Presence, movement and position — even when you sit still</li>
+          <li>No lens, no video: nothing about your room leaves your room</li>
+          <li>A face that blinks, sleeps, wakes and answers back</li>
+          <li>Walk in and the lights come on; leave and everything powers down</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="btn btn-solid" href="/products/dwello/">Meet Dwello <span class="ar">→</span></a>
+          <a class="tlink" href="/products/dwello/#radar">See what it sees <span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="pv">
+        <div class="dradar" aria-hidden="true"></div><div class="dsweep" aria-hidden="true"></div>
+        <div class="dstage">
+          <div data-dwello-face style="position:relative;z-index:2;max-width:210px"></div>
+          <div class="dexp" data-dwello-exp></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Ptrionix -->
+    <article class="pcard rv" style="--ac:#f5b324">
+      <div>
+        <span class="num">03 &nbsp;·&nbsp; <span style="color:#f5b324">LAUNCHING 14.09.2026</span></span>
+        <h3>Ptrionix</h3><span class="dom">ptrionix.com</span>
+        <p class="lead" style="margin-top:18px">Every project. One blueprint. Ptrionix is the operating system for construction and interior design firms — auto-generate BOQs, track materials, finance and site logs, and run every project from one AI-powered plan instead of six spreadsheets.</p>
+        <ul class="pfeat">
+          <li>Bills of quantity generated from the drawing set</li>
+          <li>Materials tracked from purchase order to site delivery</li>
+          <li>Budget, spend and margin in a single project ledger</li>
+          <li>Daily site logs, vendors and team assignments in one place</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="btn btn-solid" href="/products/ptrionix/">Read the brief <span class="ar">→</span></a>
+          <a class="tlink" href="https://ptrionix.com" target="_blank" rel="noopener">ptrionix.com <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="pv">
+        <div class="pcount" data-countdown="2026-09-14T00:00:00">
+          <div><b data-cd="d">00</b><small>Days</small></div>
+          <div><b data-cd="h">00</b><small>Hrs</small></div>
+          <div><b data-cd="m">00</b><small>Min</small></div>
+          <div><b data-cd="s">00</b><small>Sec</small></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Beamfall -->
+    <article class="pcard flip rv" style="--ac:#a855f7">
+      <div>
+        <span class="num">04 &nbsp;·&nbsp; <span style="color:#a855f7">LIVE · FREE FOREVER</span></span>
+        <h3>Beamfall</h3><span class="dom" style="text-transform:none">iPhone &amp; Android · Puzzle</span>
+        <p class="lead" style="margin-top:18px">Fire a beam across a grid, rotate mirrors and prisms to bend it, and light every target in its own colour. 100 levels, every tenth one a boss run — and every level proven solvable by computer before it shipped.</p>
+        <ul class="pfeat">
+          <li>100 hand-verified levels, 10 boss runs</li>
+          <li>No advertising and nothing to buy — ever</li>
+          <li>No account, no sign-in, no data collected</li>
+          <li>Works fully offline, in aeroplane mode</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="btn btn-solid" href="/support/#beamfall">How to play <span class="ar">→</span></a>
+          <a class="tlink" href="/delete-account/">Delete your account <span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="pv">
+        <svg class="bfgrid" viewBox="0 0 260 200" aria-hidden="true">
+          <defs><pattern id="bfg2" width="26" height="26" patternUnits="userSpaceOnUse">
+            <path d="M26 0H0v26" fill="none" stroke="rgba(246,244,239,.07)" stroke-width="1"/></pattern></defs>
+          <rect x="13" y="13" width="234" height="174" fill="url(#bfg2)" rx="6"/>
+          <path class="beam" d="M26 100 H117 L117 48 H195 L195 152 H234" fill="none"
+                stroke="#a855f7" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 7"/>
+          <g stroke="rgba(246,244,239,.55)" stroke-width="2" stroke-linecap="round">
+            <path d="M109 56 L125 40"/><path d="M187 40 L203 56"/><path d="M187 160 L203 144"/>
+          </g>
+          <circle cx="26" cy="100" r="5" fill="#a855f7"/>
+          <circle cx="234" cy="152" r="7" fill="none" stroke="#a855f7" stroke-width="2"/>
+          <circle cx="234" cy="152" r="3" fill="#a855f7"/>
+        </svg>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">Building a product of your own?</h2>
+    <p class="lead rv" data-d="1" style="margin:16px auto 26px">We take products from a sketch to something people pay for — and we've done it for ourselves three times over.</p>
+    <div class="rv" data-d="2" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-solid" href="/#contact">Start a project <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/projects/websites/">See client work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script src="/assets/js/dwello-face.js"></script>
+<script>
+document.querySelectorAll('[data-countdown]').forEach(function(box){
+  var target=new Date(box.dataset.countdown).getTime();
+  var f=function(n){return String(Math.max(0,n)).padStart(2,'0')};
+  var tick=function(){var d=Math.max(0,target-Date.now()),s=Math.floor(d/1000);
+    box.querySelector('[data-cd="d"]').textContent=f(Math.floor(s/86400));
+    box.querySelector('[data-cd="h"]').textContent=f(Math.floor(s/3600)%24);
+    box.querySelector('[data-cd="m"]').textContent=f(Math.floor(s/60)%60);
+    box.querySelector('[data-cd="s"]').textContent=f(s%60)};
+  tick();setInterval(tick,1000);
+});
+</script>
+</body>
+</html>

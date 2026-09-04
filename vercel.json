@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/ReadRush/Privacy", "destination": "/ReadRush/privacy/", "permanent": true },
+    { "source": "/ReadRush/Support", "destination": "/ReadRush/support/", "permanent": true },
+    { "source": "/RushRage/Privacy", "destination": "/RushRage/privacy/", "permanent": true },
+    { "source": "/RushRage/Support", "destination": "/RushRage/support/", "permanent": true },
+    { "source": "/readrush/:path*",  "destination": "/ReadRush/:path*",  "permanent": true },
+    { "source": "/rushrage/:path*",  "destination": "/RushRage/:path*",  "permanent": true },
+    { "source": "/portfolio",        "destination": "/projects/websites/", "permanent": true }
+  ]
+}

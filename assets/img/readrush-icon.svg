@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="ReadRush app icon">
+  <defs>
+    <linearGradient id="rrBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c2027"/><stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="rrBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4626c"/><stop offset="1" stop-color="#d21f2f"/>
+    </linearGradient>
+    <mask id="rrMask">
+      <rect width="1024" height="1024" fill="#000"/>
+      <g fill="#fff">
+        <path d="M240 235 H640 A175 175 0 0 1 640 585 H240 Z"/>
+        <rect x="240" y="235" width="175" height="555"/>
+        <path d="M498 585 H682 L818 790 H604 Z"/>
+      </g>
+      <rect x="415" y="368" width="232" height="108" rx="54" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="1024" height="1024" rx="225" fill="url(#rrBg)"/>
+  <rect width="1024" height="1024" rx="225" fill="#fff" mask="url(#rrMask)"/>
+  <rect x="487" y="196" width="60" height="624" rx="30" fill="url(#rrBar)"/>
+  <circle cx="517" cy="516" r="46" fill="#ff5b64"/>
+</svg>

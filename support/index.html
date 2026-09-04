@@ -3,193 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support — PTRI Innovation</title>
-<meta name="description" content="Support for PTRI Innovation products, including Beamfall — a completely free beam-routing puzzle game for iPhone and Android with no ads and no in-app purchases.">
-<meta name="theme-color" content="#08090c">
+<meta name="theme-color" content="#08090b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+<title>Support — PTRI Innovation</title>
+<meta name="description" content="Support for PTRI Innovation products. Help and answers for Beamfall, the free beam-routing puzzle for iPhone, plus how to reach us about anything else we build.">
+<meta property="og:title" content="Support — PTRI Innovation">
+<meta property="og:description" content="Help for Beamfall and every other product we build.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#08090c;--bg-soft:#0e1014;--bg-card:#13151b;
-  --ink:#f3f1ec;--ink-mute:#9b9990;--ink-faint:#56554f;
-  --blue:#1b6fe8;--orange:#e8631a;--cyan:#1aace8;--lime:#c2d81a;--accent:#e8631a;
-  --line:rgba(243,241,236,0.08);--line-mid:rgba(243,241,236,0.14);
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;
-  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.07;letter-spacing:-0.02em}
-em{font-style:italic;font-weight:400;color:var(--orange)}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--orange);color:#fff}
-.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
-.narrow{max-width:800px}
-.sec{padding:96px 0}
-.sec-label{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:26px}
-.sec-label::before{content:"";width:26px;height:1px;background:var(--line-mid)}
-.chip{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);border:1px solid var(--line-mid);
-  padding:6px 13px;border-radius:30px}
-.btn{display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:46px;
-  font-size:15px;font-weight:400;transition:all .3s;cursor:pointer;border:1px solid transparent}
-.btn-primary{background:var(--ink);color:var(--bg)}
-.btn-primary:hover{background:var(--orange);color:#fff}
-.btn-ghost{border-color:var(--line-mid);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
-  justify-content:space-between;padding:20px 32px;transition:.4s;
-  background:rgba(8,9,12,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:21px;
-  font-weight:600;letter-spacing:-.02em}
-.dots{display:grid;grid-template-columns:repeat(2,7px);gap:3px}
-.dots span{width:7px;height:7px;border-radius:2px;display:block}
-.dots span:nth-child(1){background:var(--orange)}
-.dots span:nth-child(2){background:var(--cyan)}
-.dots span:nth-child(3){background:var(--lime)}
-.dots span:nth-child(4){background:var(--blue)}
-.nav-links{display:flex;gap:30px}
-.nav-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
-.nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
-@media(max-width:780px){.nav-links{display:none}}
-/* page head */
-.phead{padding:150px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.phead::before{content:"";position:absolute;inset:0;z-index:0;
-  background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(232,99,26,.10),transparent 70%)}
-.phead .wrap{position:relative;z-index:1}
-.phead h1{font-size:clamp(2.5rem,6vw,4.4rem);letter-spacing:-.035em;margin:20px 0 20px;max-width:17ch}
-.phead p.intro{max-width:600px;color:var(--ink-mute);font-size:1.12rem}
-.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-/* body copy */
-.doc h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:0 0 18px;scroll-margin-top:90px}
-.doc h3{font-size:1.15rem;font-weight:500;margin:30px 0 10px;font-family:'Outfit',sans-serif;letter-spacing:-.01em;color:var(--ink)}
-.doc p{color:var(--ink-mute);margin-bottom:16px;max-width:70ch}
-.doc strong{color:var(--ink);font-weight:400}
-.doc ul{list-style:none;margin:0 0 20px;max-width:70ch;display:flex;flex-direction:column;gap:12px}
-.doc li{color:var(--ink-mute);padding-left:24px;position:relative}
-.doc li::before{content:"";position:absolute;left:2px;top:.7em;width:9px;height:1px;background:var(--orange);opacity:.7}
-.block{padding-bottom:56px}
-.card{background:var(--bg-card);border:1px solid var(--line-mid);border-radius:24px;padding:34px}
-/* footer */
-footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg)}
-.foot-row{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:center}
-.foot-links{display:flex;flex-wrap:wrap;gap:24px}
-.foot-links a{font-size:14px;color:var(--ink-mute);transition:color .25s}
-.foot-links a:hover{color:var(--orange)}
-.foot-bot{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
-@media(max-width:640px){.sec{padding:64px 0}.wrap{padding:0 22px}.card{padding:24px}}
-</style>
-<style>
-.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
-.route{border:1px solid var(--line-mid);border-radius:20px;padding:28px 26px;background:var(--bg-card);
-  display:flex;flex-direction:column;gap:10px;transition:border-color .3s,transform .3s}
-.route:hover{border-color:var(--ink-faint);transform:translateY(-3px)}
-.route i{width:9px;height:9px;border-radius:50%;display:block}
-.route b{font-family:'Fraunces',serif;font-size:1.24rem;font-weight:500}
-.route p{font-size:.92rem;color:var(--ink-faint);line-height:1.6;flex:1;margin:0}
-.route span.go{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--orange);margin-top:4px}
-/* game panel */
-.game{border:1px solid var(--line-mid);border-radius:26px;overflow:hidden;background:#04050a;margin-top:20px}
-.game-top{padding:40px;position:relative;border-bottom:1px solid rgba(255,255,255,.07);
-  background:radial-gradient(ellipse 72% 130% at 18% 0%,rgba(63,224,255,.13),transparent 72%)}
-.game-top>div{position:relative;z-index:1;max-width:54ch}
-.game-badge{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#3fe0ff}
-.game-badge i{width:6px;height:6px;border-radius:50%;background:#3fe0ff;display:block}
-.game h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:16px 0 14px;color:#e8ecff}
-.game .lede{color:#a8b0c8;font-size:1.06rem;margin-bottom:0}
-.free{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:12px 20px;border-radius:40px;
-  border:1px solid rgba(63,224,255,.34);background:rgba(63,224,255,.07);color:#cfe8f5;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.gstats{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
-.gstat{border:1px solid rgba(255,255,255,.13);border-radius:40px;padding:8px 16px;
-  font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#a8b0c8}
-.gstat b{color:#3fe0ff;font-weight:500}
-.gart{position:absolute;right:44px;top:50%;transform:translateY(-50%);width:min(280px,30%);opacity:.95}
-.gart path.bm{stroke-dasharray:340;stroke-dashoffset:340;animation:draw 2.4s cubic-bezier(.16,1,.3,1) .3s forwards}
+:root{--ac:#38bdf8;--bf:#3fe0ff}
+.shero{position:relative;overflow:hidden;padding:clamp(118px,13vw,164px) 0 clamp(40px,5vw,60px)}
+.shero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 58% 54% at 74% 34%,rgba(56,189,248,.11),transparent 68%),
+             radial-gradient(ellipse 50% 46% at 8% 82%,rgba(255,77,25,.05),transparent 72%)}
+.shero .wrap{position:relative;z-index:1}
+.shero h1{font-size:clamp(2.7rem,7.4vw,5.6rem);letter-spacing:-.055em;line-height:.94;margin:22px 0 20px;max-width:15ch}
+.shero h1 em{color:var(--ac)}
+
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(32px,4vw,48px)}
+.route{border:1px solid var(--line);border-radius:16px;padding:24px 22px;background:rgba(246,244,239,.018);
+  display:flex;flex-direction:column;gap:9px;transition:border-color .35s var(--ease),transform .35s var(--ease)}
+.route:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.route i{width:9px;height:9px;border-radius:50%;flex:none}
+.route b{font-size:1.05rem;font-weight:550;letter-spacing:-.03em}
+.route p{font-size:.88rem;color:var(--ink-3);line-height:1.55;flex:1}
+
+/* ---- beamfall block ---- */
+.bf{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#04050a;position:relative}
+.bf-top{padding:clamp(28px,4vw,44px);border-bottom:1px solid rgba(255,255,255,.07);position:relative;
+  background:radial-gradient(ellipse 70% 120% at 20% 0%,rgba(63,224,255,.12),transparent 70%)}
+.bf-top>div{position:relative;z-index:1;max-width:56ch}
+.bf-art{position:absolute;right:clamp(20px,4vw,52px);top:50%;transform:translateY(-50%);
+  width:min(300px,32%);opacity:.95;pointer-events:none}
+.bf-art .bm{stroke-dasharray:340;stroke-dashoffset:340;animation:draw 2.6s var(--ease) .3s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.pieces{padding:34px 40px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
-.piece{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+@media(max-width:820px){.bf-art{display:none}.bf-top>div{max-width:none}}
+.bf-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--bf)}
+.bf h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.05em;margin:16px 0 12px;color:#e8ecff}
+.bf .lead{color:#a8b0c8}
+.bf-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.bf-stat{border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:8px 16px;
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a8b0c8}
+.bf-stat b{color:var(--bf);font-weight:500}
+
+.pieces{padding:clamp(26px,3.6vw,40px);display:grid;grid-template-columns:repeat(2,1fr);gap:2px 34px}
+.piece{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .piece svg{flex:none;margin-top:2px}
-.piece b{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;color:#e8ecff;font-weight:400}
-.piece span{display:block;font-size:.9rem;color:#8b93ad;line-height:1.55;margin-top:4px}
-/* faq */
+.piece b{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#e8ecff;font-weight:500}
+.piece span{display:block;font-size:.89rem;color:#8b93ad;line-height:1.5;margin-top:4px}
+
+/* ---- faq ---- */
+.faq{display:flex;flex-direction:column;gap:0;max-width:820px}
 .qa{border-bottom:1px solid var(--line)}
 .qa summary{list-style:none;cursor:pointer;padding:20px 0;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;font-size:1.06rem;transition:color .25s}
+  justify-content:space-between;gap:20px;font-size:1.05rem;font-weight:450;letter-spacing:-.025em;transition:color .25s}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary:hover,.qa[open] summary{color:var(--orange)}
-.qa .pl{position:relative;width:13px;height:13px;flex:none;opacity:.6}
-.qa .pl::before,.qa .pl::after{content:"";position:absolute;background:currentColor;transition:transform .3s}
-.qa .pl::before{left:0;top:6px;width:13px;height:1.5px}
-.qa .pl::after{left:6px;top:0;width:1.5px;height:13px}
-.qa[open] .pl::after{transform:rotate(90deg)}
-.qa p{color:var(--ink-mute);padding:0 0 22px;max-width:72ch;margin:0}
-.cta{border:1px solid var(--line-mid);border-radius:22px;padding:44px;background:var(--bg-card);
-  display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;margin-top:20px}
-.cta h3{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:500;margin-bottom:10px}
-.cta p{color:var(--ink-mute);max-width:46ch;margin:0}
-@media(max-width:900px){.routes{grid-template-columns:1fr}.pieces{grid-template-columns:1fr;gap:0}
-  .gart{display:none}.game-top>div{max-width:none}.game-top,.pieces{padding:28px}}
+.qa summary:hover{color:var(--ac)}
+.qa summary .pl{position:relative;width:13px;height:13px;flex:none;opacity:.55}
+.qa summary .pl::before,.qa summary .pl::after{content:"";position:absolute;background:currentColor;transition:transform .3s var(--ease)}
+.qa summary .pl::before{left:0;top:6px;width:13px;height:1.5px}
+.qa summary .pl::after{left:6px;top:0;width:1.5px;height:13px}
+.qa[open] summary .pl::after{transform:rotate(90deg)}
+.qa[open] summary{color:var(--ac)}
+.qa p{color:var(--ink-2);padding:0 0 22px;max-width:72ch;font-weight:330}
+
+.cta{border:1px solid var(--line);border-radius:20px;padding:clamp(30px,4.4vw,52px);
+  background:rgba(246,244,239,.02);display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between}
+.cta h3{font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.04em;margin-bottom:10px}
+
+@media(max-width:900px){.routes{grid-template-columns:1fr}.pieces{grid-template-columns:1fr;gap:0}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="/" class="logo">
-    <span class="dots"><span></span><span></span><span></span><span></span></span>
-    <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
   </a>
-  <div class="nav-links">
+  <div class="nav-mid">
     <a href="/">Home</a>
-    <a href="/#products">Products</a>
-    <a href="/#services">Services</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/support/#beamfall"><i style="background:#a855f7"></i><div><span>Beamfall</span><small>Free beam-routing puzzle — iPhone &amp; Android</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
     <a href="/support/">Support</a>
     <a href="/#contact">Contact</a>
   </div>
+  <a class="btn btn-ghost btn-sm" href="/#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
 </nav>
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a class="sub" href="/support/#beamfall">— Beamfall</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="/support/">Support <small>03</small></a>
+  <a href="/privacy/">Privacy <small>04</small></a>
+  <a href="/#contact">Contact <small>05</small></a>
+</div>
 
-<header class="phead">
+<header class="shero">
   <div class="wrap">
-    <div class="sec-label">Help — Support</div>
+    <span class="kicker"><b>Help</b> — Support</span>
     <h1>Something not working? <em>Tell us.</em></h1>
-    <p class="intro">Every product we ship has a person behind it. Pick what you need help with, or
+    <p class="lead">Every product we ship has a person behind it. Pick what you need help with, or
       just write to us directly — a real reply comes back.</p>
+
     <div class="routes">
       <a class="route" href="#beamfall">
         <i style="background:#3fe0ff"></i>
         <b>Beamfall</b>
-        <p>Our free puzzle game for iPhone. How to play, what the pieces do, and the questions we get most.</p>
-        <span class="go">Read the guide &darr;</span>
+        <p>The free beam-routing puzzle for iPhone. How to play, what the pieces do, and answers to the
+          questions we get most.</p>
+        <span class="tlink" style="align-self:flex-start;margin-top:6px">Read the guide <span class="ar">↓</span></span>
       </a>
       <a class="route" href="mailto:info@ptriinnovation.com?subject=Product%20support">
-        <i style="background:#c2d81a"></i>
-        <b>Voyagea &middot; Dwello</b>
-        <p>Account questions, bugs, billing or anything else about the platforms we build in-house.</p>
-        <span class="go">Email support &nearr;</span>
+        <i style="background:#3ecfb2"></i>
+        <b>Voyagea · Dwello · Ptrionix</b>
+        <p>Account questions, bugs, billing or anything else about the products we build in-house.</p>
+        <span class="tlink" style="align-self:flex-start;margin-top:6px">Email support <span class="ar">↗</span></span>
       </a>
       <a class="route" href="mailto:info@ptriinnovation.com?subject=Website%20support">
-        <i style="background:#e8631a"></i>
+        <i style="background:#ff4d19"></i>
         <b>A site we built you</b>
         <p>Client websites and software. Changes, hosting, domains, or something that broke.</p>
-        <span class="go">Email the studio &nearr;</span>
+        <span class="tlink" style="align-self:flex-start;margin-top:6px">Email the studio <span class="ar">↗</span></span>
       </a>
     </div>
   </div>
 </header>
 
+<hr class="rule">
+
 <section class="sec" id="beamfall">
   <div class="wrap">
-    <div class="sec-label">Games — Beamfall</div>
-    <div class="game">
-      <div class="game-top">
-        <svg class="gart" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <div class="bf">
+      <div class="bf-top">
+        <svg class="bf-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">
           <g stroke="rgba(255,255,255,.07)" stroke-width="1">
             <path d="M40 0v200M80 0v200M120 0v200M160 0v200M0 40h200M0 80h200M0 120h200M0 160h200"/>
           </g>
@@ -202,78 +174,179 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;background:var(--bg)
           <circle cx="180" cy="100" r="4.4" fill="#3fe0ff"/>
         </svg>
         <div>
-          <span class="game-badge"><i></i>iPhone &middot; Puzzle</span>
-          <h2>Beamfall</h2>
-          <p class="lede">Fire a beam across a grid, rotate mirrors and prisms to bend it, and light
-            every target in its own colour. Tap a piece to turn it — that is the only control in the game.</p>
-          <div class="free">Completely free &middot; No ads &middot; No payments ever</div>
-          <div class="gstats">
-            <span class="gstat"><b>100</b> levels</span>
-            <span class="gstat"><b>10</b> boss runs</span>
-            <span class="gstat">no account</span>
-            <span class="gstat">plays offline</span>
-          </div>
+        <span class="bf-badge"><span class="dot c"></span>iPhone · Free · No ads</span>
+        <h2>Beamfall</h2>
+        <p class="lead">Fire a beam across a grid, rotate mirrors and prisms to bend it, and light every
+          target in its own colour. Tap a piece to turn it — that is the only control in the game.</p>
+        <div class="bf-stats">
+          <span class="bf-stat"><b>100</b> levels</span>
+          <span class="bf-stat"><b>10</b> boss runs</span>
+          <span class="bf-stat">no ads</span>
+          <span class="bf-stat">no purchases</span>
+          <span class="bf-stat">plays offline</span>
+        </div>
         </div>
       </div>
+
       <div class="pieces">
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="7" y="7" width="20" height="20" rx="6" fill="none" stroke="#3fe0ff" stroke-width="2"/><circle cx="17" cy="17" r="3.4" fill="#eafcff"/><rect x="27" y="14" width="5" height="6" rx="2" fill="#3fe0ff"/></svg><div><b>Emitter</b><span>Fires the beam. Fixed in place — you cannot turn it.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="9" fill="none" stroke="#eafcff" stroke-width="2.6"/><circle cx="17" cy="17" r="3.4" fill="#3fe0ff"/></svg><div><b>Target</b><span>Must be lit in its own colour. Light them all to clear the level.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="15.5" y="5" width="3.6" height="24" rx="1.8" fill="#e6f5ff" transform="rotate(45 17 17)"/></svg><div><b>Mirror</b><span>Tap to flip the diagonal. Bounces light through 90&deg;.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><g transform="rotate(45 17 17)"><rect x="15.5" y="5" width="3.6" height="9" rx="1.8" fill="#ffcf7a"/><rect x="15.5" y="20" width="3.6" height="9" rx="1.8" fill="#ffcf7a"/><rect x="16.6" y="5" width="1.4" height="24" fill="#ffcf7a" opacity=".35"/></g></svg><div><b>Splitter</b><span>Bounces light <em style="color:inherit">and</em> lets it carry straight on through the gap.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="15.2" y="4" width="3.6" height="14" rx="1.8" fill="#c9b6ff"/><rect x="17" y="15.2" width="13" height="3.6" rx="1.8" fill="#c9b6ff"/><circle cx="17" cy="17" r="3" fill="#f6f1ff"/></svg><div><b>Prism</b><span>A corner channel. Light entering the wrong face is absorbed.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="9" fill="rgba(34,255,160,.22)" stroke="#22ffa0" stroke-width="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1" fill="#e8fff2" transform="rotate(45 17 17)"/></svg><div><b>Tint</b><span>Coloured glass. Recolours any beam passing straight through it.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="7.5" y="7.5" width="19" height="19" rx="4" fill="rgba(0,0,0,.35)" stroke="#ff2f7d" stroke-width="2"/><rect x="12" y="14" width="10" height="2.4" fill="#ff2f7d"/><rect x="12" y="18.5" width="10" height="2.4" fill="#ff2f7d"/></svg><div><b>Gate</b><span>A colour lock. Only its own colour gets past.</span></div></div>
-        <div class="piece"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="7" y="7" width="20" height="20" rx="5" fill="#1b2340" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/><path d="M9 22L22 9M14 25L25 14" stroke="rgba(255,255,255,.16)" stroke-width="1.6"/></svg><div><b>Wall</b><span>Blocks everything. Route around it.</span></div></div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><rect x="7" y="7" width="20" height="20" rx="6" fill="none" stroke="#3fe0ff" stroke-width="2"/><circle cx="17" cy="17" r="3.4" fill="#eafcff"/><rect x="27" y="14" width="5" height="6" rx="2" fill="#3fe0ff"/></svg>
+          <div><b>Emitter</b><span>Fires the beam. Fixed in place — you cannot turn it.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="9" fill="none" stroke="#eafcff" stroke-width="2.6"/><circle cx="17" cy="17" r="3.4" fill="#3fe0ff"/></svg>
+          <div><b>Target</b><span>Must be lit in its own colour. Light them all to clear the level.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><rect x="15.5" y="5" width="3.6" height="24" rx="1.8" fill="#e6f5ff" transform="rotate(45 17 17)"/></svg>
+          <div><b>Mirror</b><span>Tap to flip the diagonal. Bounces light through 90°.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><g transform="rotate(45 17 17)"><rect x="15.5" y="5" width="3.6" height="9" rx="1.8" fill="#ffcf7a"/><rect x="15.5" y="20" width="3.6" height="9" rx="1.8" fill="#ffcf7a"/><rect x="16.6" y="5" width="1.4" height="24" fill="#ffcf7a" opacity=".35"/></g></svg>
+          <div><b>Splitter</b><span>Bounces light <em>and</em> lets it carry straight on through the gap.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><rect x="15.2" y="4" width="3.6" height="14" rx="1.8" fill="#c9b6ff"/><rect x="17" y="15.2" width="13" height="3.6" rx="1.8" fill="#c9b6ff"/><circle cx="17" cy="17" r="3" fill="#f6f1ff"/></svg>
+          <div><b>Prism</b><span>A corner channel. Light entering the wrong face is absorbed.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="9" fill="rgba(34,255,160,.22)" stroke="#22ffa0" stroke-width="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1" fill="#e8fff2" transform="rotate(45 17 17)"/></svg>
+          <div><b>Tint</b><span>Coloured glass. Recolours any beam passing straight through it.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><rect x="7.5" y="7.5" width="19" height="19" rx="4" fill="rgba(0,0,0,.35)" stroke="#ff2f7d" stroke-width="2"/><rect x="12" y="14" width="10" height="2.4" fill="#ff2f7d"/><rect x="12" y="18.5" width="10" height="2.4" fill="#ff2f7d"/></svg>
+          <div><b>Gate</b><span>A colour lock. Only its own colour gets past.</span></div>
+        </div>
+        <div class="piece">
+          <svg width="34" height="34" viewBox="0 0 34 34"><rect x="7" y="7" width="20" height="20" rx="5" fill="#1b2340" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/><path d="M9 22L22 9M14 25L25 14" stroke="rgba(255,255,255,.16)" stroke-width="1.6"/></svg>
+          <div><b>Wall</b><span>Blocks everything. Route around it.</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" style="padding-top:0">
-  <div class="wrap narrow">
-    <div class="sec-label">Beamfall — Questions</div>
-    <details class="qa"><summary>What does &ldquo;par&rdquo; mean?<span class="pl"></span></summary><p>Par is the fewest taps a level can possibly be solved in — and it is not an estimate. Before the game shipped, every level was solved exhaustively by computer, testing every combination of piece orientations. Par is the proven minimum. Match it and you earn three diamonds.</p></details>
-    <details class="qa"><summary>What makes a boss level different?<span class="pl"></span></summary><p>Every tenth level is a boss: a larger grid, more pieces, and often a second emitter firing a second beam. On the later bosses a containment rule also applies — no beam may escape the board at all, shown as &ldquo;NO LEAKS&rdquo; under the level name.</p></details>
-    <details class="qa"><summary>I am completely stuck. Is the level definitely solvable?<span class="pl"></span></summary><p>Yes. Every level is guaranteed solvable from exactly the position it starts in — this is verified automatically for all 100 levels before each release, so you are never facing an impossible board. Tap <strong style="color:var(--ink)">?</strong> in-game for a reminder of what each piece does, or <strong style="color:var(--ink)">&#8634;</strong> to reset the level and try a different route.</p></details>
-    <details class="qa"><summary>Do I need an account?<span class="pl"></span></summary><p>No. Every level, every hint and all your progress work with no account at all, entirely offline. Signing in with Apple is optional and only adds your name to the global leaderboard. If you never sign in, the app sends nothing anywhere.</p></details>
-    <details class="qa"><summary>How do I delete my leaderboard account?<span class="pl"></span></summary><p>Open the leaderboard in the app and tap <strong style="color:var(--ink)">Delete account</strong>. That permanently removes your account, your display name and every score attached to it. Your progress on your own device is kept, so you can carry on playing. You can also email us and we will do it for you. Full step-by-step instructions, and exactly what is deleted, are on our <a href="/delete-account/" style="color:var(--orange)">account deletion page</a>.</p></details>
-    <details class="qa"><summary>How does the leaderboard rank players?<span class="pl"></span></summary><p>By diamonds earned, with fewest total taps breaking ties &mdash; so efficiency wins over volume. Because every level&rsquo;s par is a proven minimum number of moves, a score below it is mathematically impossible and the server rejects it outright.</p></details>
-    <details class="qa"><summary>How many hints do I get?<span class="pl"></span></summary><p>Three, for the whole game &mdash; not three per level. Spend them where they matter. A hint points at exactly the piece worth turning next and never leads to a dead end. Using one caps that level at two diamonds, so a perfect score still means you found the shortest route yourself.</p></details>
-    <details class="qa"><summary>Is it really free? What is the catch?<span class="pl"></span></summary><p>There is no catch. Beamfall is completely free, with no advertising, no in-app purchases, no subscription, no &ldquo;premium&rdquo; levels and nothing at all to pay for. All 100 levels are included from the moment you install it. We built it because we wanted to build it.</p></details>
-    <details class="qa"><summary>Is there a timer, lives, or energy?<span class="pl"></span></summary><p>None of those. No timer, no lives system, no energy meter and nothing that stops you playing or asks you to wait. Take as long as you like.</p></details>
-    <details class="qa"><summary>Will I lose my progress?<span class="pl"></span></summary><p>Progress is stored on your device and survives app updates. Deleting the app deletes it. If you sign in for the leaderboard, your progress is also saved to your account and comes back when you sign in on another device — but signing in is entirely optional, and without it your progress stays on that one device.</p></details>
-    <details class="qa"><summary>Does Beamfall need an internet connection?<span class="pl"></span></summary><p>No. All 100 levels ship inside the app and every one of them is playable in aeroplane mode. The only part that uses the network is the optional leaderboard — if you never sign in, Beamfall makes no network requests at all. See our <a href="/privacy/#beamfall" style="color:var(--orange)">privacy policy</a> for the full detail.</p></details>
-    <details class="qa"><summary>How do I report a bug or a broken level?<span class="pl"></span></summary><p>Email <a href="mailto:info@ptriinnovation.com?subject=Beamfall%20bug%20report" style="color:var(--orange)">info@ptriinnovation.com</a>. If it is about a specific level, please include the level number and, if you can, a screenshot — it makes the problem much faster to find.</p></details>
+<section class="sec-tight">
+  <div class="wrap">
+    <span class="kicker"><b>Beamfall</b> — Questions</span>
+    <div class="faq" style="margin-top:26px">
 
+      <details class="qa">
+        <summary>What does “par” mean?<span class="pl"></span></summary>
+        <p>Par is the fewest taps a level can possibly be solved in — and it is not an estimate. Before
+          the game shipped, every level was solved exhaustively by computer, testing every possible
+          combination of piece orientations. Par is the proven minimum. Match it and you earn three
+          diamonds.</p>
+      </details>
+
+      <details class="qa">
+        <summary>What makes a boss level different?<span class="pl"></span></summary>
+        <p>Every tenth level is a boss: a larger grid, more pieces, and often a second emitter firing a
+          second beam. On the later bosses a containment rule also applies — <em>no beam may escape the
+          board at all</em>, which is shown as “NO LEAKS” under the level name.</p>
+      </details>
+
+      <details class="qa">
+        <summary>I am completely stuck. Is the level definitely solvable?<span class="pl"></span></summary>
+        <p>Yes. Every level is guaranteed solvable from exactly the position it starts in — this is
+          verified automatically for all 100 levels before each release, so you are never facing an
+          impossible board. Tap <strong>?</strong> in-game for a reminder of what each piece does, or
+          <strong>↺</strong> to reset the level and try a different route.</p>
+      </details>
+
+      <details class="qa">
+        <summary>Is there a timer, lives, or energy?<span class="pl"></span></summary>
+        <p>None of those. There is no timer, no lives system, no energy meter and nothing that stops you
+          playing or asks you to wait. Take as long as you like.</p>
+      </details>
+
+      <details class="qa">
+        <summary>Will I lose my progress?<span class="pl"></span></summary>
+        <p>Progress is stored on your device and survives app updates. Because there is no account
+          system — by design — it does not transfer between devices, and deleting the app deletes it
+          permanently.</p>
+      </details>
+
+      <details class="qa">
+        <summary>Does Beamfall need an internet connection?<span class="pl"></span></summary>
+        <p>Never. All 100 levels ship inside the app and it works in aeroplane mode. Beamfall makes no
+          network requests of any kind — see our <a href="/privacy/#beamfall" style="color:var(--ac)">privacy
+          policy</a> for the full detail.</p>
+      </details>
+
+      <details class="qa">
+        <summary>Are there ads or in-app purchases?<span class="pl"></span></summary>
+        <p>No, and there is no plan to add them. The game is free, complete, and has nothing to sell you.</p>
+      </details>
+
+      <details class="qa">
+        <summary>How do I report a bug or a broken level?<span class="pl"></span></summary>
+        <p>Email <a href="mailto:info@ptriinnovation.com?subject=Beamfall%20bug%20report" style="color:var(--ac)">info@ptriinnovation.com</a>.
+          If it is about a specific level, please include the level number and, if you can, a screenshot —
+          it makes the problem much faster to find.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap">
     <div class="cta">
       <div>
         <h3>Still stuck?</h3>
-        <p>Write to us and a person will read it. Include the product name and, if something broke, what you were doing at the time.</p>
+        <p class="lead" style="max-width:46ch">Write to us and a person will read it. Include the product
+          name and, if something broke, what you were doing at the time.</p>
       </div>
-      <a class="btn btn-primary" href="mailto:info@ptriinnovation.com?subject=Support">info@ptriinnovation.com <span>&rarr;</span></a>
+      <a class="btn btn-solid" href="mailto:info@ptriinnovation.com?subject=Support">info@ptriinnovation.com <span class="ar">→</span></a>
     </div>
   </div>
 </section>
-<footer>
+
+<footer class="foot">
   <div class="wrap">
-    <div class="foot-row">
-      <a href="/" class="logo">
-        <span class="dots"><span></span><span></span><span></span><span></span></span>
-        <span>Ptri<small style="display:block;margin-top:-3px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--ink-faint)">INNOVATION</small></span>
-      </a>
-      <div class="foot-links">
-        <a href="/">Home</a>
-        <a href="/#products">Products</a>
-        <a href="/support/">Support</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/#contact">Contact</a>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
       </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/support/">Support</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul></div>
     </div>
     <div class="foot-bot">
-      <span>&copy; 2026 PTRI Innovation Pvt. Ltd.</span>
-      <span>Joining the World with Technology</span>
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
     </div>
   </div>
 </footer>
+<script src="/assets/js/site.js"></script>
 </body>
 </html>

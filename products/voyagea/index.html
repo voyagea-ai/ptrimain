@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>Voyagea — AI travel planner · PTRI Innovation</title>
+<meta name="description" content="Voyagea is a free AI travel planner by PTRI Innovation. Complete day-by-day itineraries in seconds, with maps, budgets, hyperlocal tips and a digital V-Passport. Live at voyagea.travel.">
+<style>
+:root{--ac:#3ecfb2}
+.vhero{position:relative;overflow:hidden;padding:clamp(112px,13vw,150px) 0 clamp(44px,5vw,66px)}
+.vhero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 58% 52% at 72% 40%,rgba(62,207,178,.13),transparent 68%)}
+.vhero .wrap{position:relative;z-index:1}
+.vhero h1{font-size:clamp(3rem,8.4vw,6.4rem);letter-spacing:-.055em;line-height:.94;margin:24px 0 22px}
+.vhero h1 em{color:var(--ac)}
+.chat{display:flex;flex-direction:column;gap:11px;position:relative;z-index:2;width:100%;max-width:400px;margin:0 auto}
+.vbar{display:flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:10px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:100px;padding:7px 13px;background:rgba(8,9,11,.6);align-self:flex-start}
+.vbar i{width:6px;height:6px;border-radius:50%;background:var(--ac)}
+.bub{border-radius:16px;padding:12px 15px;font-size:.9rem;line-height:1.5;max-width:88%;
+  opacity:0;transform:translateY(10px);transition:.6s var(--ease)}
+.bub.show{opacity:1;transform:none}
+.bub.me{background:rgba(246,244,239,.09);border:1px solid var(--line-2);align-self:flex-end;border-bottom-right-radius:5px}
+.bub.ai{background:rgba(62,207,178,.09);border:1px solid rgba(62,207,178,.28);border-bottom-left-radius:5px}
+.vdays{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.vday{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ac);
+  border:1px solid rgba(62,207,178,.3);border-radius:6px;padding:5px 9px;background:rgba(62,207,178,.06);
+  opacity:0;transform:translateY(8px);transition:.5s var(--ease)}
+.vday.show{opacity:1;transform:none}
+.typing{display:inline-flex;gap:4px;align-items:center}
+.typing i{width:5px;height:5px;border-radius:50%;background:var(--ac);animation:bob 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bob{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+.vframe{position:relative;border:1px solid var(--line);border-radius:22px;padding:26px;min-height:360px;
+  display:flex;align-items:center;background:linear-gradient(160deg,var(--void-2),var(--void))}
+.vframe::before{content:"";position:absolute;inset:0;opacity:.45;border-radius:22px;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:34px 34px;-webkit-mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000,transparent);
+  mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000,transparent)}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="vhero">
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:24px"><a href="/">PTRI Innovation</a><i>/</i><a href="/products/">Products</a><i>/</i><b>Voyagea</b></p>
+    <div class="split">
+      <div>
+        <span class="chip"><i class="dot"></i> Live · free to use</span>
+        <h1>Tell us where.<br><em>We'll plan</em> the rest.</h1>
+        <p class="lead">A free AI travel planner that writes a complete day-by-day itinerary in seconds — maps, budgets, hyperlocal tips, and a digital V-Passport that stamps every trip you take.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:28px">
+          <a class="btn btn-solid" href="https://voyagea.travel" target="_blank" rel="noopener">Open Voyagea <span class="ar">↗</span></a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="vframe" data-vchat>
+        <div class="chat">
+          <div class="vbar"><i></i> voyagea.travel</div>
+          <div class="bub me">Plan me 5 days in Japan — food &amp; culture, mid budget.</div>
+          <div class="bub ai"><span class="typing"><i></i><i></i><i></i></span></div>
+          <div class="bub ai" style="max-width:100%">Done — Kyoto temples, a Tokyo food crawl, and a day trip to Hakone. Budget lands at ¥94,000.
+            <div class="vdays">
+              <span class="vday">Day 1 · Kyoto</span><span class="vday">Day 2 · Nara</span>
+              <span class="vday">Day 3 · Tokyo</span><span class="vday">Day 4 · Hakone</span>
+              <span class="vday">Day 5 · Tokyo</span><span class="vday">V-Passport ✦ stamped</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="shot rv">
+      <div class="bar"><i></i><i></i><i></i><span>voyagea.travel</span></div>
+      <img src="/assets/img/voyagea.jpg" alt="The Voyagea homepage — tell us where, we'll plan the rest" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>01</b> &nbsp;/&nbsp; What it does</span>
+        <h2 class="d2" style="margin-top:20px">Planning, without the tabs.</h2></div>
+      <p class="lead" style="max-width:34ch">Most travel tools give you search results. Voyagea gives you a plan you can actually follow on the day.</p>
+    </div></div>
+    <div class="fgrid rv" style="--ac:#3ecfb2">
+      <article><span class="n">01</span><h3>Say it in a sentence</h3><p>"Five days in Japan, food and culture, mid budget." No forms, no filter soup, no twenty-field wizard.</p></article>
+      <article><span class="n">02</span><h3>Get a real day plan</h3><p>Morning to night, routed sensibly, with travel time between stops and a budget for each day.</p></article>
+      <article><span class="n">03</span><h3>Hyperlocal detail</h3><p>The stall worth the queue, the temple to hit before 8am — the things a friend who's been would tell you.</p></article>
+      <article><span class="n">04</span><h3>Maps &amp; budgets</h3><p>Every day mapped, every day costed, so you know what the trip actually adds up to before you book.</p></article>
+      <article><span class="n">05</span><h3>V-Passport</h3><p>A digital stamp for every place you land. Your travel history, collected in one place.</p></article>
+      <article><span class="n">06</span><h3>Everywhere you are</h3><p>iOS app and web on one account — plan on the laptop, follow it on the phone, offline-friendly.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="kicker"><b>02</b> &nbsp;/&nbsp; Build notes</span>
+      <h2 class="d3" style="margin-top:18px;max-width:16ch">Built, shipped and operated in-house.</h2>
+      <p class="lead" style="margin-top:18px">Voyagea is not a demo. It has real users, real accounts, real purchases and real support — which means the whole unglamorous half of shipping a product is something we've already done end to end.</p>
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-solid" href="https://voyagea.travel" target="_blank" rel="noopener">Try it free <span class="ar">↗</span></a>
+        <a class="tlink" href="/#contact">Want one like it? <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="rv" data-d="1">
+      <ul class="facts">
+        <li><span>Owner</span><b>PTRI Innovation (in-house)</b></li>
+        <li><span>Category</span><b>AI travel platform</b></li>
+        <li><span>Status</span><b style="color:#3ecfb2">Live · public · free</b></li>
+        <li><span>Platforms</span><b>Web + iOS</b></li>
+        <li><span>Stack</span><b>React Native / Expo · Next.js<br>Supabase · Gemini · Vercel</b></li>
+        <li><span>Domain</span><b><a href="https://voyagea.travel" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line-2)">voyagea.travel ↗</a></b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">More from the studio</h2>
+    <div class="rv" data-d="1" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+      <a class="btn btn-ghost" href="/products/dwello/">Dwello <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/products/ptrionix/">Ptrionix <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/projects/websites/">Websites <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script>
+(function(){
+  var box=document.querySelector('[data-vchat]');if(!box)return;
+  var bubs=box.querySelectorAll('.bub'),days=box.querySelectorAll('.vday'),timers=[];
+  var reset=function(){timers.forEach(clearTimeout);timers=[];
+    bubs.forEach(function(b){b.classList.remove('show');b.style.display=''});
+    days.forEach(function(d){d.classList.remove('show')})};
+  var play=function(){
+    reset();
+    timers.push(setTimeout(function(){bubs[0].classList.add('show')},350));
+    timers.push(setTimeout(function(){bubs[1].classList.add('show')},1250));
+    timers.push(setTimeout(function(){bubs[1].style.display='none';bubs[2].classList.add('show')},3100));
+    days.forEach(function(d,i){timers.push(setTimeout(function(){d.classList.add('show')},3500+i*230))});
+    timers.push(setTimeout(play,11000));
+  };
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){es[0].isIntersecting?play():reset()},{threshold:.3}).observe(box)}
+  else{play()}
+})();
+</script>
+</body>
+</html>

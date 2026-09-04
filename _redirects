@@ -1,0 +1,8 @@
+# Netlify / Cloudflare Pages — case-variant safety net for the ReadRush app links
+/ReadRush/Privacy   /ReadRush/privacy   301
+/ReadRush/Support   /ReadRush/support   301
+/RushRage/Privacy   /RushRage/privacy   301
+/RushRage/Support   /RushRage/support   301
+/readrush/*         /ReadRush/:splat    301
+/rushrage/*         /RushRage/:splat    301
+/portfolio          /projects/websites  301

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>Ptrionix — AI-powered ERP for builders · PTRI Innovation</title>
+<meta name="description" content="Ptrionix is the operating system for construction and interior design firms — auto-generated BOQs, materials, finance and site logs on one AI-powered plan. Launching 14 September 2026.">
+<style>
+:root{--ac:#f5b324}
+.bhero{position:relative;overflow:hidden;padding:clamp(112px,13vw,152px) 0 clamp(50px,6vw,80px);
+  background:#0b1018;text-align:center}
+.bhero .grid{position:absolute;inset:0;opacity:.6;
+  background-image:linear-gradient(rgba(245,179,36,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(245,179,36,.07) 1px,transparent 1px);
+  background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 85% 80% at 50% 40%,#000,transparent);
+  mask-image:radial-gradient(ellipse 85% 80% at 50% 40%,#000,transparent)}
+.bhero .wrap{position:relative;z-index:1}
+.bhero h1{font-size:clamp(2.7rem,7.6vw,5.8rem);letter-spacing:-.055em;line-height:.96;margin:22px 0 24px}
+.bhero h1 span{color:var(--ac)}
+.bhero .lead{margin:0 auto}
+.corner{position:absolute;width:16px;height:16px;opacity:.5}
+.corner::before,.corner::after{content:"";position:absolute;background:rgba(245,179,36,.5)}
+.corner::before{left:50%;top:0;width:1px;height:100%;transform:translateX(-50%)}
+.corner::after{top:50%;left:0;height:1px;width:100%;transform:translateY(-50%)}
+.count{display:flex;gap:10px;justify-content:center;margin:44px auto 18px;max-width:560px}
+.count div{flex:1;border:1px solid rgba(246,244,239,.13);border-radius:14px;padding:18px 6px;
+  background:rgba(245,179,36,.05)}
+.count b{display:block;font-size:clamp(1.9rem,5vw,3.2rem);font-weight:500;color:var(--ac);letter-spacing:-.04em;line-height:1}
+.count small{display:block;font-family:var(--f-mono);font-size:9px;letter-spacing:.22em;color:var(--ink-3);
+  margin-top:9px;text-transform:uppercase}
+.ground{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.ground b{color:var(--ac);font-weight:400}
+.mods{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:30px}
+.mods span{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+  border:1px solid rgba(246,244,239,.14);border-radius:7px;padding:8px 13px}
+.sheetrow{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid rgba(246,244,239,.13);margin-top:48px}
+.sheetrow div{padding:16px 12px;border-right:1px solid rgba(246,244,239,.13);text-align:left}
+.sheetrow div:last-child{border-right:0}
+.sheetrow small{display:block;font-family:var(--f-mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.sheetrow b{font-size:.86rem;font-weight:450;display:block;margin-top:5px}
+@media(max-width:780px){.sheetrow{grid-template-columns:1fr 1fr 1fr}.count{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="bhero">
+  <div class="grid" aria-hidden="true"></div>
+  <span class="corner" style="left:24px;top:24px"></span>
+  <span class="corner" style="right:24px;top:24px"></span>
+  <div class="wrap">
+    <p class="crumb" style="justify-content:center;margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><a href="/products/">Products</a><i>/</i><b>Ptrionix</b></p>
+    <span class="chip"><i class="dot a"></i> Project no. 2026-014 · AI-powered ERP for builders</span>
+    <h1>Every project.<br>One <span>blueprint</span>.</h1>
+    <p class="lead" style="max-width:56ch">Ptrionix is the operating system for construction and interior design firms — auto-generate BOQs, track materials, finance and site logs, and run every project from one AI-powered plan instead of six spreadsheets.</p>
+
+    <div class="count" data-countdown="2026-09-14T00:00:00">
+      <div><b data-cd="d">00</b><small>Days</small></div>
+      <div><b data-cd="h">00</b><small>Hrs</small></div>
+      <div><b data-cd="m">00</b><small>Min</small></div>
+      <div><b data-cd="s">00</b><small>Sec</small></div>
+    </div>
+    <p class="ground">Breaking ground — <b>14 September 2026</b></p>
+
+    <div class="mods">
+      <span>Projects</span><span>BOQ</span><span>Materials</span><span>Finance</span>
+      <span>Site logs</span><span>Vendors</span><span>Teams</span>
+    </div>
+
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:36px">
+      <a class="btn btn-solid" href="https://ptrionix.com" target="_blank" rel="noopener">Visit ptrionix.com <span class="ar">↗</span></a>
+      <a class="btn btn-ghost" href="/#contact">Talk to us about it</a>
+    </div>
+
+    <div class="sheetrow">
+      <div><small>Project</small><b>Ptrionix ERP</b></div>
+      <div><small>Client</small><b>Construction &amp; interior firms</b></div>
+      <div><small>Status</small><b>In development</b></div>
+      <div><small>Launch</small><b>14.09.2026</b></div>
+      <div><small>Domain</small><b>ptrionix.com</b></div>
+      <div><small>Rev</small><b>01</b></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>01</b> &nbsp;/&nbsp; The problem</span>
+        <h2 class="d2" style="margin-top:20px;max-width:16ch">Six spreadsheets and a WhatsApp group.</h2></div>
+      <p class="lead" style="max-width:36ch">That's how most builders run a project today. The quantities live in one file, the money in another, and the site knows something neither of them does.</p>
+    </div></div>
+    <div class="fgrid rv" style="--ac:#f5b324">
+      <article><span class="n">01</span><h3>BOQ</h3><p>Bills of quantity generated from the drawing set and priced against your own rate library — not retyped from scratch on every job.</p></article>
+      <article><span class="n">02</span><h3>Materials</h3><p>Every item tracked from purchase order to site delivery, so nobody discovers a shortfall on the morning of the pour.</p></article>
+      <article><span class="n">03</span><h3>Finance</h3><p>Budget, committed spend, invoiced and margin — per project and across the book, in one ledger the office and the owner both trust.</p></article>
+      <article><span class="n">04</span><h3>Site logs</h3><p>Daily logs from the people actually on site: progress, labour, weather, blockers — timestamped and attached to the project.</p></article>
+      <article><span class="n">05</span><h3>Vendors</h3><p>Suppliers, subcontractors, rates and history in one record, so the next quote starts from what the last job really cost.</p></article>
+      <article><span class="n">06</span><h3>Teams</h3><p>Who is on which site, on which day, doing what — assignment and accountability without another group chat.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="kicker"><b>02</b> &nbsp;/&nbsp; Why us</span>
+      <h2 class="d3" style="margin-top:18px;max-width:18ch">We already build for the trades.</h2>
+      <p class="lead" style="margin-top:18px">AK Builds &amp; Plumbing is a PTRI site. Dwello is PTRI hardware. Ptrionix is what happens when a studio that ships software spends enough time around renovation crews to learn where the day actually goes.</p>
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-solid" href="/#contact">Get on the launch list <span class="ar">→</span></a>
+        <a class="tlink" href="/projects/websites/">See our work <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="rv" data-d="1">
+      <div class="shot">
+        <div class="bar"><i></i><i></i><i></i><span>ptrionix.com</span></div>
+        <img src="/assets/img/ptrionix.jpg" alt="Ptrionix launch page — every project, one blueprint" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">More from the studio</h2>
+    <div class="rv" data-d="1" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+      <a class="btn btn-ghost" href="/products/voyagea/">Voyagea <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/products/dwello/">Dwello <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/projects/websites/">Websites <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script>
+document.querySelectorAll('[data-countdown]').forEach(function(box){
+  var target=new Date(box.dataset.countdown).getTime();
+  var f=function(n){return String(Math.max(0,n)).padStart(2,'0')};
+  var tick=function(){var d=Math.max(0,target-Date.now()),s=Math.floor(d/1000);
+    box.querySelector('[data-cd="d"]').textContent=f(Math.floor(s/86400));
+    box.querySelector('[data-cd="h"]').textContent=f(Math.floor(s/3600)%24);
+    box.querySelector('[data-cd="m"]').textContent=f(Math.floor(s/60)%60);
+    box.querySelector('[data-cd="s"]').textContent=f(s%60)};
+  tick();setInterval(tick,1000);
+});
+</script>
+</body>
+</html>

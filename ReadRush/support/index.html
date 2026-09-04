@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>ReadRush Support · PTRI Innovation</title>
+<meta name="description" content="Support for the ReadRush iPhone app by PTRI Innovation — how RSVP reading works, what effective WPM means, resetting progress, deleting your account, and Sign in with Apple troubleshooting.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ptriinnovation.com/ReadRush/support/">
+<style>
+:root{--ac:#f4454f}
+.dochead::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 48% 62% at 80% 26%,rgba(244,69,79,.14),transparent 70%)}
+.mailbox{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+  border:1px solid var(--line-2);border-radius:16px;background:var(--void-2);padding:22px 24px;margin:22px 0 26px}
+.mailbox small{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.mailbox b{font-size:1.12rem;font-weight:550;letter-spacing:-.02em}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;gap:18px;align-items:center;cursor:pointer;
+  padding:19px 0;font-size:1.02rem;font-weight:500;letter-spacing:-.025em;color:var(--ink);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--ac)}
+.faq summary .pm{width:27px;height:27px;border-radius:50%;border:1px solid var(--line-2);flex:none;
+  display:grid;place-items:center;position:relative;transition:.3s var(--ease)}
+.faq summary .pm::before,.faq summary .pm::after{content:"";position:absolute;background:var(--ink-2);transition:.3s var(--ease)}
+.faq summary .pm::before{width:10px;height:1.5px}
+.faq summary .pm::after{width:1.5px;height:10px}
+.faq details[open] summary{color:var(--ink)}
+.faq details[open] summary .pm{background:var(--ac);border-color:var(--ac)}
+.faq details[open] summary .pm::after{transform:rotate(90deg);opacity:0}
+.faq details[open] summary .pm::before{background:#fff}
+.faq .body{padding:0 0 24px;max-width:70ch}
+.faq .body p{color:var(--ink-2);margin-bottom:12px;line-height:1.75}
+.faq .body ul{list-style:none;display:grid;gap:9px;margin-bottom:12px}
+.faq .body li{display:flex;gap:12px;color:var(--ink-2);font-size:.97rem}
+.faq .body li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--line-3);flex:none;margin-top:9px}
+.faq .body strong{color:var(--ink);font-weight:550}
+.faq .body a{color:var(--ink);border-bottom:1px solid var(--line-2)}
+.faq .body a:hover{color:var(--ac);border-color:var(--ac)}
+.faq .body .formula{font-family:var(--f-mono);font-size:.93rem;color:var(--ink);background:var(--void-3);
+  border:1px solid var(--line-2);border-radius:12px;padding:16px 20px;margin:16px 0;overflow-x:auto}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="dochead">
+  <div class="bp" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:26px">
+      <a href="/">PTRI Innovation</a><i>/</i><a href="/ReadRush/">ReadRush</a><i>/</i><b>Support</b>
+    </p>
+    <div class="applock">
+      <img src="/assets/img/readrush-icon.svg" alt="ReadRush app icon">
+      <span><b>ReadRush</b><small>iPhone · Speed reading</small></span>
+    </div>
+    <h1>Support</h1>
+    <p class="lead" style="margin-top:20px">ReadRush helps you practice reading faster without losing comprehension. It presents one centered word at a time, highlights a single red focus letter, and measures both speed and understanding after each challenge.</p>
+    <nav class="docnav">
+      <a href="/ReadRush/support/" aria-current="page">Support</a>
+      <a href="/ReadRush/privacy/">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap docwrap">
+  <aside class="toc">
+      <h5>Contents <span data-toccount>03</span></h5>
+      <div class="railwrap"><ol></ol></div>
+    </aside>
+
+  <main class="prose">
+<div class="qa rv">
+      <a href="#s2"><small>Most asked</small><b>What is effective WPM? <span class="ar">→</span></b><p>Speed multiplied by comprehension — why 800 WPM can score 720.</p></a>
+      <a href="#s2"><small>Account</small><b>Delete my account <span class="ar">→</span></b><p>Profile → Delete account and cloud data, or email us to do it for you.</p></a>
+      <a href="#s2"><small>Troubleshooting</small><b>Sign in with Apple <span class="ar">→</span></b><p>What to check when Apple sign-in will not complete.</p></a>
+      <a href="/ReadRush/privacy/"><small>Legal</small><b>Privacy Policy <span class="ar">→</span></b><p>What we store, what syncs, and how long any of it is kept.</p></a>
+    </div>
+
+    <h2 id="s1" data-toc="Contact support"><span class="n">01</span>Contact support</h2>
+    <p>For help, feedback, privacy questions, or account-deletion assistance, email <strong>info@ptriinnovation.com</strong>.</p>
+    <div class="mailbox">
+      <div><small>Email support</small><b>info@ptriinnovation.com</b></div>
+      <a class="btn btn-solid" href="mailto:info@ptriinnovation.com?subject=ReadRush%20support">Email us <span class="ar">→</span></a>
+    </div>
+    <p>When contacting support, please include:</p>
+    <ul>
+      <li>the device model and iOS version;</li>
+      <li>the ReadRush version and build shown at the bottom of Profile;</li>
+      <li>what you expected to happen;</li>
+      <li>what happened instead; and</li>
+      <li>a screenshot, if it does not contain private information.</li>
+    </ul>
+    <div class="callout"><p>Please never send passwords, Apple authorization codes, Supabase keys, or other login secrets.</p></div>
+
+    <h2 id="s2" data-toc="Frequently asked questions"><span class="n">02</span>Frequently asked questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>What is RSVP reading? <span class="pm"></span></summary>
+        <div class="body"><p>Rapid Serial Visual Presentation displays words one at a time in a fixed location. ReadRush keeps the word centered and highlights a red focus letter to reduce unnecessary eye movement.</p></div>
+      </details>
+      <details>
+        <summary>What is effective WPM? <span class="pm"></span></summary>
+        <div class="body">
+          <p>ReadRush combines reading speed and comprehension:</p>
+          <p class="formula">Effective WPM = actual WPM × comprehension percentage</p>
+          <p>For example, 800 actual WPM with 90% comprehension produces 720 effective WPM. This rewards useful speed rather than simply flashing through words.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How do I change reading speed? <span class="pm"></span></summary>
+        <div class="body"><p>Choose a challenge and adjust the speed between 100 and 1,200 WPM. You can also save a preferred speed in Profile.</p></div>
+      </details>
+      <details>
+        <summary>Can I pause or restart a challenge? <span class="pm"></span></summary>
+        <div class="body"><p>Yes. The reader provides pause, resume, and restart controls. No advertisement can interrupt an active reading session or quiz.</p></div>
+      </details>
+      <details>
+        <summary>What is the baseline test? <span class="pm"></span></summary>
+        <div class="body"><p>The onboarding baseline is a 30-second reading exercise followed by comprehension questions. It establishes an initial effective WPM result.</p></div>
+      </details>
+      <details>
+        <summary>How are personal bests and streaks calculated? <span class="pm"></span></summary>
+        <div class="body"><p>Your personal best is the highest effective WPM achieved in a completed challenge. Your streak reflects consecutive calendar days with a completed reading challenge.</p></div>
+      </details>
+      <details>
+        <summary>Do I need an account? <span class="pm"></span></summary>
+        <div class="body"><p>No. The core app works locally without an account. Connecting Sign in with Apple allows ReadRush to associate and synchronize your profile and reading progress through Supabase.</p></div>
+      </details>
+      <details>
+        <summary>Why did Apple not provide my name or regular email? <span class="pm"></span></summary>
+        <div class="body"><p>Apple normally provides a name only during the first authorization. If you choose Hide My Email, ReadRush receives an Apple private relay address instead of your personal address. You can edit your display name in Profile.</p></div>
+      </details>
+      <details>
+        <summary>How do I reset my progress? <span class="pm"></span></summary>
+        <div class="body"><p>Open <strong>Profile → Reset reading progress</strong>. This clears local reading sessions, scores, personal best, and streak information.</p></div>
+      </details>
+      <details>
+        <summary>How do I delete my account and cloud data? <span class="pm"></span></summary>
+        <div class="body">
+          <p>Open <strong>Profile → Delete account and cloud data</strong>. The app will ask for confirmation, then remove the Supabase authentication account, synchronized ReadRush state, and local reading history.</p>
+          <p>If you cannot access the app, email <a href="mailto:info@ptriinnovation.com"><strong>info@ptriinnovation.com</strong></a> from the address connected to the account and request ReadRush account deletion.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Sign in with Apple is not working <span class="pm"></span></summary>
+        <div class="body">
+          <p>Check that:</p>
+          <ul>
+            <li>the device has an internet connection;</li>
+            <li>you are signed in to iCloud;</li>
+            <li>two-factor authentication is enabled for the Apple Account when Apple requires it;</li>
+            <li>you are using the current TestFlight or App Store build; and</li>
+            <li>Apple’s and Supabase’s services are available.</li>
+          </ul>
+          <p>If the issue continues, send us the error message without including credentials or authorization codes.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Where can I read the Privacy Policy? <span class="pm"></span></summary>
+        <div class="body"><p><a href="/ReadRush/privacy/">https://ptriinnovation.com/ReadRush/privacy</a></p></div>
+      </details>
+    </div>
+
+    <h2 id="s3" data-toc="About ReadRush"><span class="n">03</span>About ReadRush</h2>
+    <p>ReadRush is developed by <strong>PTRI Innovation Private Limited</strong>. It is designed as a focused training tool and does not promise medical, diagnostic, therapeutic, or guaranteed educational outcomes.</p>
+    <address class="addr" style="margin-top:16px">
+      <b>PTRI Innovation Private Limited</b><br>
+      706 Supath Complex, Vijay Cross Road<br>
+      Ahmedabad, Gujarat, India<br>
+      Email: <a href="mailto:info@ptriinnovation.com"><strong>info@ptriinnovation.com</strong></a>
+    </address>
+
+    <hr>
+    <p style="font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">
+      ReadRush is a product of PTRI Innovation Private Limited · Last updated 4 September 2026
+    </p>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script src="/assets/js/doc.js"></script>
+</body>
+</html>

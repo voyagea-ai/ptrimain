@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>Dwello — a desk robot that senses your room · PTRI Innovation</title>
+<meta name="description" content="Dwello is a little desk robot that senses your room with radar — not a camera — and actually reacts to you. Presence, zones and movement, with a face that blinks, talks and runs your room.">
+<meta property="og:title" content="Dwello — a desk robot that senses your room">
+<meta property="og:description" content="Radar, not a camera. Dwello knows you walked in.">
+<style>
+:root{--ac:#38bdf8}
+/* ---- hero ---- */
+.dhero{position:relative;overflow:hidden;padding:clamp(112px,13vw,150px) 0 clamp(50px,6vw,76px)}
+.dhero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 55% at 74% 42%,rgba(56,189,248,.15),transparent 68%),
+             radial-gradient(ellipse 50% 40% at 8% 84%,rgba(56,189,248,.06),transparent 70%)}
+.dhero .wrap{position:relative;z-index:1}
+.dhero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(28px,4vw,60px);align-items:center}
+.dhero h1{font-size:clamp(3rem,8.4vw,6.4rem);letter-spacing:-.055em;line-height:.94;margin:26px 0 24px}
+.dhero h1 span{color:var(--ac)}
+.dstage{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;
+  min-height:clamp(360px,44vw,470px);justify-content:center}
+.dradar{position:absolute;width:min(420px,86%);aspect-ratio:1;border-radius:50%;border:1px solid rgba(56,189,248,.16);z-index:0}
+.dradar::before,.dradar::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(56,189,248,.13);inset:16%}
+.dradar::after{inset:33%}
+.dsweep{position:absolute;width:min(420px,86%);aspect-ratio:1;border-radius:50%;z-index:0;
+  background:conic-gradient(from 0deg,rgba(56,189,248,.15),transparent 26%);animation:spin 5.5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dhost{position:relative;z-index:2;max-width:clamp(210px,26vw,290px)}
+.dcap{position:relative;z-index:2;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-3)}
+.dexp{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;position:relative;z-index:3;max-width:360px}
+.dexp button{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-2);border:1px solid var(--line);background:rgba(8,9,11,.55);border-radius:100px;
+  padding:7px 13px;cursor:pointer;transition:.25s}
+.dexp button:hover{border-color:rgba(56,189,248,.5);color:var(--ink)}
+.dexp button.on{background:rgba(56,189,248,.14);border-color:rgba(56,189,248,.55);color:var(--ac)}
+.dexp-l{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);
+  position:relative;z-index:3}
+@media(max-width:900px){.dhero-grid{grid-template-columns:1fr}.dstage{order:-1}}
+
+/* ---- statement ---- */
+.dsay{text-align:center;padding:clamp(60px,8vw,110px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dsay p{font-size:clamp(1.6rem,3.6vw,3rem);letter-spacing:-.045em;line-height:1.12;font-weight:500;max-width:20ch;margin:0 auto}
+.dsay p span{color:var(--ink-3);display:block}
+
+/* ---- what it does ---- */
+.dcards{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.dcards article{background:var(--void);padding:clamp(22px,2.4vw,30px);transition:background .4s}
+.dcards article:hover{background:var(--void-3)}
+.dcards .ic{width:38px;height:38px;border-radius:11px;border:1px solid rgba(56,189,248,.3);
+  background:rgba(56,189,248,.08);display:grid;place-items:center;margin-bottom:20px;color:var(--ac)}
+.dcards h3{font-size:1.08rem;letter-spacing:-.03em;margin-bottom:9px}
+.dcards p{font-size:.89rem;color:var(--ink-2)}
+@media(max-width:1000px){.dcards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.dcards{grid-template-columns:1fr}}
+
+/* ---- radar sim ---- */
+.simwrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(18px,2.2vw,26px);align-items:start}
+.room{position:relative;border:1px solid var(--line-2);border-radius:18px;background:
+  linear-gradient(160deg,#0c1015,#080a0d);aspect-ratio:4/3;overflow:hidden;cursor:crosshair}
+.room .rgrid{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(rgba(56,189,248,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.07) 1px,transparent 1px);
+  background-size:6.25% 8.33%}
+.zone{position:absolute;border:1px dashed rgba(246,244,239,.14);border-radius:8px;
+  display:flex;align-items:flex-start;padding:7px 9px;transition:background .3s,border-color .3s}
+.zone span{font-family:var(--f-mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.zone.hot{background:rgba(56,189,248,.09);border-color:rgba(56,189,248,.5)}
+.zone.hot span{color:var(--ac)}
+.dw-pin{position:absolute;transform:translate(-50%,-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:5px}
+.dw-pin i{width:14px;height:14px;border-radius:4px;background:#e9eef2;box-shadow:0 0 0 4px rgba(233,238,242,.12)}
+.dw-pin b{font-family:var(--f-mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);font-weight:400}
+.target{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);z-index:5;cursor:grab;touch-action:none}
+.target:active{cursor:grabbing}
+.target::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--ac);
+  box-shadow:0 0 16px 3px rgba(56,189,248,.55)}
+.target::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(56,189,248,.5);
+  animation:tping 2s ease-out infinite}
+@keyframes tping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.1);opacity:0}}
+.beam{position:absolute;inset:0;z-index:3;pointer-events:none}
+.roomhud{position:absolute;left:12px;bottom:11px;z-index:6;font-family:var(--f-mono);font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.roomhud b{color:var(--ac);font-weight:400}
+.panel{border:1px solid var(--line);border-radius:18px;background:var(--void-2);overflow:hidden}
+.panel h4{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;padding:15px 18px;border-bottom:1px solid var(--line)}
+.plist{list-style:none}
+.plist li{display:flex;justify-content:space-between;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);
+  font-size:.87rem}
+.plist li:last-child{border-bottom:0}
+.plist span{color:var(--ink-3);font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding-top:3px}
+.plist b{font-weight:450;text-align:right}
+.plist b.ok{color:var(--teal)}
+.plist b.idle{color:var(--ink-3)}
+.stream{height:172px;overflow-y:auto;padding:12px 18px;font-family:var(--f-mono);font-size:10.5px;line-height:1.9;
+  color:var(--ink-3)}
+.stream div{white-space:nowrap}
+.stream .t{color:var(--ink-3);opacity:.7}
+.stream .e{color:var(--ac)}
+.stream .z{color:var(--ink)}
+@media(max-width:900px){.simwrap{grid-template-columns:1fr}}
+
+/* ---- inside ---- */
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.parts div{background:var(--void);padding:20px 18px}
+.parts b{display:block;font-size:.95rem;font-weight:500;letter-spacing:-.02em}
+.parts small{font-family:var(--f-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);
+  display:block;margin-bottom:9px}
+
+/* ---- early access ---- */
+.ea{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px)}
+.field label{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:8px}
+.field label em{font-style:normal;color:var(--ink-3);opacity:.7;text-transform:none;letter-spacing:0;font-family:var(--f-sans)}
+.field input,.field select,.field textarea{width:100%;background:var(--void-2);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;font-size:.95rem;color:var(--ink);transition:border-color .3s,background .3s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--ac);background:var(--void-3)}
+.field select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2366645d' stroke-width='1.6'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center}
+.form{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;gap:11px;align-items:flex-start;font-size:.9rem;color:var(--ink-2);cursor:pointer}
+.check input{width:17px;height:17px;accent-color:var(--ac);margin-top:2px;flex:none}
+.fnote{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-3);line-height:1.7}
+@media(max-width:860px){.ea{grid-template-columns:1fr}.f2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="dhero">
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:26px">
+      <a href="/">PTRI Innovation</a><i>/</i><a href="/products/">Products</a><i>/</i><b>Dwello</b>
+    </p>
+    <div class="dhero-grid">
+      <div>
+        <span class="chip"><i class="dot c"></i> Prototype · building now</span>
+        <h1>Meet<br><span>Dwello.</span></h1>
+        <p class="lead">A little desk robot that senses your room with radar — not a camera — and actually reacts to you.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:30px">
+          <a class="btn btn-solid" href="#early">Join early access <span class="ar">→</span></a>
+          <a class="btn btn-ghost" href="#radar">See what it sees</a>
+        </div>
+        <p class="small" style="margin-top:24px;font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)">
+          A PTRI Innovation product · built as AirTrace · Windsor, Canada
+        </p>
+      </div>
+      <div class="dstage">
+        <div class="dradar" aria-hidden="true"></div>
+        <div class="dsweep" aria-hidden="true"></div>
+        <div class="dhost" data-dwello-face></div>
+        <p class="dcap">Click Dwello · it reacts</p>
+        <p class="dexp-l">Expressions</p>
+        <div class="dexp" data-dwello-exp></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STATEMENT ============ -->
+<section class="dsay">
+  <div class="wrap">
+    <p class="rv">Alexa waits for you to speak.<span>Dwello already knows you walked in.</span></p>
+  </div>
+</section>
+
+<!-- ============ WHAT IT DOES ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>01</b> &nbsp;/&nbsp; What it does</span>
+        <h2 class="d2" style="margin-top:20px">Five things, done properly.</h2></div>
+      <p class="lead" style="max-width:34ch">No app-first gimmicks. Dwello is useful the moment it's plugged in and the Wi-Fi is off.</p>
+    </div></div>
+    <div class="dcards rv">
+      <article>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12v.01M5 12a7 7 0 0114 0M1.5 12a10.5 10.5 0 0121 0"/></svg></div>
+        <h3>Senses the room</h3>
+        <p>Radar picks up presence, movement and position — even when you're sitting still.</p>
+      </article>
+      <article>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3l18 18M9.9 5.1A9 9 0 0121 12a8.9 8.9 0 01-2 5.6M6.6 6.6A9 9 0 003 12a9 9 0 009 9 8.9 8.9 0 004.4-1.2"/></svg></div>
+        <h3>No camera. Ever.</h3>
+        <p>No lens, no video, no images. Nothing about your room leaves your room.</p>
+      </article>
+      <article>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10v1M15 10v1M8.5 14.5a5 5 0 007 0"/></svg></div>
+        <h3>Has a face</h3>
+        <p>Blinks, looks around, gets sleepy when you go, wakes up when you're back.</p>
+      </article>
+      <article>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v10M9 6.5a3 3 0 016 0v4a3 3 0 01-6 0zM5 11a7 7 0 0014 0M12 18v3"/></svg></div>
+        <h3>Talks back</h3>
+        <p>Greets you, answers you, and tells you to stand up once in a while.</p>
+      </article>
+      <article>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18h6M10 21h4M12 3a6 6 0 013.7 10.7c-.5.4-.7 1-.7 1.6H9c0-.6-.2-1.2-.7-1.6A6 6 0 0112 3z"/></svg></div>
+        <h3>Runs your room</h3>
+        <p>Walk in and the lights come on. Leave and everything powers down.</p>
+      </article>
+    </div>
+    <p class="small" style="margin-top:22px;text-align:center">Feels touch, too — tap it, pet it, poke it, and it reacts.</p>
+  </div>
+</section>
+
+<!-- ============ RADAR SIM ============ -->
+<section class="sec" id="radar">
+  <div class="ticks" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>02</b> &nbsp;/&nbsp; Live simulation</span>
+        <h2 class="d2" style="margin-top:20px">This is what it <em>sees</em>.</h2></div>
+      <p class="lead" style="max-width:38ch">Drag the dot around the room. No camera involved — just presence, zones and movement, the way the radar reports them.</p>
+    </div></div>
+
+    <div class="simwrap rv">
+      <div class="room" id="room" tabindex="0" aria-label="Room simulation — drag the target dot">
+        <div class="rgrid" aria-hidden="true"></div>
+        <div class="zone" data-zone="Door"    style="left:0%;top:38%;width:15%;height:24%"><span>Door</span></div>
+        <div class="zone" data-zone="Bed"     style="left:6%;top:5%;width:31%;height:29%"><span>Bed</span></div>
+        <div class="zone" data-zone="Desk"    style="left:62%;top:6%;width:33%;height:28%"><span>Desk</span></div>
+        <div class="zone" data-zone="TV area" style="left:6%;top:66%;width:29%;height:29%"><span>TV area</span></div>
+        <div class="zone" data-zone="Couch"   style="left:60%;top:62%;width:34%;height:32%"><span>Couch</span></div>
+        <svg class="beam" id="beam" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true">
+          <line id="beamline" x1="79" y1="15" x2="8" y2="37.5"
+                stroke="rgba(56,189,248,.42)" stroke-width=".28" stroke-dasharray="1.4 1.2"/>
+        </svg>
+        <div class="dw-pin" style="left:79%;top:20%"><i></i><b>Dwello</b></div>
+        <div class="target" id="target" style="left:8%;top:50%" role="slider"
+             aria-label="Person position" tabindex="0"></div>
+        <p class="roomhud">Drag the dot · arrow keys work too &nbsp;·&nbsp; <b id="hudTargets">1 target</b></p>
+      </div>
+
+      <div style="display:grid;gap:16px">
+        <div class="panel">
+          <h4>Live room state</h4>
+          <ul class="plist">
+            <li><span>Room status</span><b id="stStatus" class="idle">Empty</b></li>
+            <li><span>People detected</span><b id="stPeople">0</b></li>
+            <li><span>Current zone</span><b id="stZone">Door</b></li>
+            <li><span>Distance from Dwello</span><b id="stDist">—</b></li>
+            <li><span>Dwello</span><b id="stOnline" class="ok">Online</b></li>
+            <li><span>Last entry</span><b id="stEntry">—</b></li>
+            <li><span>Presence duration</span><b id="stDur">—</b></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>Event stream</h4>
+          <div class="stream" id="stream"><div>Waiting for radar events…</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="small" style="margin-top:20px;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">
+      Simulation for the web — the shipping firmware reports the same fields from an LD2450-class mmWave sensor.
+    </p>
+  </div>
+</section>
+
+<!-- ============ INSIDE ============ -->
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>03</b> &nbsp;/&nbsp; Inside</span>
+        <h2 class="d3" style="margin-top:18px">What's in the shell.</h2></div>
+      <p class="small" style="max-width:36ch">Built for makers. In development — the design and features will change before launch.</p>
+    </div></div>
+    <div class="parts rv">
+      <div><small>Compute</small><b>ESP32-C6</b></div>
+      <div><small>Sensing</small><b>mmWave radar</b></div>
+      <div><small>Display</small><b>1.28″ round LCD</b></div>
+      <div><small>Input</small><b>Far-field mic</b></div>
+      <div><small>Output</small><b>Speaker</b></div>
+      <div><small>Touch</small><b>Capacitive touch</b></div>
+      <div><small>Power &amp; data</small><b>USB-C</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EARLY ACCESS ============ -->
+<section class="sec" id="early">
+  <div class="wrap ea">
+    <div class="rv">
+      <span class="kicker"><b>04</b> &nbsp;/&nbsp; Early access</span>
+      <h2 class="d2" style="margin-top:20px;max-width:11ch">Be first to meet <em>Dwello</em>.</h2>
+      <p class="lead" style="margin-top:20px">Drop your email for build updates, demo clips, and a chance to test Dwello before anyone else.</p>
+      <p class="small" style="margin-top:18px">We respect your privacy. No spam, and you can unsubscribe from any email.</p>
+      <div style="margin-top:30px"><a class="tlink" href="/products/">Back to all products <span class="ar">→</span></a></div>
+    </div>
+    <form class="form rv" data-d="1" id="eaForm">
+      <div class="f2">
+        <div class="field"><label for="dn">Name <em>optional</em></label><input id="dn" name="name" placeholder="Your name"></div>
+        <div class="field"><label for="de">Email <em>required</em></label><input id="de" name="email" type="email" required placeholder="you@example.com"></div>
+      </div>
+      <div class="f2">
+        <div class="field"><label for="dw">Where would you use Dwello?</label>
+          <select id="dw" name="where">
+            <option>Home office</option><option>Bedroom</option><option>Living room</option>
+            <option>Studio / workshop</option><option>Lab / makerspace</option><option>Somewhere else</option>
+          </select>
+        </div>
+        <div class="field"><label for="dc">Company <em>optional</em></label><input id="dc" name="company" placeholder="Company"></div>
+      </div>
+      <label class="check"><input type="checkbox" name="tester" checked>
+        Yes, I want to help test the prototype and send feedback.</label>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:6px">
+        <button class="btn btn-volt" type="submit" style="background:var(--ac);color:#04121b">Join early access <span class="ar">→</span></button>
+        <p class="fnote" id="eaNote">You can opt out any time.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">Want something like this built?</h2>
+    <p class="lead rv" data-d="1" style="margin:16px auto 26px">Dwello is a PTRI Innovation product — hardware, firmware, face, voice and cloud, all in-house. We do the same for clients.</p>
+    <a class="btn btn-solid rv" data-d="2" href="/#contact">Talk to the studio <span class="ar">→</span></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script src="/assets/js/dwello-face.js"></script>
+<script src="/assets/js/room-sim.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('eaForm');if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f),g=function(k){return (d.get(k)||'').toString().trim()};
+    var body='Name: '+(g('name')||'—')+'\nEmail: '+g('email')+'\nCompany: '+(g('company')||'—')
+      +'\nWhere: '+g('where')+'\nHappy to test the prototype: '+(d.get('tester')?'yes':'no');
+    window.location.href='mailto:info@ptriinnovation.com?subject='
+      +encodeURIComponent('Dwello early access — '+(g('name')||g('email')))+'&body='+encodeURIComponent(body);
+    document.getElementById('eaNote').innerHTML='Your mail app should be opening. If it didn’t, write to <a href="mailto:info@ptriinnovation.com" style="color:var(--ac)">info@ptriinnovation.com</a>.';
+  });
+})();
+</script>
+</body>
+</html>

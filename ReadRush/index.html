@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>ReadRush — speed reading for iPhone · PTRI Innovation</title>
+<meta name="description" content="ReadRush is a speed-reading training app for iPhone by PTRI Innovation. One word at a time, a red focus letter, and a score that combines speed with comprehension.">
+<link rel="canonical" href="https://ptriinnovation.com/ReadRush/">
+<style>
+:root{--ac:#f4454f}
+.rhero{position:relative;overflow:hidden;padding:clamp(112px,13vw,152px) 0 clamp(46px,5vw,70px)}
+.rhero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 55% 55% at 72% 38%,rgba(244,69,79,.15),transparent 68%),
+             radial-gradient(ellipse 40% 40% at 10% 85%,rgba(244,69,79,.06),transparent 70%)}
+.rhero .wrap{position:relative;z-index:1}
+.rhero h1{font-size:clamp(2.8rem,7.6vw,5.6rem);letter-spacing:-.055em;line-height:.96;margin:22px 0 22px}
+.rhero h1 em{color:var(--ac)}
+.icon-lg{width:clamp(96px,11vw,124px);height:auto;border-radius:22px;
+  box-shadow:0 26px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06);margin-bottom:24px}
+/* phone frame with the live RSVP reader */
+.phone{position:relative;margin:0 auto;width:min(300px,84%);aspect-ratio:9/18.6;border-radius:42px;
+  background:linear-gradient(160deg,#1b1f25,#0a0c0f);padding:10px;
+  box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.07)}
+.screen{position:relative;width:100%;height:100%;border-radius:33px;overflow:hidden;
+  background:radial-gradient(ellipse 90% 55% at 50% 18%,#15181e,#08090b);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:22px}
+.notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:76px;height:20px;
+  border-radius:12px;background:#000;z-index:3}
+.sbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;
+  padding:16px 22px 0;font-family:var(--f-mono);font-size:8.5px;letter-spacing:.1em;color:var(--ink-3);z-index:2}
+.word{font-size:clamp(1.5rem,4.6vw,2.05rem);font-weight:600;letter-spacing:-.035em;line-height:1;
+  min-height:1.15em;display:flex;align-items:center;white-space:nowrap}
+.word span.f{color:var(--ac)}
+.guide{position:relative;width:70%;height:1px;background:rgba(246,244,239,.14)}
+.guide::before{content:"";position:absolute;left:50%;top:-6px;width:2px;height:13px;border-radius:1px;
+  background:var(--ac);transform:translateX(-50%)}
+.rbar{position:absolute;left:22px;right:22px;bottom:74px;height:3px;border-radius:2px;background:rgba(246,244,239,.1)}
+.rbar i{display:block;height:100%;border-radius:2px;background:var(--ac);width:0;transition:width .14s linear}
+.rstats{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:space-around;
+  font-family:var(--f-mono);font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.rstats b{display:block;font-family:var(--f-sans);font-size:.95rem;font-weight:550;color:var(--ink);
+  letter-spacing:-.02em;margin-bottom:3px}
+.rstats b.ac{color:var(--ac)}
+@media(max-width:900px){.phone{margin-top:34px}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="rhero">
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><b>ReadRush</b></p>
+    <div class="split">
+      <div>
+        <img class="icon-lg" src="/assets/img/readrush-icon.svg" alt="ReadRush app icon" width="124" height="124">
+        <span class="chip"><i class="dot" style="background:#f4454f;box-shadow:0 0 0 0 rgba(244,69,79,.55)"></i> iPhone · speed reading</span>
+        <h1>Read faster.<br><em>Actually</em> remember it.</h1>
+        <p class="lead">ReadRush shows one word at a time at the pace you choose, holds a red focus letter still in the centre, then asks comprehension questions — so your score rewards understanding, not just flicking through words.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:28px">
+          <a class="btn btn-solid" href="/ReadRush/support/">Support <span class="ar">→</span></a>
+          <a class="btn btn-ghost" href="/ReadRush/privacy/">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <span class="notch"></span>
+          <div class="sbar"><span>9:41</span><span>ReadRush</span></div>
+          <div class="word" id="word"></div>
+          <div class="guide"></div>
+          <div class="rbar"><i id="rbar"></i></div>
+          <div class="rstats">
+            <span><b>420</b>Target wpm</span>
+            <span><b>90%</b>Comp.</span>
+            <span><b class="ac">378</b>Effective</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="fgrid rv" style="--ac:#f4454f">
+      <article><span class="n">01</span><h3>One word, one place</h3><p>Rapid Serial Visual Presentation keeps every word centred, so your eyes stop travelling back and forth across the line.</p></article>
+      <article><span class="n">02</span><h3>Effective WPM</h3><p>Speed multiplied by comprehension. 800&nbsp;WPM at 90% understanding scores 720 — flicking through words earns you nothing.</p></article>
+      <article><span class="n">03</span><h3>100–1,200 WPM</h3><p>Set the pace per challenge or save a preferred speed. Pause, resume and restart whenever you need to.</p></article>
+      <article><span class="n">04</span><h3>Baseline test</h3><p>A 30-second read plus comprehension questions during onboarding sets your starting effective WPM.</p></article>
+      <article><span class="n">05</span><h3>Streaks &amp; personal bests</h3><p>A daily challenge, consecutive-day streaks and a personal best, so practice has something to push against.</p></article>
+      <article><span class="n">06</span><h3>Account optional</h3><p>The whole app works with no account at all. Sign in with Apple only if you want progress to follow you across devices.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line)">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    <a class="card rv" href="/ReadRush/support/" style="padding:26px 28px">
+      <span class="kicker" style="margin-bottom:16px"><b>01</b> &nbsp;/&nbsp; Help</span>
+      <h3 class="d4" style="margin:14px 0 8px">Support &amp; FAQ</h3>
+      <p class="small">RSVP, effective WPM, resetting progress, deleting your account, Sign in with Apple.</p>
+      <span class="tlink" style="margin-top:18px">Open support <span class="ar">→</span></span>
+    </a>
+    <a class="card rv" data-d="1" href="/ReadRush/privacy/" style="padding:26px 28px">
+      <span class="kicker" style="margin-bottom:16px"><b>02</b> &nbsp;/&nbsp; Legal</span>
+      <h3 class="d4" style="margin:14px 0 8px">Privacy Policy</h3>
+      <p class="small">What stays on your device, what syncs to your account, and how to delete all of it.</p>
+      <span class="tlink" style="margin-top:18px">Read the policy <span class="ar">→</span></span>
+    </a>
+    <a class="card rv" data-d="2" href="mailto:info@ptriinnovation.com?subject=ReadRush%20support" style="padding:26px 28px">
+      <span class="kicker" style="margin-bottom:16px"><b>03</b> &nbsp;/&nbsp; Contact</span>
+      <h3 class="d4" style="margin:14px 0 8px">Email the team</h3>
+      <p class="small">info@ptriinnovation.com — support, privacy requests and account deletion, all answered by us.</p>
+      <span class="tlink" style="margin-top:18px">Write to us <span class="ar">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+<script>
+/* tiny RSVP demo — the same idea as the app: one word, one fixed focus letter */
+(function(){
+  var el=document.getElementById('word'),bar=document.getElementById('rbar');
+  if(!el)return;
+  var words=('Reading faster is not about skipping words — it is about removing the time '+
+             'your eyes waste travelling back across a line.').split(' ');
+  var i=0,timer=null;
+  var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var show=function(){
+    var w=words[i%words.length];
+    var f=Math.max(0,Math.min(w.length-1,Math.floor((w.length-1)/2)));
+    el.innerHTML=w.slice(0,f)+'<span class="f">'+w[f]+'</span>'+w.slice(f+1);
+    if(bar)bar.style.width=((i%words.length)/(words.length-1)*100).toFixed(1)+'%';
+    i++;
+  };
+  show();
+  if(RM)return;
+  var start=function(){if(!timer)timer=setInterval(show,143)};   /* ~420 wpm */
+  var stop=function(){clearInterval(timer);timer=null};
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){(es[0].isIntersecting&&!document.hidden)?start():stop()},{threshold:.25}).observe(el);
+  }else{start()}
+  document.addEventListener('visibilitychange',function(){document.hidden&&stop()});
+})();
+</script>
+</body>
+</html>

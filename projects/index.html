@@ -10,31 +10,26 @@
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
 
-<title>Delete your Beamfall account — PTRI Innovation</title>
-<meta name="description" content="How to delete your Beamfall account and every score attached to it — from inside the app in about ten seconds, or by email. What is deleted and what is kept.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://ptriinnovation.com/delete-account/">
+<title>Projects — everything PTRI Innovation has built</title>
+<meta name="description" content="Projects by PTRI Innovation: websites for AK Builds & Plumbing, Keri in Windsor, Voyagea, Ptrionix and Skyvage, plus in-house products, AI platforms and hardware.">
 <style>
-:root{--ac:#a855f7}
-.dochead::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 48% 62% at 80% 26%,rgba(168,85,247,.13),transparent 70%)}
-.dtable{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:22px 0 26px}
-.dtable div{display:grid;grid-template-columns:190px minmax(0,1fr);gap:0;border-bottom:1px solid var(--line)}
-.dtable div:last-child{border-bottom:0}
-.dtable dt{padding:16px 20px;font-size:.92rem;font-weight:550;color:var(--ink);
-  border-right:1px solid var(--line);background:var(--void-2)}
-.dtable dd{padding:16px 20px;font-size:.93rem;color:var(--ink-2);line-height:1.65}
-.dtable dd b{color:var(--ac);font-weight:550}
-.dtable dd b.keep{color:var(--teal)}
-.steps{list-style:none;counter-reset:st;display:grid;gap:0;border-top:1px solid var(--line);margin:18px 0 22px}
-.steps li{counter-increment:st;display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;
-  padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.97rem;line-height:1.65}
-.steps li::before{content:counter(st,decimal-leading-zero);font-family:var(--f-mono);font-size:10px;
-  letter-spacing:.14em;color:var(--ac);padding-top:5px}
-.steps kbd{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.06em;color:var(--ink);
-  border:1px solid var(--line-2);border-radius:6px;padding:2px 7px;background:var(--void-3)}
-@media(max-width:620px){.dtable div{grid-template-columns:1fr}
-  .dtable dt{border-right:0;border-bottom:1px solid var(--line)}}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,24px)}
+.cat{position:relative;display:block;border:1px solid var(--line);border-radius:20px;padding:clamp(26px,3vw,38px);
+  background:var(--void-2);overflow:hidden;transition:border-color .4s var(--ease),transform .4s var(--ease),background .4s}
+.cat:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--void-3)}
+.cat .n{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-3)}
+.cat h3{font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.045em;margin:16px 0 12px}
+.cat p{color:var(--ink-2);font-size:.96rem;max-width:44ch}
+.cat .cnt{position:absolute;right:clamp(24px,3vw,36px);top:clamp(24px,3vw,34px);font-family:var(--f-mono);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  border:1px solid var(--line-2);border-radius:100px;padding:6px 12px}
+.cat .go{margin-top:26px;display:inline-flex;align-items:center;gap:9px;font-size:.93rem;color:var(--ink)}
+.cat .go .ar{transition:transform .35s var(--ease)}
+.cat:hover .go .ar{transform:translateX(5px)}
+.strip{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.strip span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:6px;padding:6px 10px}
+@media(max-width:820px){.cats{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -53,7 +48,6 @@
         <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
         <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
         <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
-        <a href="/support/#beamfall"><i style="background:#a855f7"></i><div><span>Beamfall</span><small>Free beam-routing puzzle — iPhone &amp; Android</small></div></a>
         <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
       </div>
     </div>
@@ -79,68 +73,63 @@
   <a class="sub" href="/products/dwello/">— Dwello</a>
   <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
   <a class="sub" href="/ReadRush/">— ReadRush</a>
-  <a class="sub" href="/support/#beamfall">— Beamfall</a>
   <a href="/projects/websites/">Websites <small>02</small></a>
   <a href="#services">Services <small>03</small></a>
   <a href="#studio">Studio <small>04</small></a>
   <a href="#contact">Contact <small>05</small></a>
 </div>
 
-<header class="dochead">
+<header class="phero">
   <div class="bp" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="crumb" style="margin-bottom:26px">
-      <a href="/">PTRI Innovation</a><i>/</i><b>Beamfall — Account deletion</b>
-    </p>
-    <h1>Delete your Beamfall account</h1>
-    <p class="lead" style="margin-top:22px">Beamfall is published by PTRI Innovation Pvt. Ltd. You can delete your account and every score attached to it from inside the app, in about ten seconds, with no email and no waiting.</p>
-    <div class="docmeta">
-      <div><small>App</small><b>Beamfall</b></div>
-      <div><small>Platforms</small><b>iOS &amp; Android</b></div>
-      <div><small>Timing</small><b>Deletion is immediate</b></div>
-      <div><small>Contact</small><b><a href="mailto:info@ptriinnovation.com" style="border-bottom:1px solid var(--line-2)">info@ptriinnovation.com</a></b></div>
-    </div>
+    <p class="crumb" style="margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><b>Projects</b></p>
+    <h1 class="d1" style="max-width:14ch">Everything we've <em>shipped</em>.</h1>
+    <p class="lead" style="margin-top:26px">Client sites, in-house products, AI platforms and one small robot. Pick a shelf.</p>
   </div>
 </header>
 
-<div class="wrap docwrap">
-  <aside class="toc"><h5>Contents <span data-toccount>04</span></h5><div class="railwrap"><ol></ol></div></aside>
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="cats">
+      <a class="cat rv" href="/projects/websites/">
+        <span class="n">01</span><span class="cnt">5 live</span>
+        <h3>Websites</h3>
+        <p>Marketing sites, brand experiences and commerce front-ends — for clients across Windsor and Ahmedabad, and for our own products.</p>
+        <div class="strip"><span>akbuildsandplumbing.ca</span><span>keriinwindsor.ca</span><span>voyagea.travel</span><span>ptrionix.com</span><span>skyvageweb.vercel.app</span></div>
+        <span class="go">Open the index <span class="ar">→</span></span>
+      </a>
+      <a class="cat rv" data-d="1" href="/products/">
+        <span class="n">02</span><span class="cnt">3 products</span>
+        <h3>Products</h3>
+        <p>The things we build for ourselves — an AI travel planner in production, a radar desk robot on the bench, and an ERP counting down to launch.</p>
+        <div class="strip"><span>Voyagea</span><span>Dwello</span><span>Ptrionix</span></div>
+        <span class="go">See the products <span class="ar">→</span></span>
+      </a>
+      <a class="cat rv" data-d="2" href="/#services">
+        <span class="n">03</span><span class="cnt">4 disciplines</span>
+        <h3>Platforms &amp; AI</h3>
+        <p>Custom SaaS, internal tooling, LLM pipelines and the reliability work that decides whether an AI feature survives real users.</p>
+        <div class="strip"><span>LLM pipelines</span><span>RAG</span><span>APIs</span><span>Cloud &amp; DevOps</span></div>
+        <span class="go">What we do <span class="ar">→</span></span>
+      </a>
+      <a class="cat rv" data-d="3" href="/products/dwello/">
+        <span class="n">04</span><span class="cnt">1 prototype</span>
+        <h3>Hardware</h3>
+        <p>When the product needs a body: ESP32 firmware, mmWave sensing, a round LCD face and a voice. Dwello is the one you can play with today.</p>
+        <div class="strip"><span>ESP32-C6</span><span>mmWave radar</span><span>Embedded UI</span></div>
+        <span class="go">Meet Dwello <span class="ar">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <main class="prose">
-    <h2 id="s1" data-toc="From inside the app"><span class="n">01</span>From inside the app</h2>
-    <p>This is the fastest route and it deletes everything immediately.</p>
-    <ol class="steps">
-      <li>Open <strong>Beamfall</strong>.</li>
-      <li>On the title screen, tap <kbd>LEADERBOARD</kbd>.</li>
-      <li>Make sure you are signed in — the screen shows <kbd>SIGNED IN AS</kbd> and your name.</li>
-      <li>Scroll to the bottom and tap <kbd>DELETE ACCOUNT</kbd>.</li>
-      <li>Confirm by tapping <kbd>Delete</kbd>. Your account and all scores are removed straight away.</li>
-    </ol>
-
-    <h2 id="s2" data-toc="By email"><span class="n">02</span>By email</h2>
-    <p>If you have lost access to the device or cannot sign in, email <a href="mailto:info@ptriinnovation.com?subject=Beamfall%20account%20deletion"><strong>info@ptriinnovation.com</strong></a> from the address you signed in with, with the subject <strong>Beamfall account deletion</strong>.</p>
-    <p>We will confirm and delete the account within <strong>30 days</strong>, and in practice far sooner.</p>
-
-    <h2 id="s3" data-toc="What is deleted, and what is kept"><span class="n">03</span>What is deleted, and what is kept</h2>
-    <dl class="dtable">
-      <div><dt>Your account</dt><dd><b>Deleted permanently.</b> The sign-in record is removed, along with the email address associated with it.</dd></div>
-      <div><dt>Display name</dt><dd><b>Deleted permanently.</b> Your entry disappears from the global leaderboard immediately.</dd></div>
-      <div><dt>Scores and level results</dt><dd><b>Deleted permanently.</b> Every level result — taps, diamonds, whether a hint was used — is removed.</dd></div>
-      <div><dt>Notification token</dt><dd><b>Deleted permanently.</b> We can no longer send you notifications.</dd></div>
-      <div><dt>Progress on your own device</dt><dd><b class="keep">Kept.</b> It never leaves your phone unless you sign in, so deleting the account does not cost you your levels. You can carry on playing exactly as before.</dd></div>
-    </dl>
-    <div class="callout"><p>Nothing is retained after deletion beyond what the law requires of us, and there is no backup copy held for a retention period. We do not sell or share any of this data with third parties, and we never have.</p></div>
-
-    <h2 id="s4" data-toc="You may not need an account at all"><span class="n">04</span>You may not need an account at all</h2>
-    <p>Beamfall is complete without one. All 100 levels, all three hints, and every setting work with no account and no sign-in. An account exists only so your name can appear on the global leaderboard and so your progress can follow you to another device. If you never sign in, nothing about you is transmitted or stored anywhere.</p>
-    <p>Full detail is in our <a href="/privacy/">privacy policy</a>, and other questions are answered on the <a href="/support/">support page</a>.</p>
-
-    <hr>
-    <p style="font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">
-      Beamfall is published by PTRI Innovation Pvt. Ltd.
-    </p>
-  </main>
-</div>
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">Want to be next on this page?</h2>
+    <p class="lead rv" data-d="1" style="margin:16px auto 26px">If you're building something that deserves this level of care, we'd like to hear about it.</p>
+    <a class="btn btn-solid rv" data-d="2" href="/#contact">Start a project <span class="ar">→</span></a>
+  </div>
+</section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="foot">
@@ -186,6 +175,5 @@
   </div>
 </footer>
 <script src="/assets/js/site.js"></script>
-<script src="/assets/js/doc.js"></script>
 </body>
 </html>
