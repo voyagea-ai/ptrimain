@@ -192,10 +192,10 @@
           <h3>Beamfall collects nothing unless you sign in.</h3>
           <p>Every level, every hint and all of your progress work entirely on your device, offline,
             with no account. Used that way the game makes no network requests at all and we receive
-            nothing whatsoever about you. There is no advertising, no analytics and no tracking in
-            any version of the app.</p>
+            nothing whatsoever about you. There are no analytics SDKs and no tracking of any kind unless you allow it for ads,
+            which you can remove outright with a single purchase.</p>
           <div class="nolist">
-            <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#3ecfb2" stroke-width="1.6"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No advertising or tracking</div>
+            <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#3ecfb2" stroke-width="1.6"><path d="M3 8l3.2 3.2L13 4.5"/></svg>Ads only &mdash; removable, one payment</div>
             <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#3ecfb2" stroke-width="1.6"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No analytics SDKs</div>
             <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#3ecfb2" stroke-width="1.6"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No in-app purchases</div>
             <div><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#3ecfb2" stroke-width="1.6"><path d="M3 8l3.2 3.2L13 4.5"/></svg>No location, camera or contacts</div>
@@ -238,6 +238,38 @@
           <strong>on your device</strong> and need no account and no network &mdash; we are not told
           whether you received one or opened it. You are asked for permission once, after you have
           played a while, and declining costs you nothing.</p>
+
+        <h3>Advertising</h3>
+        <p>From version 1.2, Beamfall shows occasional full-screen ads between levels &mdash; never
+          during one, and never in your first few levels. Ads are supplied by <strong>Google
+          AdMob</strong>. This is the only part of Beamfall that shares anything with a third party.</p>
+        <div class="tbl">
+          <div><b>Advertising identifier</b><span>A resettable device identifier (the IDFA on iPhone, the Advertising ID on Android) that lets Google decide which ad to show and count whether it was seen</span></div>
+          <div><b>Ad interaction</b><span>Whether an ad was shown, viewed or tapped</span></div>
+          <div><b>Approximate location</b><span>Derived from your IP address by Google, at country or city level. We are never given your precise location</span></div>
+        </div>
+        <p>Google acts as an independent controller of this data, not as our processor. What they do
+          with it is governed by <a href="https://policies.google.com/technologies/partner-sites">Google&rsquo;s
+          own privacy policy</a>. We never receive it, and we never combine it with your leaderboard
+          account.</p>
+
+        <h3>Your choices about ads</h3>
+        <p><strong>In the EEA, the UK and Switzerland</strong> you are shown a consent form the first
+          time the game starts, before any ad is requested. If you decline, no personalised ads are
+          requested. You can change your answer at any time from the consent link in the app.</p>
+        <p><strong>On iPhone</strong> you are additionally asked, through Apple&rsquo;s own App
+          Tracking Transparency prompt, whether Beamfall may track you across apps. Declining is
+          honoured in full: you still get ads, but non-personalised ones. You can change it later in
+          iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking.</p>
+        <p><strong>Anyone</strong> can remove ads entirely with a single one-off purchase inside the
+          game. It is not a subscription. Once bought, no advertising SDK is started at all, no
+          advertising identifier is read, and you are not asked for tracking permission.</p>
+
+        <h3>The Remove Ads purchase</h3>
+        <p>Payment is handled entirely by Apple or Google. <strong>We never see or receive your card
+          details, and we store nothing about the purchase on our own servers.</strong> Whether you
+          own it is answered by the App Store or Play Store from your Apple or Google account, which
+          is also how <em>Restore Purchase</em> works after reinstalling.</p>
 
         <h3>Who processes it</h3>
         <p>Leaderboard data is stored with <strong>Supabase</strong>, a hosted database provider acting
