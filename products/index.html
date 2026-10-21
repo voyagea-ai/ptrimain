@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
 
-<title>Products — Voyagea, Dwello &amp; Ptrionix · PTRI Innovation</title>
-<meta name="description" content="The products PTRI Innovation builds and runs in-house: Voyagea, the AI travel planner; Dwello, a radar-sensing desk robot; and Ptrionix, an AI-powered ERP for construction and interior design firms.">
+<title>Products — ChargeBuddy, Voyagea, Dwello &amp; Ptrionix · PTRI Innovation</title>
+<meta name="description" content="The products PTRI Innovation builds and runs in-house: ChargeBuddy, the EV charging map for India; Voyagea, the AI travel planner; Dwello, a radar-sensing desk robot; and Ptrionix, an AI-powered ERP for construction and interior design firms.">
 <style>
 .pcard{border-top:1px solid var(--line);padding:clamp(38px,5vw,64px) 0;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(26px,4vw,60px);align-items:center}
@@ -47,6 +47,14 @@
 .bfgrid .beam{animation:bfrun 1.8s linear infinite;filter:drop-shadow(0 0 6px rgba(168,85,247,.55))}
 @keyframes bfrun{to{stroke-dashoffset:-28}}
 @media (prefers-reduced-motion:reduce){.bfgrid .beam{animation:none}}
+.cbpv::after{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,rgba(23,180,87,.3),transparent 65%);filter:blur(18px)}
+.cbpv .cbphone{position:relative;z-index:1;width:clamp(170px,17vw,210px);border-radius:30px;padding:6px;background:#0b0c0e;
+  box-shadow:0 0 0 1px var(--line-2),0 36px 70px -28px rgba(0,0,0,.85);transform:rotate(-3deg)}
+.cbpv .cbphone img{display:block;width:100%;height:auto;border-radius:25px;border:0}
+.cbpv .cbicon{position:absolute;z-index:2;right:12%;top:14%;width:64px;height:64px;border-radius:16px;border:0;
+  box-shadow:0 0 0 1px var(--line-2),0 16px 34px -12px rgba(23,180,87,.6)}
+.cblogo-sm{height:30px;width:auto;transform:skewX(-8deg);margin:16px 0 6px;display:block}
 @media(max-width:900px){.pcard{grid-template-columns:1fr}.pcard.flip .pv{order:0}}
 </style>
 </head>
@@ -62,6 +70,7 @@
     <div class="nav-drop">
       <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
       <div class="dropdown">
+        <a href="/products/chargebuddy/"><i style="background:#17b457"></i><div><span>ChargeBuddy</span><small>EV charging map for India — iPhone &amp; Android</small></div></a>
         <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
         <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
         <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
@@ -87,6 +96,7 @@
 <div class="sheet">
   <a href="/">Home <small>00</small></a>
   <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/chargebuddy/">— ChargeBuddy</a>
   <a class="sub" href="/products/voyagea/">— Voyagea</a>
   <a class="sub" href="/products/dwello/">— Dwello</a>
   <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
@@ -102,36 +112,43 @@
   <div class="wrap">
     <p class="crumb" style="margin-bottom:26px"><a href="/">PTRI Innovation</a><i>/</i><b>Products</b></p>
     <h1 class="d1" style="max-width:13ch">Things we build <em>for ourselves</em>.</h1>
-    <p class="lead" style="margin-top:26px">Four products, four stages. We design them, engineer them, ship them and keep them running — which is exactly why our client work behaves like product work.</p>
+    <p class="lead" style="margin-top:26px">Five products, five stages. We design them, engineer them, ship them and keep them running — which is exactly why our client work behaves like product work.</p>
   </div>
 </header>
 
 <section class="sec-tight">
   <div class="wrap">
     <div class="idx rv">
-      <a href="/products/voyagea/">
+      <a href="/products/chargebuddy/">
         <span class="n">01</span>
+        <div><h3>ChargeBuddy</h3><span class="dom">chargebuddy.in</span></div>
+        <p>Every public EV charger in India on one map, with live status from riders — so you know which ones work before you drive there.</p>
+        <span class="st" style="color:#86f282;border-color:rgba(23,180,87,.5)">Live</span>
+        <span class="go">→</span>
+      </a>
+      <a href="/products/voyagea/">
+        <span class="n">02</span>
         <div><h3>Voyagea</h3><span class="dom">voyagea.travel</span></div>
         <p>A free AI travel planner that writes complete day-by-day itineraries in seconds — with maps, budgets and a digital V-Passport.</p>
         <span class="st" style="color:#3ecfb2;border-color:rgba(62,207,178,.4)">Live</span>
         <span class="go">→</span>
       </a>
       <a href="/products/dwello/">
-        <span class="n">02</span>
+        <span class="n">03</span>
         <div><h3>Dwello</h3><span class="dom">by AirTrace</span></div>
         <p>A desk robot that senses your room with radar — not a camera — blinks, talks back and runs the lights when you walk in.</p>
         <span class="st" style="color:#38bdf8;border-color:rgba(56,189,248,.4)">Prototype</span>
         <span class="go">→</span>
       </a>
       <a href="/products/ptrionix/">
-        <span class="n">03</span>
+        <span class="n">04</span>
         <div><h3>Ptrionix</h3><span class="dom">ptrionix.com</span></div>
         <p>The operating system for construction and interior design firms — BOQs, materials, finance and site logs on one AI-powered plan.</p>
         <span class="st" style="color:#f5b324;border-color:rgba(245,179,36,.4)">14.09.2026</span>
         <span class="go">→</span>
       </a>
       <a href="/support/#beamfall">
-        <span class="n">04</span>
+        <span class="n">05</span>
         <div><h3>Beamfall</h3><span class="dom" style="text-transform:none">iPhone &amp; Android</span></div>
         <p>A beam-routing puzzle — rotate mirrors and prisms to light every target. 100 levels, no ads, no purchases, no account.</p>
         <span class="st" style="color:#a855f7;border-color:rgba(168,85,247,.4)">Live · free</span>
@@ -144,10 +161,35 @@
 <section class="sec-tight">
   <div class="wrap">
 
-    <!-- Voyagea -->
-    <article class="pcard rv" style="--ac:#3ecfb2">
+    <!-- ChargeBuddy -->
+    <article class="pcard rv" style="--ac:#17b457">
       <div>
-        <span class="num">01 &nbsp;·&nbsp; <span style="color:#3ecfb2">LIVE</span></span>
+        <span class="num">01 &nbsp;·&nbsp; <span style="color:#86f282">LIVE · iPHONE &amp; ANDROID</span></span>
+        <h3 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">ChargeBuddy</h3>
+        <img class="cblogo-sm" src="/assets/img/chargebuddy/logo-white.webp" alt="ChargeBuddy" width="174" height="32">
+        <span class="dom">chargebuddy.in</span>
+        <p class="lead" style="margin-top:18px">A charger on the map isn't a charger that works. ChargeBuddy puts every public EV charger in India on one map, shows only the ones that fit your vehicle, and tells you which ones work — from riders who check in after they charge.</p>
+        <ul class="pfeat">
+          <li>27,000+ public chargers across every state and union territory</li>
+          <li>Scooters, autos and cars — only the chargers that fit</li>
+          <li>One-tap check-ins, with XP and badges for riders</li>
+          <li>On Apple CarPlay and Android Auto</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+          <a class="btn btn-solid" href="/products/chargebuddy/">Product page <span class="ar">→</span></a>
+          <a class="tlink" href="https://chargebuddy.in" target="_blank" rel="noopener">chargebuddy.in <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="pv cbpv" aria-hidden="true">
+        <div class="cbphone"><img src="/assets/img/chargebuddy/app-station.webp" alt="" width="900" height="1957" loading="lazy"></div>
+        <img class="cbicon" src="/assets/img/chargebuddy/appicon.webp" alt="" width="64" height="64" loading="lazy">
+      </div>
+    </article>
+
+    <!-- Voyagea -->
+    <article class="pcard flip rv" style="--ac:#3ecfb2">
+      <div>
+        <span class="num">02 &nbsp;·&nbsp; <span style="color:#3ecfb2">LIVE</span></span>
         <h3>Voyagea</h3><span class="dom">voyagea.travel</span>
         <p class="lead" style="margin-top:18px">Tell it where you're going and how you like to travel. Voyagea returns a complete day-by-day plan — routes, budgets, food, and the small hyperlocal things a good friend would tell you. Every trip you take earns a stamp in your V-Passport.</p>
         <ul class="pfeat">
@@ -165,9 +207,9 @@
     </article>
 
     <!-- Dwello -->
-    <article class="pcard flip rv" style="--ac:#38bdf8">
+    <article class="pcard rv" style="--ac:#38bdf8">
       <div>
-        <span class="num">02 &nbsp;·&nbsp; <span style="color:#38bdf8">PROTOTYPE</span></span>
+        <span class="num">03 &nbsp;·&nbsp; <span style="color:#38bdf8">PROTOTYPE</span></span>
         <h3>Dwello</h3><span class="dom" style="text-transform:none">by AirTrace · Windsor, Canada</span>
         <p class="lead" style="margin-top:18px">A little desk robot that senses your room with radar — not a camera — and actually reacts to you. Alexa waits for you to speak. Dwello already knows you walked in.</p>
         <ul class="pfeat">
@@ -191,9 +233,9 @@
     </article>
 
     <!-- Ptrionix -->
-    <article class="pcard rv" style="--ac:#f5b324">
+    <article class="pcard flip rv" style="--ac:#f5b324">
       <div>
-        <span class="num">03 &nbsp;·&nbsp; <span style="color:#f5b324">LAUNCHING 14.09.2026</span></span>
+        <span class="num">04 &nbsp;·&nbsp; <span style="color:#f5b324">LAUNCHING 14.09.2026</span></span>
         <h3>Ptrionix</h3><span class="dom">ptrionix.com</span>
         <p class="lead" style="margin-top:18px">Every project. One blueprint. Ptrionix is the operating system for construction and interior design firms — auto-generate BOQs, track materials, finance and site logs, and run every project from one AI-powered plan instead of six spreadsheets.</p>
         <ul class="pfeat">
@@ -218,9 +260,9 @@
     </article>
 
     <!-- Beamfall -->
-    <article class="pcard flip rv" style="--ac:#a855f7">
+    <article class="pcard rv" style="--ac:#a855f7">
       <div>
-        <span class="num">04 &nbsp;·&nbsp; <span style="color:#a855f7">LIVE · FREE FOREVER</span></span>
+        <span class="num">05 &nbsp;·&nbsp; <span style="color:#a855f7">LIVE · FREE FOREVER</span></span>
         <h3>Beamfall</h3><span class="dom" style="text-transform:none">iPhone &amp; Android · Puzzle</span>
         <p class="lead" style="margin-top:18px">Fire a beam across a grid, rotate mirrors and prisms to bend it, and light every target in its own colour. 100 levels, every tenth one a boss run — and every level proven solvable by computer before it shipped.</p>
         <ul class="pfeat">
@@ -256,7 +298,7 @@
 <section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
   <div class="wrap">
     <h2 class="d3 rv">Building a product of your own?</h2>
-    <p class="lead rv" data-d="1" style="margin:16px auto 26px">We take products from a sketch to something people pay for — and we've done it for ourselves three times over.</p>
+    <p class="lead rv" data-d="1" style="margin:16px auto 26px">We take products from a sketch to something people pay for — and we've done it for ourselves five times over.</p>
     <div class="rv" data-d="2" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a class="btn btn-solid" href="/#contact">Start a project <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="/projects/websites/">See client work</a>
@@ -281,6 +323,7 @@
         </div>
       </div>
       <div><h5>Products</h5><ul>
+        <li><a href="/products/chargebuddy/">ChargeBuddy</a></li>
         <li><a href="/products/voyagea/">Voyagea</a></li>
         <li><a href="/products/dwello/">Dwello</a></li>
         <li><a href="/products/ptrionix/">Ptrionix</a></li>

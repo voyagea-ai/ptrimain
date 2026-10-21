@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23ff4d19'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%2338bdf8'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%233ecfb2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23f5b324'/%3E%3C/svg%3E">
+
+<title>ChargeBuddy — EV charging map for India · PTRI Innovation</title>
+<meta name="description" content="ChargeBuddy by PTRI Innovation: every public EV charger in India on one map, with live status from riders. Free on iPhone and Android.">
+<style>
+:root{--ac:#17b457;--ac-2:#86f282}
+.cbhero{position:relative;overflow:hidden;padding:clamp(112px,13vw,150px) 0 clamp(44px,5vw,66px)}
+.cbhero::before{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 58% 55% at 74% 44%,rgba(23,180,87,.17),transparent 68%)}
+.cbhero .wrap{position:relative;z-index:1}
+.cbbrand{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+.cbicon{width:56px;height:56px;border-radius:14px;box-shadow:0 0 0 1px var(--line-2),0 14px 34px -12px rgba(23,180,87,.6)}
+.cblogo{height:34px;width:auto;transform:skewX(-8deg)}
+.cbhero h1{font-size:clamp(2.8rem,7.4vw,5.6rem);letter-spacing:-.055em;line-height:.95;margin:22px 0 22px;max-width:12ch}
+.cbhero h1 em{color:var(--ac-2)}
+.stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
+.store{display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 14px;border-radius:12px;
+  background:var(--ink);color:var(--void);border:1px solid var(--ink);transition:transform .3s var(--ease),background .3s}
+.store:hover{transform:translateY(-2px);background:#fff}
+.store span{display:flex;flex-direction:column;font-weight:600;font-size:1.02rem;line-height:1.1;letter-spacing:-.01em}
+.store small{font-size:.66rem;font-weight:500;letter-spacing:.01em;opacity:.75}
+.stores .tlink{margin-left:6px}
+.cbstage{position:relative;min-height:clamp(440px,48vw,580px);display:flex;align-items:center;justify-content:center}
+.cbglow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(23,180,87,.35),transparent 65%);filter:blur(20px)}
+.phone{margin:0;border-radius:34px;padding:7px;background:#0b0c0e;
+  box-shadow:0 0 0 1px var(--line-2),0 40px 80px -30px rgba(0,0,0,.85)}
+.phone img{display:block;width:100%;height:auto;border-radius:28px}
+.cbstage .phone{position:absolute;width:clamp(190px,21vw,250px)}
+.cbstage .front{transform:translateX(-28%) rotate(-4deg);z-index:2}
+.cbstage .back{transform:translateX(34%) translateY(4%) rotate(5deg);z-index:1;opacity:.92}
+.pill{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;
+  border-radius:14px;background:rgba(13,15,19,.82);border:1px solid var(--line-2);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 18px 40px -18px rgba(0,0,0,.8)}
+.pill i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:.85rem;color:#fff}
+.pill b{display:block;font-size:.9rem;font-weight:600;line-height:1.2}
+.pill small{display:block;font-size:.74rem;color:var(--ink-2)}
+.pill.ok{left:0;top:16%}.pill.ok i{background:var(--ac)}
+.pill.down{right:0;bottom:14%}.pill.down i{background:#f7901e}
+@media (prefers-reduced-motion:no-preference){
+  .pill.ok{animation:float 6s ease-in-out infinite}
+  .pill.down{animation:float 6s ease-in-out -3s infinite}
+}
+@keyframes float{50%{transform:translateY(-8px)}}
+.cbstats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cbstats dl{display:grid;grid-template-columns:repeat(4,1fr)}
+.cbstats dl div{padding:clamp(22px,3vw,34px) clamp(14px,2vw,26px);border-left:1px solid var(--line)}
+.cbstats dl div:first-child{border-left:0;padding-left:0}
+.cbstats dt{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:600;letter-spacing:-.04em;color:var(--ac-2);line-height:1}
+.cbstats dd{margin-top:8px;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.fgrid{--ac:var(--ac-2)}
+.screens{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,44px);
+  padding:clamp(30px,4vw,54px);border:1px solid var(--line);border-radius:26px;
+  background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(23,180,87,.12),transparent 70%),var(--void-2)}
+.screens figure{margin:0}
+.screens .phone{max-width:270px;margin:0 auto}
+.screens figcaption{text-align:center;margin-top:18px;font-size:.92rem;color:var(--ink-2)}
+.screens figcaption b{display:block;font-family:var(--f-mono);font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--ac-2);margin-bottom:5px}
+@media(max-width:900px){
+  .cbstage{min-height:460px;margin-top:10px}
+  .cbstats dl{grid-template-columns:repeat(2,1fr)}
+  .cbstats dl div:nth-child(3){border-left:0;padding-left:0}
+  .cbstats dl div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media(max-width:640px){
+  .screens{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:24px 20px;scrollbar-width:none}
+  .screens figure{flex:0 0 64%;scroll-snap-align:center}
+  .cbstage .phone{width:min(200px,48vw)}
+  .pill{padding:8px 12px 8px 8px}.pill small{display:none}
+}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark"><span></span><span></span><span></span><span></span></span>
+    <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+  </a>
+  <div class="nav-mid">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button type="button">Products <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/products/chargebuddy/"><i style="background:#17b457"></i><div><span>ChargeBuddy</span><small>EV charging map for India — iPhone &amp; Android</small></div></a>
+        <a href="/products/voyagea/"><i style="background:#3ecfb2"></i><div><span>Voyagea</span><small>AI travel planner — live at voyagea.travel</small></div></a>
+        <a href="/products/dwello/"><i style="background:#38bdf8"></i><div><span>Dwello</span><small>Desk robot that senses your room with radar</small></div></a>
+        <a href="/products/ptrionix/"><i style="background:#f5b324"></i><div><span>Ptrionix</span><small>ERP for construction &amp; interior firms</small></div></a>
+        <a href="/ReadRush/"><i style="background:#f4454f"></i><div><span>ReadRush</span><small>Speed reading for iPhone — support &amp; privacy</small></div></a>
+        <a href="/products/"><i style="background:#ff4d19"></i><div><span>All products</span><small>Everything we build in-house</small></div></a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button type="button">Projects <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l5 5 5-5"/></svg></button>
+      <div class="dropdown">
+        <a href="/projects/websites/"><i style="background:#ff4d19"></i><div><span>Websites</span><small>Sites built by PTRI — 5 live builds</small></div></a>
+        <a href="/projects/"><i style="background:#38bdf8"></i><div><span>All projects</span><small>Every discipline, every build</small></div></a>
+      </div>
+    </div>
+    <a href="#services">Services</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="#contact">Start a project <span class="ar">→</span></a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</nav>
+
+<div class="sheet">
+  <a href="/">Home <small>00</small></a>
+  <a href="/products/">Products <small>01</small></a>
+  <a class="sub" href="/products/chargebuddy/">— ChargeBuddy</a>
+  <a class="sub" href="/products/voyagea/">— Voyagea</a>
+  <a class="sub" href="/products/dwello/">— Dwello</a>
+  <a class="sub" href="/products/ptrionix/">— Ptrionix</a>
+  <a class="sub" href="/ReadRush/">— ReadRush</a>
+  <a href="/projects/websites/">Websites <small>02</small></a>
+  <a href="#services">Services <small>03</small></a>
+  <a href="#studio">Studio <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<header class="cbhero">
+  <div class="wrap">
+    <p class="crumb" style="margin-bottom:24px"><a href="/">PTRI Innovation</a><i>/</i><a href="/products/">Products</a><i>/</i><b>ChargeBuddy</b></p>
+    <div class="split">
+      <div>
+        <div class="cbbrand">
+          <img class="cbicon" src="/assets/img/chargebuddy/appicon.webp" alt="" width="64" height="64">
+          <img class="cblogo" src="/assets/img/chargebuddy/logo-white.webp" alt="ChargeBuddy" width="208" height="38">
+        </div>
+        <span class="chip"><i class="dot" style="background:var(--ac)"></i> Live · iPhone &amp; Android · free</span>
+        <h1>Find an EV charger that <em>actually works</em>.</h1>
+        <p class="lead">Every public EV charger in India on one map. Riders check in after they charge, so you know which ones work before you drive there.</p>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/in/app/id6818815887" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=in.chargebuddy.app" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3 13.7 12 3.6 21.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m17 8.7-3.3 3.3L17 15.3l3.7-2.1c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M13.7 12 3.6 21.7c.3.2.8.2 1.2 0L17 15.3z"/><path fill="#EA4335" d="M13.7 12 17 8.7 4.8 2.3c-.4-.2-.9-.2-1.2 0z"/></svg>
+            <span><small>Get it on</small>Google Play</span>
+          </a>
+          <a class="tlink" href="https://chargebuddy.in" target="_blank" rel="noopener">chargebuddy.in <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <div class="cbstage" aria-hidden="true">
+        <div class="cbglow"></div>
+        <figure class="phone back"><img src="/assets/img/chargebuddy/app-checkin.webp" alt="" width="900" height="1957"></figure>
+        <figure class="phone front"><img src="/assets/img/chargebuddy/app-map.webp" alt="" width="900" height="1957"></figure>
+        <div class="pill ok"><i>✓</i><div><b>Working</b><small>Riders charged here</small></div></div>
+        <div class="pill down"><i>!</i><div><b>Down</b><small>Reported by a rider</small></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="cbstats">
+  <div class="wrap">
+    <dl class="rv">
+      <div><dt>27,000+</dt><dd>Public chargers on the map</dd></div>
+      <div><dt>28 + 8</dt><dd>States and union territories</dd></div>
+      <div><dt>2W · 3W · 4W</dt><dd>Scooters, autos and cars</dd></div>
+      <div><dt>₹0</dt><dd>Free, no sign-up to start</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="head rv"><div class="head-row">
+      <div><span class="kicker"><b>01</b> &nbsp;/&nbsp; What it does</span>
+        <h2 class="d2" style="margin-top:20px;max-width:15ch">A charger on the map isn't a charger <em>that works</em>.</h2></div>
+      <p class="lead" style="max-width:34ch">Other maps tell you where a charger is. ChargeBuddy tells you what riders found when they got there.</p>
+    </div></div>
+    <div class="fgrid rv">
+      <article><span class="n">01</span><h3>Every charger, one map</h3><p>No switching between network apps. Open it and the map is already on the chargers near you, anywhere in India.</p></article>
+      <article><span class="n">02</span><h3>Only chargers that fit</h3><p>Tell it once what you drive — scooter, auto or car — and it hides the chargers you can't use.</p></article>
+      <article><span class="n">03</span><h3>Status from riders</h3><p>Working or down, from the people who were just there. Connectors, speed and price on every charger.</p></article>
+      <article><span class="n">04</span><h3>One-tap check-in</h3><p>Charged, charging, couldn't charge or waiting. One tap helps the next rider, and earns XP and badges.</p></article>
+      <article><span class="n">05</span><h3>On the car screen</h3><p>Nearby chargers on Apple CarPlay and Android Auto, with directions handed straight to your maps app.</p></article>
+      <article><span class="n">06</span><h3>Start as a guest</h3><p>No sign-up to start. Sign in with Apple or Google later and your check-ins and saved chargers come with you.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="screens rv">
+      <figure><div class="phone"><img src="/assets/img/chargebuddy/app-map.webp" alt="ChargeBuddy map showing chargers near the rider" loading="lazy" width="900" height="1957"></div><figcaption><b>Find</b> The nearest charger, first</figcaption></figure>
+      <figure><div class="phone"><img src="/assets/img/chargebuddy/app-station.webp" alt="A charger's page with connectors, speed and price" loading="lazy" width="900" height="1957"></div><figcaption><b>Check</b> Connectors, speed and price</figcaption></figure>
+      <figure><div class="phone"><img src="/assets/img/chargebuddy/app-checkin.webp" alt="The check-in sheet: charged, charging now, could not charge, waiting" loading="lazy" width="900" height="1957"></div><figcaption><b>Check in</b> Tell the next rider how it went</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="kicker"><b>02</b> &nbsp;/&nbsp; Build notes</span>
+      <h2 class="d3" style="margin-top:18px;max-width:17ch">Designed, built and run by PTRI.</h2>
+      <p class="lead" style="margin-top:18px">ChargeBuddy is our own product, from the data pipeline to the store listings. It runs on phones, in the car and on the web — with live check-ins, push alerts and an admin desk behind it.</p>
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-solid" href="https://chargebuddy.in" target="_blank" rel="noopener">Visit chargebuddy.in <span class="ar">↗</span></a>
+        <a class="tlink" href="/#contact">Want one like it? <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="rv" data-d="1">
+      <ul class="facts">
+        <li><span>Owner</span><b>PTRI Innovation (in-house)</b></li>
+        <li><span>Category</span><b>EV charging map · India</b></li>
+        <li><span>Status</span><b style="color:var(--ac)">Live · App Store &amp; Google Play</b></li>
+        <li><span>Platforms</span><b>iOS · Android · CarPlay<br>Android Auto · web</b></li>
+        <li><span>Stack</span><b>React Native / Expo · Supabase<br>Swift · Android for Cars</b></li>
+        <li><span>Domain</span><b><a href="https://chargebuddy.in" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line-2)">chargebuddy.in ↗</a></b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:1px solid var(--line);text-align:center">
+  <div class="wrap">
+    <h2 class="d3 rv">More from the studio</h2>
+    <div class="rv" data-d="1" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+      <a class="btn btn-ghost" href="/products/voyagea/">Voyagea <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/products/dwello/">Dwello <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/products/ptrionix/">Ptrionix <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="/projects/websites/">Websites <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/">
+          <span class="mark"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-txt"><b>PTRI Innovation</b><small>Pvt. Ltd.</small></span>
+        </a>
+        <p class="small" style="margin-top:18px;max-width:34ch">Joining the world with technology. A product and engineering studio building AI platforms, custom software and the websites businesses grow into.</p>
+        <div style="display:flex;gap:9px;margin-top:20px">
+          <a class="ic" href="https://linkedin.com/company/ptri-innovation" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">in</a>
+          <a class="ic" href="https://x.com/ptriinnovation" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">𝕏</a>
+          <a class="ic" href="mailto:info@ptriinnovation.com" aria-label="Email" style="width:36px;height:36px;border:1px solid var(--line-2);border-radius:9px;display:grid;place-items:center;font-size:12px;color:var(--ink-2)">✉</a>
+        </div>
+      </div>
+      <div><h5>Products</h5><ul>
+        <li><a href="/products/chargebuddy/">ChargeBuddy</a></li>
+        <li><a href="/products/voyagea/">Voyagea</a></li>
+        <li><a href="/products/dwello/">Dwello</a></li>
+        <li><a href="/products/ptrionix/">Ptrionix</a></li>
+        <li><a href="/ReadRush/">ReadRush</a></li>
+        <li><a href="/support/#beamfall">Beamfall</a></li>
+        <li><a href="/products/">All products</a></li>
+      </ul></div>
+      <div><h5>Projects</h5><ul>
+        <li><a href="/projects/websites/">Websites</a></li>
+        <li><a href="https://akbuildsandplumbing.ca" target="_blank" rel="noopener">AK Builds &amp; Plumbing ↗</a></li>
+        <li><a href="https://keriinwindsor.ca" target="_blank" rel="noopener">Keri in Windsor ↗</a></li>
+        <li><a href="https://skyvageweb.vercel.app" target="_blank" rel="noopener">Skyvage ↗</a></li>
+      </ul></div>
+      <div><h5>Studio</h5><ul>
+        <li><a href="/#studio">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© <span data-year>2026</span> PTRI Innovation Pvt. Ltd.</p>
+      <p>Joining the world with technology</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
